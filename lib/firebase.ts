@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA1jQa2Bo9U7UBDRWjSLHbY8Q42xbOlA8k",
-  authDomain: "bag-store-app-55b26.firebaseapp.com",
-  projectId: "bag-store-app-55b26",
-  storageBucket: "bag-store-app-55b26.firebasestorage.app",
-  messagingSenderId: "876785296161",
-  appId: "1:876785296161:web:320fea9a586bf48f84d460",
-  measurementId: "G-M6YS1LFRCD"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 // التأكد من عدم تشغيل فايربيز أكثر من مرة مع Next.js
