@@ -1,9 +1,9 @@
 'use client'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../lib/firebase';
+import { db, storage } from '../../lib/firebase';
 import { collection, addDoc, serverTimestamp, onSnapshot, query, orderBy, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { useEffect, useMemo, useState } from 'react'
-import { cloneSeed, loadState, saveState } from '../types/store'
+import { cloneSeed, loadState, saveState } from '../../types/store'
 import {
   Activity, AlertTriangle, BarChart3, Bell, Box, ChevronDown, ChevronLeft, ChevronRight,
   CircleDollarSign, ClipboardList, Clock3, Home, LayoutDashboard, Menu, Moon, MoreHorizontal,
