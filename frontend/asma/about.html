@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>FashionStore</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+<style>
+    :root {
+      --osma-primary: #8b7355;
+      /* البني الترابي من اللوجو */
+      --osma-hover: #6a563f;
+      /* درجة أغمق للـ Hover */
+      --osma-bg: #f8f6f0;
+      /* الكريمي الفاتح للخلفية */
+    }
+
+    body {
+      background-color: var(--osma-bg) !important;
+    }
+
+    /* تغيير ألوان الأزرار والـ Badges للون البراند */
+    .btn-dark,
+    .btn-shop,
+    .view-all-btn {
+      background-color: var(--osma-primary) !important;
+      border-color: var(--osma-primary) !important;
+      color: #fff !important;
+    }
+
+    .btn-dark:hover,
+    .btn-shop:hover,
+    .view-all-btn:hover {
+      background-color: var(--osma-hover) !important;
+      border-color: var(--osma-hover) !important;
+    }
+
+    .price,
+    .current-price,
+    .product-price {
+      color: var(--osma-primary) !important;
+      font-weight: 700;
+    }
+
+    .discount-badge,
+    .badge.bg-danger,
+    .badge.sale,
+    .badge.bg-success {
+      background-color: var(--osma-primary) !important;
+      color: #fff !important;
+    }
+
+    .slide-badge {
+      background-color: rgba(139, 115, 85, 0.1) !important;
+      color: var(--osma-primary) !important;
+    }
+
+    .header-nav nav ul li a.active,
+    .header-nav nav ul li a:hover {
+      color: var(--osma-primary) !important;
+    }
+
+    .product-title a:hover {
+      color: var(--osma-primary) !important;
+    }
+
+    .action-btn:hover,
+    .btn-cart:hover {
+      background-color: var(--osma-primary) !important;
+      border-color: var(--osma-primary) !important;
+      color: #fff !important;
+    }
+  </style>
+</head>
+
+<body class="about-page">
+
+  <header id="header" class="header position-fixed w-100 top-0">
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar py-2">
+      <div class="container-fluid container-xl">
+        <div class="announcement-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": { "delay": 5000 },
+            "slidesPerView": 1,
+            "effect": "slide",
+            "direction": "vertical"
+          }
+        </script>
+          <div class="swiper-wrapper text-center">
+            <div class="swiper-slide">🚚 Free shipping on orders over $50</div>
+            <div class="swiper-slide">💰 30 days money back guarantee</div>
+            <div class="swiper-slide">🎁 20% off on your first order - Use code: FIRST20</div>
+            <div class="swiper-slide">⚡ Flash Sale! Up to 70% off on selected items</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header bg-white shadow-sm">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
+            <img src="assets/img/icon - Copy.png" alt="dobleer Logo" class="logo-img">
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="header-nav d-none d-xl-block">
+            <nav id="navmenu" class="navmenu">
+              <ul class="d-flex list-unstyled mb-0 gap-4">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="return-policy.html">Return Policy</a></li>
+                <li><a href="shipping-info.html">Shipping Information</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Icons & Actions -->
+          <div class="header-actions d-flex align-items-center gap-3">
+            <!-- Search Toggle -->
+
+
+            <!-- Mobile Navigation Toggle (Triggers Offcanvas) -->
+            <!-- Mobile Navigation Toggle (Triggers Offcanvas) -->
+            <i class="custom-nav-toggle d-xl-none bi bi-list fs-2 text-dark cursor-pointer" data-bs-toggle="offcanvas"
+              data-bs-target="#mobileNavSidebar" aria-controls="mobileNavSidebar"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Form Dropdown (Collapse) -->
+    <div class="collapse position-absolute w-100 bg-white shadow-sm" id="mobileSearch" style="top: 100%; z-index: -1;">
+      <div class="container py-3">
+        <form class="search-form">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control border-0 bg-light" placeholder="Search for products..."
+              style="box-shadow: none;">
+            <button class="btn btn-dark px-4" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Premium Mobile Sidebar Menu (Offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavSidebar" aria-labelledby="mobileNavLabel">
+      <div class="offcanvas-header border-bottom py-3">
+        <h5 class="offcanvas-title fw-bold text-dark" id="mobileNavLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body px-4 py-4">
+        <nav class="mobile-nav">
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0 fs-5">
+            <li><a href="index.html" class="text-decoration-none text-dark">Home</a></li>
+            <li><a href="about.html" class="text-decoration-none text-dark active">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="return-policy.html">Return Policy</a></li>
+            <li><a href="shipping-info.html">Shipping Information</a></li>
+          </ul>
+        </nav>
+
+       
+      </div>
+    </div>
+
+  </header>
+
+
+
+ <!-- About Section -->
+  <section id="about-2" class="about-2 section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row mb-lg-5">
+        <span class="text-uppercase small-title mb-2">About Our Store</span>
+
+        <div class="col-lg-6">
+          <h2 class="about-title">
+            Premium Bags Designed for Elegance, Quality, and Everyday Confidence.
+          </h2>
+        </div>
+
+        <div class="col-lg-6 description-wrapper">
+          <p class="about-description">
+            We specialize in high-quality bags, offering modern designs, premium materials,
+            and the perfect accessory for any outfit. Whether you're looking for luxury Originals, 
+            exact Mirror replicas, or practical High Copy options, you'll always find the right style for every occasion.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Card 1 -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="content-card">
+            <div class="card-image">
+              <img src="assets/img/about/about-portrait-16.webp" alt="" class="img-fluid">
+            </div>
+
+            <div class="card-content">
+              <h3>Original (Authentic)</h3>
+
+              <p>
+                100% genuine bags from top global brands, crafted from the finest materials to provide 
+                long-lasting quality and an ultimate premium look.
+              </p>
+
+              <a href="tos.html" class="read-more">
+                Explore Collection <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="content-card">
+            <div class="card-image">
+              <img src="assets/img/about/about-portrait-4.webp" alt="" class="img-fluid">
+            </div>
+
+            <div class="card-content">
+              <h3>Mirror Quality</h3>
+
+              <p>
+                Exact 1:1 replicas featuring identical materials, genuine leather, and precise hardware, 
+                providing true luxury at a smart price.
+              </p>
+
+              <a href="tos.html" class="read-more">
+                Shop Now <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="content-card">
+            <div class="card-image">
+              <img src="assets/img/about/about-portrait-1.webp" alt="" class="img-fluid">
+            </div>
+
+            <div class="card-content">
+              <h3>High Copy</h3>
+
+              <p>
+                Excellent quality and highly practical for everyday use, combining trendy designs 
+                and durability with an affordable price tag for everyone.
+              </p>
+
+              <a href="tos.html" class="read-more">
+                Discover More <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Stats Section -->
+  <section id="stats" class="stats section light-background">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <!-- Customers -->
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item">
+            <i class="bi bi-emoji-smile"></i>
+            <span data-purecounter-start="0" data-purecounter-end="5000" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p><strong>Happy Customers</strong> <span>satisfied with our bags</span></p>
+          </div>
+        </div>
+
+        <!-- Products -->
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item">
+            <i class="bi bi-bag"></i>
+            <span data-purecounter-start="0" data-purecounter-end="350" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p><strong>Products</strong> <span>premium bags collection</span></p>
+          </div>
+        </div>
+
+        <!-- Orders -->
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item">
+            <i class="bi bi-cart-check"></i>
+            <span data-purecounter-start="0" data-purecounter-end="12000" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p><strong>Orders Delivered</strong> <span>fast and secure shipping</span></p>
+          </div>
+        </div>
+
+        <!-- Team -->
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item">
+            <i class="bi bi-people"></i>
+            <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p><strong>Expert Team</strong> <span>always ready to help</span></p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="testimonials-slider swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+            {
+              "slidesPerView": 1,
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              }
+            }
+          </script>
+
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2>Excellent Quality & Perfect Details</h2>
+                  <p>
+                    I ordered a Mirror Quality handbag and was impressed by the craftsmanship.
+                    The leather feels premium, the stitching is excellent, and the details are exactly as described.
+                  </p>
+                  <p>
+                    Shipping was fast, customer service was helpful, and I'll definitely order again.
+                    Highly recommended for anyone looking for stylish luxury bags.
+                  </p>
+                  <div class="profile d-flex align-items-center">
+                    <img src="assets/img/person/person-m-7.webp" class="profile-img" alt="">
+                    <div class="profile-info">
+                      <h3>James Wilson</h3>
+                      <span>Verified Customer</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                  <div class="featured-img-wrapper">
+                    <img src="assets/img/person/person-m-7.webp" class="featured-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- End Testimonial -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2>Stylish and Practical</h2>
+                  <p>
+                    The High Copy tote bag exceeded my expectations. It's lightweight,
+                    durable, and perfect for everyday use and carrying all my essentials.
+                  </p>
+                  <p>
+                    Great value for money with excellent customer support.
+                    I already recommended this store to my friends.
+                  </p>
+                  <div class="profile d-flex align-items-center">
+                    <img src="assets/img/person/person-f-8.webp" class="profile-img" alt="">
+                    <div class="profile-info">
+                      <h3>Emily Carter</h3>
+                      <span>Happy Customer</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                  <div class="featured-img-wrapper">
+                    <img src="assets/img/person/person-f-8.webp" class="featured-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- End Testimonial -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2>Great Shopping Experience</h2>
+                  <p>
+                    The ordering process was smooth and delivery was faster than expected.
+                    The Original leather bags look even better in real life.
+                  </p>
+                  <p>
+                    Perfect craftsmanship, premium materials, and outstanding service.
+                    I'll definitely shop here again.
+                  </p>
+                  <div class="profile d-flex align-items-center">
+                    <img src="assets/img/person/person-m-9.webp" class="profile-img" alt="">
+                    <div class="profile-info">
+                      <h3>Michael Brown</h3>
+                      <span>Loyal Customer</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                  <div class="featured-img-wrapper">
+                    <img src="assets/img/person/person-m-9.webp" class="featured-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- End Testimonial -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2>Highly Recommended Store</h2>
+                  <p>
+                    I've purchased several bags from this store, ranging from High Copy to Original.
+                    Every product has been durable, stylish, and exactly what I needed.
+                  </p>
+                  <p>
+                    Excellent prices, premium quality, and fast delivery make this my favorite
+                    online destination for bags.
+                  </p>
+                  <div class="profile d-flex align-items-center">
+                    <img src="assets/img/person/person-f-10.webp" class="profile-img" alt="">
+                    <div class="profile-info">
+                      <h3>Olivia Davis</h3>
+                      <span>Verified Buyer</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                  <div class="featured-img-wrapper">
+                    <img src="assets/img/person/person-f-10.webp" class="featured-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- End Testimonial -->
+
+        </div>
+
+        <div class="swiper-navigation w-100 d-flex align-items-center justify-content-center">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /Testimonials Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">FashionStore</span>
+              </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut,
+                consectetur lorem. Proin eget tortor risus.</p>
+
+              <div class="social-links mt-4">
+                <h5>Connect With Us</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                  <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Shop</h4>
+              <ul class="footer-links">
+                <li><a href="category.html">New Arrivals</a></li>
+                <li><a href="category.html">Bestsellers</a></li>
+                <li><a href="category.html">Women's Clothing</a></li>
+                <li><a href="category.html">Men's Clothing</a></li>
+                <li><a href="category.html">Accessories</a></li>
+                <li><a href="category.html">Sale</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Support</h4>
+              <ul class="footer-links">
+                <li><a href="support.html">Help Center</a></li>
+                <li><a href="account.html">Order Status</a></li>
+                <li><a href="shiping-info.html">Shipping Info</a></li>
+                <li><a href="return-policy.html">Returns &amp; Exchanges</a></li>
+                <li><a href="#">Size Guide</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <h4>Contact Information</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>123 Fashion Street, New York, NY 10001</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span>hello@example.com</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-clock"></i>
+                  <span>Monday-Friday: 9am-6pm<br>Saturday: 10am-4pm<br>Sunday: Closed</span>
+                </div>
+              </div>
+
+              <div class="app-buttons mt-4">
+                <a href="#" class="app-btn">
+                  <i class="bi bi-apple"></i>
+                  <span>App Store</span>
+                </a>
+                <a href="#" class="app-btn">
+                  <i class="bi bi-google-play"></i>
+                  <span>Google Play</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="sitename">Hassan</strong>. All Rights Reserved.</p>
+            </div>
+            <div class="credits mt-1">
+
+              Designed by <a href="https://hassan6102.github.io/cv//">Eng.Hassan Mohamed</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              <div class="payment-methods">
+                <div class="payment-icons">
+                  <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                  <i class="bi bi-paypal" aria-label="PayPal"></i>
+                  <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                  <i class="bi bi-google" aria-label="Google Pay"></i>
+                  <i class="bi bi-shop" aria-label="Shop Pay"></i>
+                  <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+                </div>
+              </div>
+
+              <div class="legal-links">
+                <a href="tos.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tos.html">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+ <!-- Floating Customer Support Button (Modern & Clean) -->
+  <div class="cs-float" id="csFloat">
+    <button class="cs-main" id="csMain" aria-expanded="false" aria-label="Customer Support">
+      <i class="bi bi-chat-dots-fill cs-icon"></i>
+    </button>
+
+    <div class="cs-menu" id="csMenu" role="menu">
+      <a class="cs-item" href="https://wa.me/201111447123" target="_blank">
+        <i class="bi bi-whatsapp" style="color: #25D366;"></i>
+        <span>WhatsApp</span>
+      </a>
+      <a class="cs-item" href="tel:+201111447123">
+        <i class="bi bi-telephone-fill" style="color: var(--osma-primary);"></i>
+        <span>Call Us</span>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    /* Clean Support Button CSS */
+    .cs-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9999;
+    }
+
+    .cs-main {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: #8b7355;
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .cs-main:hover {
+      transform: scale(1.05);
+      background-color: var(--osma-hover);
+    }
+
+.cs-icon {
+      font-size: 24px;
+      transition: transform 0.3s ease;
+      pointer-events: none; /* إضافة السطر ده */
+    }
+
+    .cs-float.open .cs-icon {
+      transform: rotate(360deg);
+      content: "\F62A"; /* تتغير لعلامة X في البوتستراب أيكونز لو حابب تظبطها بالجافاسكريبت، بس الدوران شغال كويس */
+    }
+
+    .cs-menu {
+      position: absolute;
+      right: 0;
+      bottom: 70px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 10px 0;
+      width: 180px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .cs-float.open .cs-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .cs-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 15px;
+      transition: background-color 0.2s ease;
+    }
+
+    .cs-item i {
+      font-size: 18px;
+    }
+
+    .cs-item:hover {
+      background-color: #f8f9fa;
+      color: var(--osma-primary);
+    }
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const csFloat = document.getElementById("csFloat");
+    const csMain = document.getElementById("csMain");
+
+    if (csMain && csFloat) {
+      // Toggle Menu
+      csMain.addEventListener("click", function (e) {
+        e.preventDefault(); // منع أي سلوك افتراضي
+        e.stopPropagation(); // منع انتقال الضغطة لباقي الصفحة
+        csFloat.classList.toggle("open");
+        
+        // تغيير حالة aria للـ Accessibility
+        const isOpen = csFloat.classList.contains("open");
+        csMain.setAttribute("aria-expanded", isOpen);
+      });
+
+      // Close when clicking outside
+      document.addEventListener("click", function (e) {
+        if (!csFloat.contains(e.target)) {
+          csFloat.classList.remove("open");
+          csMain.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  });
+</script> 
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/drift-zoom/Drift.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

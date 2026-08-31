@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>OSMA | Premium Bags</title>
+  <meta name="description" content="Premium Bags Collection by OSMA">
+  <meta name="keywords" content="OSMA, bags, handbags, backpacks, travel bags">
+
+  <link href="assets/img/icon.jpg" rel="icon">
+  <link href="assets/img/icon.jpg" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- OSMA Brand Colors Customization -->
+  <style>
+    :root {
+      --osma-primary: #8b7355;
+      /* البني الترابي من اللوجو */
+      --osma-hover: #6a563f;
+      /* درجة أغمق للـ Hover */
+      --osma-bg: #f8f6f0;
+      /* الكريمي الفاتح للخلفية */
+    }
+
+    body {
+      background-color: var(--osma-bg) !important;
+    }
+
+    /* تغيير ألوان الأزرار والـ Badges للون البراند */
+    .btn-dark,
+    .btn-shop,
+    .view-all-btn {
+      background-color: var(--osma-primary) !important;
+      border-color: var(--osma-primary) !important;
+      color: #fff !important;
+    }
+
+    .btn-dark:hover,
+    .btn-shop:hover,
+    .view-all-btn:hover {
+      background-color: var(--osma-hover) !important;
+      border-color: var(--osma-hover) !important;
+    }
+
+    .price,
+    .current-price,
+    .product-price {
+      color: var(--osma-primary) !important;
+      font-weight: 700;
+    }
+
+    .discount-badge,
+    .badge.bg-danger,
+    .badge.sale,
+    .badge.bg-success {
+      background-color: var(--osma-primary) !important;
+      color: #fff !important;
+    }
+
+    .slide-badge {
+      background-color: rgba(139, 115, 85, 0.1) !important;
+      color: var(--osma-primary) !important;
+    }
+
+    .header-nav nav ul li a.active,
+    .header-nav nav ul li a:hover {
+      color: var(--osma-primary) !important;
+    }
+
+    .product-title a:hover {
+      color: var(--osma-primary) !important;
+    }
+
+    .action-btn:hover,
+    .btn-cart:hover {
+      background-color: var(--osma-primary) !important;
+      border-color: var(--osma-primary) !important;
+      color: #fff !important;
+    }
+  </style>
+  <style>
+    /* كود الجذر الآمن لشريط المنتجات المتحرك */
+    .osma-marquee-wrapper {
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px 0;
+    }
+
+    .osma-marquee-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+    }
+
+    /* الحركة للشمال */
+    .osma-marquee-track.move-left {
+      animation: marqueeLeft 30s linear infinite;
+    }
+
+    /* الحركة لليمين */
+    .osma-marquee-track.move-right {
+      animation: marqueeRight 30s linear infinite;
+    }
+
+    /* توقيف الحركة عند وقوف الماوس (UX ممتاز) */
+    .osma-marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeLeft {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes marqueeRight {
+      0% {
+        transform: translateX(-50%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    /* تثبيت عرض الكارت عشان ميبظش في الحركة */
+    .osma-marquee-card {
+      width: 260px;
+      flex-shrink: 0;
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header position-fixed w-100 top-0">
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar py-2" style="background-color: #8b7355; color: #fff;">
+      <div class="container-fluid container-xl">
+        <div class="announcement-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": { "delay": 5000 },
+            "slidesPerView": 1,
+            "effect": "slide",
+            "direction": "vertical"
+          }
+        </script>
+          <div class="swiper-wrapper text-center">
+            <div class="swiper-slide">🚚 شحن مجاني للطلبات فوق EGP 500</div>
+            <div class="swiper-slide">💰 ضمان استرجاع خلال 14 يوم</div>
+            <div class="swiper-slide">🎁 خصم 20% على أول طلب - كود: OSMA20</div>
+            <div class="swiper-slide">⚡ عروض فلاش! خصومات تصل لـ 50% على شنط مختارة</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header bg-white shadow-sm">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
+            <!-- مسار لوجو أوسما الخاص بك -->
+            <img src="assets/img/icon - Copy.png" alt="OSMA Logo" class="logo-img">
+          </a>
+
+          <!-- Desktop Navigation -->
+          <!-- Desktop Navigation -->
+          <div class="header-nav d-none d-xl-block">
+            <nav id="navmenu" class="navmenu">
+              <ul class="d-flex list-unstyled mb-0 gap-4">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="return-policy.html">Return Policy</a></li>
+                <li><a href="shipping-info.html">Shipping Info</a></li>
+              </ul>
+            </nav> 
+          </div>
+          <div class="header-actions d-flex align-items-center gap-3">
+
+
+
+            <i class="custom-nav-toggle d-xl-none bi bi-list fs-2 text-dark cursor-pointer" data-bs-toggle="offcanvas"
+              data-bs-target="#mobileNavSidebar" aria-controls="mobileNavSidebar"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse position-absolute w-100 bg-white shadow-sm" id="mobileSearch" style="top: 100%; z-index: -1;">
+      <div class="container py-3">
+        <form class="search-form">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control border-0 bg-light" placeholder="Search for bags..."
+              style="box-shadow: none;">
+            <button class="btn btn-dark px-4" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavSidebar" aria-labelledby="mobileNavLabel">
+      <div class="offcanvas-header border-bottom py-3">
+        <h5 class="offcanvas-title fw-bold text-dark" id="mobileNavLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body px-4 py-4">
+        <nav class="mobile-nav">
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0 fs-5">
+            <li><a href="index.html" class="text-decoration-none text-dark active">Home</a></li>
+            <li><a href="about.html" class="text-decoration-none text-dark">About Us</a></li>
+            <li><a href="faq.html" class="text-decoration-none text-dark">FAQs</a></li>
+            <li><a href="return-policy.html" class="text-decoration-none text-dark">Return Policy</a></li>
+            <li><a href="shipping-info.html" class="text-decoration-none text-dark">Shipping Info</a></li>
+          </ul>
+        </nav>
+
+        <div class="mt-5">
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section class="ecommerce-hero-2 hero section" id="hero">
+      <div class="container">
+        <div class="hero-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 800,
+              "autoplay": {
+                "delay": 5000
+              },
+              "effect": "fade",
+              "fadeEffect": {
+                "crossFade": true
+              },
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+            <!-- New Collection Slide -->
+            <div class="swiper-slide slide-new">
+              <div class="row align-items-center">
+                <div class="col-lg-6 content-col" data-aos="fade-right" data-aos-delay="100">
+                  <div class="slide-content">
+                    <span class="slide-badge">OSMA New Collection</span>
+                    <h1>Discover Our <span>Premium Bags</span> Collection</h1>
+                    <p>Explore our latest collection of high-quality bags. From classic leather handbags and crossbody
+                      bags to smart backpacks and travel luggage, find the perfect match for every occasion.</p>
+                    <div class="slide-cta">
+                      <a href="tos.html" class="btn btn-shop">Shop New Collection <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 image-col" data-aos="fade-left" data-aos-delay="200">
+                  <div class="product-showcase">
+                    <div class="product-grid">
+                      <div class="product-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-image">
+                          <img src="assets/img/new/KOTTY Mens Regular Fit Mide Rise Strachable Jeans.png"
+                            alt="Classic Handbag">
+                        </div>
+                        <div class="product-info">
+                          <h4>Handbag</h4>
+                          <span class="price">EGP 799</span>
+                        </div>
+                      </div>
+                      <div class="product-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-image">
+                          <img src="assets/img/new/BAGGY PULL-ON CARGO PANTS.png" alt="Travel Backpack">
+                        </div>
+                        <div class="product-info">
+                          <h4>Backpack</h4>
+                          <span class="price">EGP 849</span>
+                        </div>
+                      </div>
+                      <div class="product-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="product-image">
+                          <img src="assets/img/new/download (5).png" alt="Crossbody Bag">
+                        </div>
+                        <div class="product-info">
+                          <h4>Crossbody</h4>
+                          <span class="price">EGP 399</span>
+                        </div>
+                      </div>
+                      <div class="product-item" data-aos="fade-up" data-aos-delay="600">
+                        <div class="product-image">
+                          <img src="assets/img/new/download (9).png" alt="Smart Laptop Bag">
+                        </div>
+                        <div class="product-info">
+                          <h4>Laptop Bag</h4>
+                          <span class="price">EGP 459</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sale Products Slide -->
+            <div class="swiper-slide slide-sale">
+              <div class="row align-items-center">
+                <div class="col-lg-6 content-col" data-aos="fade-right" data-aos-delay="100">
+                  <div class="slide-content">
+                    <span class="slide-badge">Limited Time Offer</span>
+                    <h1>Premium <span>Bags Sale</span> Up To 50% Off</h1>
+                    <p>Upgrade your style with premium bags at unbeatable prices. Enjoy huge discounts on handbags,
+                      backpacks, laptop bags, and everyday travel essentials.</p>
+                    <div class="slide-cta">
+                      <a href="#" class="btn btn-shop">Shop the Sale <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="countdown-container">
+                      <div class="countdown-label">Offer ends in:</div>
+                      <div class="countdown d-flex" data-count="2026/12/31">
+                        <div>
+                          <h3 class="count-days"></h3>
+                          <h4>Days</h4>
+                        </div>
+                        <div>
+                          <h3 class="count-hours"></h3>
+                          <h4>Hours</h4>
+                        </div>
+                        <div>
+                          <h3 class="count-minutes"></h3>
+                          <h4>Minutes</h4>
+                        </div>
+                        <div>
+                          <h3 class="count-seconds"></h3>
+                          <h4>Seconds</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 image-col" data-aos="fade-left" data-aos-delay="200">
+                  <div class="sale-showcase">
+                    <div class="main-product">
+                      <img src="assets/img/new/download (10).jpeg" alt="Bags Sale">
+                      <div class="discount-badge">
+                        <span class="percent">50%</span>
+                        <span class="text">OFF</span>
+                      </div>
+                    </div>
+                    <div class="floating-tag" data-aos="zoom-in" data-aos-delay="300">
+                      <div class="tag-content">
+                        <span class="tag-label">Best Selling Bag</span>
+                        <span class="tag-price">
+                          <span class="old-price">EGP 1299</span>
+                          <span class="new-price" style="color:#8b7355;">EGP 649</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Featured Products Slide -->
+            <div class="swiper-slide slide-featured">
+              <div class="row align-items-center">
+                <div class="col-lg-6 content-col" data-aos="fade-right" data-aos-delay="100">
+                  <div class="slide-content">
+                    <span class="slide-badge">OSMA Premium</span>
+                    <h1>Luxury <span>Handbags</span></h1>
+                    <p>Designed for elegance, durability, and modern style. Discover our premium collection of luxury
+                      bags crafted for your everyday journey and special occasions.</p>
+                    <div class="slide-cta">
+                      <a href="#" class="btn btn-shop">Explore Collection <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-list">
+                      <div class="feature-item">
+                        <i class="bi bi-check-circle-fill" style="color:#8b7355;"></i>
+                        <span>Premium Leather & Fabric</span>
+                      </div>
+                      <div class="feature-item">
+                        <i class="bi bi-check-circle-fill" style="color:#8b7355;"></i>
+                        <span>Spacious & Practical</span>
+                      </div>
+                      <div class="feature-item">
+                        <i class="bi bi-check-circle-fill" style="color:#8b7355;"></i>
+                        <span>Modern & Stylish Designs</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 image-col" data-aos="fade-left" data-aos-delay="200">
+                  <div class="featured-showcase">
+                    <div class="featured-image">
+                      <img src="assets/img/new/b5bfb41fa9d58400c40e2e4257757668.jpg" alt="Featured Bag">
+                      <div class="featured-badge" style="background:#8b7355;">
+                        <i class="bi bi-star-fill"></i>
+                        <span>Best Seller</span>
+                      </div>
+                    </div>
+                    <div class="floating-review" data-aos="fade-up" data-aos-delay="300">
+                     
+                      <div class="review-text">
+                        "Excellent quality, perfect size, and incredibly elegant."
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Best Sellers Section -->
+    <section id="best-sellers" class="best-sellers section" style="background-color: var(--osma-bg);">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Best Selling Bags</h2>
+        <p>Discover our most popular bags, crafted with premium quality, modern designs, and maximum utility for every
+          journey.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <!-- الـ ID ده هو اللي الجافاسكريبت هيدور عليه ويرمي جواه المنتجات -->
+        <div class="container-fluid overflow-hidden">
+          <!-- الحاوية الجديدة اللي الجافاسكريبت هيرمي فيها الشريطين -->
+          <div id="osma-dual-marquees" class="osma-marquee-wrapper">
+            <p class="text-center w-100" style="color: var(--osma-primary);">جاري تحميل أفضل المبيعات...</p>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Best Sellers Section -->
+
+    <section id="product-list" class="product-list section" style="background-color: var(--osma-bg);">
+      <div class="container">
+
+        <!-- Product Filter -->
+        <div class="row">
+          <div class="col-12">
+            <div class="product-filters mb-5 d-flex justify-content-center">
+              <ul class="d-flex flex-wrap gap-2 list-unstyled">
+                <li class="filter-active" style="cursor: pointer;" data-filter="*">All Bags</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper" style="padding: 20px 0;">
+          <!-- ضفنا الـ id ده عشان الجافاسكريبت يرمي المنتجات هنا -->
+          <div class="swiper-wrapper" id="all-products-swiper">
+
+            <!-- المنتجات هتترص هنا أوتوماتيك من فايربيز جوه السلايدر -->
+
+          </div>
+
+          <!-- Slider Navigation -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="tos.html" class="view-all-btn btn">
+            Shop All Bags <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+    <style>
+      .mySwiper {
+        padding-bottom: 60px !important;
+        position: relative;
+      }
+
+      /* ألوان أسهم السلايدر لتتماشى مع OSMA */
+      .mySwiper .swiper-button-next,
+      .mySwiper .swiper-button-prev {
+        top: auto !important;
+        bottom: 10px !important;
+        margin-top: 0;
+        background-color: #ffffff;
+        color: var(--osma-primary) !important;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+
+      .mySwiper .swiper-button-next::after,
+      .mySwiper .swiper-button-prev::after {
+        font-size: 16px !important;
+        font-weight: bold;
+      }
+
+      .mySwiper .swiper-button-prev {
+        left: calc(50% - 50px) !important;
+        right: auto !important;
+      }
+
+      .mySwiper .swiper-button-next {
+        right: auto !important;
+        left: calc(50% + 10px) !important;
+      }
+
+      .mySwiper .swiper-button-next:hover,
+      .mySwiper .swiper-button-prev:hover {
+        background-color: var(--osma-primary) !important;
+        color: #ffffff !important;
+      }
+
+      .mySwiper .swiper-pagination {
+        bottom: 0px !important;
+      }
+
+      .mySwiper .swiper-pagination-bullet-active {
+        background: var(--osma-primary) !important;
+      }
+    </style>
+
+
+  </main>
+
+<footer id="footer" class="footer light-background text-center">
+  <div class="footer-main" style="background-color: var(--osma-bg); padding: 40px 0;">
+    <div class="container">
+      <div class="row gy-4">
+
+        <!-- 1. Brand & Social -->
+        <div class="col-md-6">
+          <a href="index.html" class="logo text-decoration-none">
+            <span class="sitename" style="color: var(--osma-primary); font-size: 28px; font-weight: 700;">OSMA Bags</span>
+          </a>
+          <!-- ضفنا mx-auto عشان البلوكات اللي ليها عرض محدد تتسنتر -->
+          <p class="mt-3 text-muted mx-auto" style="max-width: 80%;">
+            Premium bags designed for elegance, style, and everyday functionality.
+          </p>
+          <!-- خلينا المسافات بين الأيقونات متساوية من الناحيتين باستخدام mx-2 -->
+          <div class="social-links mt-3">
+            <a href="https://www.facebook.com/share/18bEfZnFVM/?mibextid=wwXIfr" class="mx-2 text-dark fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/osma_egy?igsi=cm90NTdnbWUwZ2Q1" class="mx-2 text-dark fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.tiktok.com/@osma.egy?_r=1&_t=ZS-999WFKWcTu1" class="mx-2 text-dark fs-5" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- 2. Contact Info -->
+        <div class="col-md-6">
+          <h5 style="color: var(--osma-primary);">Contact Us</h5>
+          <ul class="list-unstyled mt-3" style="line-height: 2;">
+            <li><i class="bi bi-geo-alt me-2" style="color: var(--osma-primary);"></i> Cairo, Egypt</li>
+            <li><i class="bi bi-telephone me-2" style="color: var(--osma-primary);"></i> <span dir="ltr">+201111447123</span></li>
+            <li><i class="bi bi-envelope me-2" style="color: var(--osma-primary);"></i> osma@gmail.com</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="footer-bottom py-4" style="border-top: 1px solid rgba(0,0,0,0.1);">
+    <div class="container text-center">
+      
+      <!-- حقوق النشر -->
+      <p class="mb-2 text-muted" style="font-size: 1.1rem;">
+        © <strong>OSMA</strong>. All Rights Reserved.
+      </p>
+      
+      <!-- اسم المصمم -->
+      <div class="mb-3">
+        <span class="text-muted" style="font-size: 1.1rem;">Designed by</span><br>
+        <a href="https://hassan6102.github.io/cv/" class="text-decoration-none fw-bold mt-1 d-inline-block" style="color: var(--osma-primary); font-size: 1rem; letter-spacing: 0.5px;">
+          Eng. Hassan Mohamed
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+
+  <!-- Floating Customer Support Button (Modern & Clean) -->
+  <div class="cs-float" id="csFloat">
+    <button class="cs-main" id="csMain" aria-expanded="false" aria-label="Customer Support">
+      <i class="bi bi-chat-dots-fill cs-icon"></i>
+    </button>
+
+    <div class="cs-menu" id="csMenu" role="menu">
+      <a class="cs-item" href="https://wa.me/201111447123" target="_blank">
+        <i class="bi bi-whatsapp" style="color: #25D366;"></i>
+        <span>WhatsApp</span>
+      </a>
+      <a class="cs-item" href="tel:+01111447123">
+        <i class="bi bi-telephone-fill" style="color: var(--osma-primary);"></i>
+        <span>Call Us</span>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    /* Clean Support Button CSS */
+    .cs-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9999;
+    }
+
+    .cs-main {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: var(--osma-primary);
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .cs-main:hover {
+      transform: scale(1.05);
+      background-color: var(--osma-hover);
+    }
+
+.cs-icon {
+      font-size: 24px;
+      transition: transform 0.3s ease;
+      pointer-events: none; /* إضافة السطر ده */
+    }
+
+    .cs-float.open .cs-icon {
+      transform: rotate(360deg);
+      content: "\F62A"; /* تتغير لعلامة X في البوتستراب أيكونز لو حابب تظبطها بالجافاسكريبت، بس الدوران شغال كويس */
+    }
+
+    .cs-menu {
+      position: absolute;
+      right: 0;
+      bottom: 70px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 10px 0;
+      width: 180px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .cs-float.open .cs-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .cs-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 15px;
+      transition: background-color 0.2s ease;
+    }
+
+    .cs-item i {
+      font-size: 18px;
+    }
+
+    .cs-item:hover {
+      background-color: #f8f9fa;
+      color: var(--osma-primary);
+    }
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const csFloat = document.getElementById("csFloat");
+    const csMain = document.getElementById("csMain");
+
+    if (csMain && csFloat) {
+      // Toggle Menu
+      csMain.addEventListener("click", function (e) {
+        e.preventDefault(); // منع أي سلوك افتراضي
+        e.stopPropagation(); // منع انتقال الضغطة لباقي الصفحة
+        csFloat.classList.toggle("open");
+        
+        // تغيير حالة aria للـ Accessibility
+        const isOpen = csFloat.classList.contains("open");
+        csMain.setAttribute("aria-expanded", isOpen);
+      });
+
+      // Close when clicking outside
+      document.addEventListener("click", function (e) {
+        if (!csFloat.contains(e.target)) {
+          csFloat.classList.remove("open");
+          csMain.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  });
+</script> 
+  <div id="preloader" style="display: none;"></div>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+    style="background-color: var(--osma-primary);"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- 2. مكتبة البوتستراب (دي اللي هتشغل زرار المنيو الجانبي) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 3. مكتبة السلايدر -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- 4. مكتبة AOS (عشان main.js ميزعلش ويشتغل) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- 5. كود سحري عشان نسكت main.js في الحاجات التانية -->
+  <script>
+    window.PureCounter = function () { };
+  </script>
+  <!-- كود سحري عشان نسكت main.js ونمنع أي أخطاء -->
+  <script>
+    window.PureCounter = function () { };
+    window.Drift = function () { }; /* السطر ده هيسكت رسالة الزووم */
+  </script>
+  <!-- 6. ملف التشغيل بتاع القالب (لازم يكون آخر حاجة) -->
+  <script src="assets/js/main.js"></script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, collection, getDocs, query } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA1jQa2Bo9U7UBDRWjSLHbY8Q42xbOlA8k",
+      authDomain: "bag-store-app-55b26.firebaseapp.com",
+      projectId: "bag-store-app-55b26",
+      storageBucket: "bag-store-app-55b26.firebasestorage.app",
+      messagingSenderId: "876785296161",
+      appId: "1:876785296161:web:320fea9a586bf48f84d460",
+      measurementId: "G-M6YS1LFRCD"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function loadProducts() {
+      // الـ ID الجديد بتاع الشريطين
+      const marqueeContainer = document.getElementById('osma-dual-marquees');
+      const swiperWrapper = document.getElementById('all-products-swiper');
+
+      if (swiperWrapper) swiperWrapper.innerHTML = '';
+
+      try {
+        const q = query(collection(db, 'products'));
+        const querySnapshot = await getDocs(q);
+
+        if (querySnapshot.empty) {
+          if (marqueeContainer) marqueeContainer.innerHTML = '<p class="text-center w-100">لا توجد منتجات حالياً.</p>';
+          return;
+        }
+
+        let allProducts = [];
+        let swiperHtml = '';
+
+        querySnapshot.forEach((doc) => {
+          const p = doc.data();
+          p.id = doc.id;
+          allProducts.push(p);
+
+          const finalImg = p.imageUrl || p.image || 'assets/img/icon - Copy.png';
+          const hasDiscount = p.oldPrice && p.oldPrice > p.price;
+          const priceHtml = hasDiscount
+            ? `<span class="current-price">EGP ${p.price}</span> <span class="old-price" style="text-decoration: line-through; color: #999; font-size: 14px; margin-left: 5px;">EGP ${p.oldPrice}</span>`
+            : `<span class="current-price">EGP ${p.price}</span>`;
+          const badgeHtml = hasDiscount
+            ? `<span class="badge sale" style="background: var(--osma-primary); position: absolute; top: 10px; left: 10px; z-index: 2;">تخفيض</span>`
+            : ``;
+const waLink = `https://wa.me/201111447123?text=${encodeURIComponent('أهلاً، عايز أطلب الشنطة دي: ' + p.name + ' - كود المنتج: ' + p.sku)}`;
+          // --- 1. كود السلايدر اللي تحت (All Bags) هيفضل شغال زي ما هو ---
+          swiperHtml += `
+            <div class="swiper-slide filter-${p.category ? p.category.replace(/\s+/g, '') : 'all'}">
+              <div class="product-card">
+                <div class="product-image position-relative">
+                  ${badgeHtml}
+                  <img src="${finalImg}" alt="${p.name}" style="aspect-ratio: 1; object-fit: cover; width: 100%;">
+                  <div class="product-overlay">
+                    <a href="${waLink}" target="_blank" class="btn-cart" style="text-decoration:none;"><i class="bi bi-whatsapp"></i> اطلب عبر واتساب</a>
+                    <div class="product-actions">
+                      <a href="product-details.html?id=${p.id}" class="action-btn"><i class="bi bi-eye"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-title"><a href="product-details.html?id=${p.id}">${p.name}</a></h5>
+                  <div class="product-price mt-2">${priceHtml}</div>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        if (swiperWrapper) {
+          swiperWrapper.innerHTML = swiperHtml;
+          setTimeout(() => {
+            if (typeof Swiper !== 'undefined') {
+              const swiper = new Swiper('.mySwiper', {
+                slidesPerView: 1, spaceBetween: 20, observer: true, observeParents: true,
+                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+                pagination: { el: '.swiper-pagination', clickable: true },
+                breakpoints: { 640: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } }
+              });
+            }
+          }, 100);
+        }
+
+        // --- 2. الكود الجديد لبناء الشريطين المتحركين (Marquees) ---
+        if (marqueeContainer && allProducts.length > 0) {
+          // هناخد أول 10 منتجات بس للبيست سيلر
+          const top10 = allProducts.slice(0, 10);
+          
+          // نقسمهم 5 فوق و 5 تحت (لو المنتجات أقل من 10 هيكررهم عشان الشكل ميبوظش)
+          const row1 = top10.slice(0, 5);
+          const row2 = top10.length > 5 ? top10.slice(5, 10) : row1; 
+
+          // دالة بتولد شكل الكارت
+          const generateCards = (items) => {
+            return items.map(p => {
+              const finalImg = p.imageUrl || p.image || 'assets/img/icon - Copy.png';
+              const hasDiscount = p.oldPrice && p.oldPrice > p.price;
+              const priceHtml = hasDiscount
+                ? `<span class="current-price">EGP ${p.price}</span> <span class="old-price" style="text-decoration: line-through; color: #999; font-size: 14px; margin-left: 5px;">EGP ${p.oldPrice}</span>`
+                : `<span class="current-price">EGP ${p.price}</span>`;
+const waLink = `https://wa.me/201111447123?text=${encodeURIComponent('أهلاً، عايز أطلب الشنطة دي: ' + p.name + ' - كود المنتج: ' + p.sku)}`;              
+              return `
+                <div class="osma-marquee-card">
+                  <div class="product-card" style="margin: 0; height: 100%;">
+                    <div class="product-image position-relative">
+                      <img src="${finalImg}" alt="${p.name}" style="aspect-ratio: 1; object-fit: cover; width: 100%;">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <a href="product-details.html?id=${p.id}" class="action-btn" title="التفاصيل"><i class="bi bi-eye"></i></a>
+                          <a href="${waLink}" target="_blank" class="action-btn" title="واتساب"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details text-center mt-3">
+                      <div class="product-category" style="color: #666; font-size: 0.9rem;">${p.category || 'شنط'}</div>
+                      <h4 class="product-title mt-1 mb-2"><a href="product-details.html?id=${p.id}" style="color: #222; text-decoration: none; font-weight: 600;">${p.name}</a></h4>
+                      <div class="product-price" style="color: var(--osma-primary); font-weight: 700; font-size: 1.1rem;">${priceHtml}</div>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('');
+          };
+
+          // توليد المحتوى (بنكرره مرتين عشان حركة الـ Scroll تبقى متصلة ومتقطعش)
+          const html1 = generateCards(row1) + generateCards(row1); 
+          const html2 = generateCards(row2) + generateCards(row2);
+
+          // تركيب الشريطين في الصفحة وعكس اتجاهاتهم
+          marqueeContainer.innerHTML = `
+            <div class="osma-marquee-track move-left">
+               ${html1}
+            </div>
+            <div class="osma-marquee-track move-right">
+               ${html2}
+            </div>
+          `;
+        }
+
+      } catch (error) {
+        console.error("Error loading products: ", error);
+      }
+    }
+
+    loadProducts();
+  </script>
+</body>
+
+</html>

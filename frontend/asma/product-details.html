@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Product Details - OSMA Bags</title>
+  <meta name="description" content="OSMA Premium Bags Details">
+  <meta name="keywords" content="OSMA, bags, handbags, premium">
+
+  <!-- Favicons -->
+  <link href="assets/img/icon.jpg" rel="icon">
+  <link href="assets/img/icon.jpg" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- OSMA Brand Colors Customization -->
+  <style>
+    :root {
+      --osma-primary: #8b7355;
+      --osma-hover: #6a563f;
+      --osma-bg: #f8f6f0;
+    }
+
+    body {
+      background-color: var(--osma-bg) !important;
+    }
+
+    .btn-dark,
+    .btn-shop,
+    .view-all-btn,
+    .btn-primary,
+    .add-to-cart-btn {
+      background-color: var(--osma-primary) !important;
+      border-color: var(--osma-primary) !important;
+      color: #fff !important;
+    }
+
+    .btn-dark:hover,
+    .btn-shop:hover,
+    .view-all-btn:hover,
+    .btn-primary:hover,
+    .add-to-cart-btn:hover {
+      background-color: var(--osma-hover) !important;
+      border-color: var(--osma-hover) !important;
+    }
+
+    .price,
+    .current-price,
+    .product-price,
+    .rating-value {
+      color: var(--osma-primary) !important;
+      font-weight: 700;
+    }
+
+    .discount-badge,
+    .badge.bg-danger,
+    .badge.sale,
+    .badge.bg-success,
+    .badge-sale,
+    .badge-new {
+      background-color: var(--osma-primary) !important;
+      color: #fff !important;
+    }
+
+    .header-nav nav ul li a.active,
+    .header-nav nav ul li a:hover {
+      color: var(--osma-primary) !important;
+    }
+
+    .product-title a:hover {
+      color: var(--osma-primary) !important;
+    }
+
+    .action-btn:hover,
+    .btn-cart:hover,
+    .buy-now-btn:hover {
+      background-color: var(--osma-primary) !important;
+      border-color: var(--osma-primary) !important;
+      color: #fff !important;
+    }
+
+    .nav-tabs .nav-link.active {
+      color: var(--osma-primary) !important;
+      border-color: var(--osma-primary) !important;
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: var(--osma-primary) !important;
+      background-color: rgba(139, 115, 85, 0.1) !important;
+    }
+
+    .page-title {
+      background-color: #fff !important;
+      border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+      margin-top: 130px;
+      /* لتعويض مساحة الهيدر الثابت */
+    }
+
+    /* تصميم معرض الصور المصغرة */
+    .product-gallery-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .main-image-wrapper {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      background: #f9f9f9;
+    }
+
+    .main-image-wrapper img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+
+    .thumbnails-wrapper {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+      scrollbar-width: thin;
+    }
+
+    .thumb-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      opacity: 0.7;
+    }
+
+    .thumb-img:hover {
+      opacity: 1;
+    }
+
+    .thumb-img.active {
+      border-color: var(--osma-primary, #8b7355);
+      opacity: 1;
+      box-shadow: 0 2px 8px rgba(139, 115, 85, 0.3);
+    }
+  </style>
+</head>
+
+<body class="product-details-page">
+
+  <!-- OSMA Header -->
+  <header id="header" class="header position-fixed w-100 top-0" style="z-index: 999;">
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar py-2" style="background-color: #8b7355; color: #fff;">
+      <div class="container-fluid container-xl">
+        <div class="announcement-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": { "delay": 5000 },
+            "slidesPerView": 1,
+            "effect": "slide",
+            "direction": "vertical"
+          }
+        </script>
+          <div class="swiper-wrapper text-center">
+            <div class="swiper-slide">🚚 Free shipping on orders over EGP 500</div>
+            <div class="swiper-slide">💰 14 days money back guarantee</div>
+            <div class="swiper-slide">🎁 20% off on your first order - Use code: OSMA20</div>
+            <div class="swiper-slide">⚡ Flash Sale! Up to 50% off on selected bags</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header bg-white shadow-sm">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
+            <img src="assets/img/icon - Copy.png" alt="OSMA Logo" class="logo-img">
+            
+          </a>
+
+          <!-- Desktop Navigation (English) -->
+          <div class="header-nav d-none d-xl-block">
+            <nav id="navmenu" class="navmenu">
+              <ul class="d-flex list-unstyled mb-0 gap-4">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="return-policy.html">Return Policy</a></li>
+                <li><a href="shipping-info.html">Shipping Info</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Actions -->
+          <div class="header-actions d-flex align-items-center gap-3">
+           
+            <i class="custom-nav-toggle d-xl-none bi bi-list fs-2 text-dark cursor-pointer" data-bs-toggle="offcanvas"
+              data-bs-target="#mobileNavSidebar" aria-controls="mobileNavSidebar"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Sidebar (English) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavSidebar" aria-labelledby="mobileNavLabel">
+      <div class="offcanvas-header border-bottom py-3">
+        <h5 class="offcanvas-title fw-bold text-dark" id="mobileNavLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body px-4 py-4">
+        <nav class="mobile-nav">
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0 fs-5">
+            <li><a href="index.html" class="text-decoration-none text-dark">Home</a></li>
+            <li><a href="about.html" class="text-decoration-none text-dark">About Us</a></li>
+            <li><a href="faq.html" class="text-decoration-none text-dark">FAQs</a></li>
+            <li><a href="return-policy.html" class="text-decoration-none text-dark">Return Policy</a></li>
+            <li><a href="shipping-info.html" class="text-decoration-none text-dark">Shipping Info</a></li>
+          </ul>
+        </nav>
+
+        <div class="mt-5">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+
+
+    <!-- Product Details Section -->
+    <section id="product-details" class="product-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-5">
+          <!-- Product Images Column -->
+          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-delay="200">
+            <div class="product-gallery">
+              <!-- Vertical Thumbnails -->
+              <div class="thumbnails-vertical">
+                <div class="thumbnails-container" id="product-thumbnails">
+                  <!-- صورة مصغرة أولى نظيفة -->
+                  <div class="thumbnail-item active">
+                    <img id="thumb-image" src="assets/img/icon - Copy.png" alt="Product Thumbnail" class="img-fluid"
+                      style="aspect-ratio: 1; object-fit: cover;">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Image -->
+              <div class="main-image-wrapper">
+                <div class="image-zoom-container">
+                  <a id="main-image-link" href="assets/img/icon - Copy.png" class="glightbox"
+                    data-gallery="product-gallery">
+                    <img src="assets/img/icon - Copy.png" alt="Product Image" class="img-fluid main-image drift-zoom"
+                      id="main-product-image" data-zoom="assets/img/icon - Copy.png"
+                      style="aspect-ratio: 1; object-fit: cover; width: 100%;">
+                    <div class="zoom-overlay">
+                      <i class="bi bi-zoom-in"></i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Info Column -->
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="product-info-wrapper" id="product-info-sticky">
+              <!-- Product Meta -->
+              <div class="product-meta">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="product-category" style="color: var(--osma-primary);">Handbags</span>
+                  <div class="product-share">
+                    <button class="share-btn" aria-label="Share product">
+                      <i class="bi bi-share"></i>
+                    </button>
+                    <div class="share-dropdown">
+                      <a href="#" aria-label="Share on Facebook"><i class="bi bi-facebook"></i></a>
+                      <a href="#" aria-label="Share on Twitter"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#" aria-label="Share on Pinterest"><i class="bi bi-pinterest"></i></a>
+                      <a href="#" aria-label="Share via Email"><i class="bi bi-envelope"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <h1 class="product-title">OSMA Classic Leather Handbag</h1>
+
+                <div class="product-rating">
+                  <div class="stars" style="color: var(--osma-primary);">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <span class="rating-value">4.8</span>
+                  </div>
+                  <a href="#reviews" class="rating-count" style="color: #666;">42 Reviews</a>
+                </div>
+              </div>
+
+              <!-- Product Price -->
+              <div class="product-price-container">
+                <div class="price-wrapper">
+                  <span class="current-price">EGP 950</span>
+                  <span class="original-price">EGP 1250</span>
+                </div>
+                <span class="discount-badge">Save 24%</span>
+                <div class="stock-info">
+                  <i class="bi bi-check-circle-fill" style="color: var(--osma-primary);"></i>
+                  <span>In Stock</span>
+                  <span class="stock-count">(12 items left)</span>
+                </div>
+              </div>
+
+              <!-- Product Description -->
+              <div class="product-short-description">
+                <p>Elevate your everyday style with the OSMA Classic Leather Handbag. Crafted from premium full-grain
+                  leather, this bag offers a spacious interior, elegant gold-tone hardware, and a versatile design
+                  perfect for both work and casual outings.</p>
+              </div>
+
+              <!-- Product Options (ألوان وكمية) -->
+              <div class="product-options mt-4" id="dynamic-options-container" style="display: none;">
+
+                <!-- الألوان (هتترسم هنا أوتوماتيك) -->
+                <div class="option-group mb-4" id="color-group" style="display: none;">
+                  <h6 class="option-title fw-bold mb-2" style="color: var(--osma-primary);">اختر اللون:</h6>
+                  <div id="dynamic-colors-wrapper" class="d-flex flex-wrap gap-2">
+                    <!-- الجافاسكريبت هيحط الزراير هنا -->
+                  </div>
+                </div>
+
+                <!-- الكمية -->
+                <div class="option-group">
+                  <h6 class="option-title fw-bold mb-2" style="color: var(--osma-primary);">الكمية:</h6>
+                  <div class="quantity-selector d-flex align-items-center"
+                    style="width: 140px; border: 1px solid #ddd; border-radius: 25px; overflow: hidden; background: #fff;">
+                    <button type="button" class="btn btn-light rounded-0 border-0 flex-grow-1" id="btn-decrease"
+                      style="background: transparent;">
+                      <i class="bi bi-dash fs-5"></i>
+                    </button>
+                    <input type="number" id="orderQuantity" class="form-control text-center border-0 p-0 fw-bold"
+                      value="1" min="1" readonly style="background: transparent; box-shadow: none; width: 40px;">
+                    <button type="button" class="btn btn-light rounded-0 border-0 flex-grow-1" id="btn-increase"
+                      style="background: transparent;">
+                      <i class="bi bi-plus fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- ستايل زراير الألوان الشيك -->
+              <style>
+                .custom-color-btn {
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  color: #333;
+                  padding: 8px 18px;
+                  border-radius: 20px;
+                  font-weight: 500;
+                  transition: all 0.2s ease;
+                }
+
+                .custom-color-btn:hover {
+                  border-color: var(--osma-primary);
+                  color: var(--osma-primary);
+                }
+
+                .custom-color-btn.active {
+                  background: var(--osma-primary);
+                  border-color: var(--osma-primary);
+                  color: #fff;
+                  box-shadow: 0 4px 10px rgba(139, 115, 85, 0.3);
+                }
+              </style>
+              <!-- Action Buttons -->
+              <div class="product-actions d-flex gap-2 mt-4">
+                <button class="btn btn-primary add-to-cart-btn flex-grow-1"
+                  style="background-color: #25D366 !important; border-color: #25D366 !important;">
+                  <i class="bi bi-whatsapp"></i> واتساب
+                </button>
+                <button class="btn btn-dark order-website-btn flex-grow-1" data-bs-toggle="modal"
+                  data-bs-target="#checkoutModal">
+                  <i class="bi bi-bag-check"></i> اطلب الآن
+                </button>
+              </div>
+
+              <!-- Delivery Options -->
+              <div class="delivery-options mt-4">
+                <div class="delivery-option">
+                  <i class="bi bi-truck" style="color: var(--osma-primary);"></i>
+                  <div>
+                    <h6>Fast Shipping</h6>
+                    <p>Delivered within 2-4 business days</p>
+                  </div>
+                </div>
+                <div class="delivery-option">
+                  <i class="bi bi-arrow-repeat" style="color: var(--osma-primary);"></i>
+                  <div>
+                    <h6>14-Day Returns</h6>
+                    <p>Hassle-free returns & exchanges</p>
+                  </div>
+                </div>
+                <div class="delivery-option">
+                  <i class="bi bi-shield-check" style="color: var(--osma-primary);"></i>
+                  <div>
+                    <h6>OSMA Guarantee</h6>
+                    <p>Premium quality assurance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Add to Cart Bar -->
+        <div class="sticky-add-to-cart">
+          <div class="container">
+            <div class="sticky-content">
+              <div class="product-preview">
+                <img src="assets/img/new/3bc26413-824c-4a95-b97d-331237ee7bb3.avif" alt="Product"
+                  class="product-thumbnail">
+                <div class="product-info">
+                  <h5 class="product-title">OSMA Classic Leather Handbag</h5>
+                  <div class="product-price">EGP 950</div>
+                </div>
+              </div>
+              <div class="sticky-actions">
+                <button class="btn btn-primary add-to-cart-btn">
+                  <i class="bi bi-whatsapp"></i> Order via WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Details Accordion -->
+        <div class="row mt-5" data-aos="fade-up">
+          <div class="col-12">
+            <div class="product-details-accordion">
+
+
+              <!-- Specifications Accordion -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#specifications" aria-expanded="false" aria-controls="specifications">
+                    <i class="bi bi-chevron-down me-2" style="font-size: 1.2rem; font-weight: bold;"></i>
+                    Specifications & Dimensions
+                  </button>
+                </h2>
+                <div id="specifications" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <div class="product-specifications">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="specs-group">
+                            <h4>Physical Dimensions</h4>
+                            <div class="specs-table">
+                              <div class="specs-row">
+                                <div class="specs-label">Height</div>
+                                <div class="specs-value">28 cm</div>
+                              </div>
+                              <div class="specs-row">
+                                <div class="specs-label">Width</div>
+                                <div class="specs-value">35 cm</div>
+                              </div>
+                              <div class="specs-row">
+                                <div class="specs-label">Depth</div>
+                                <div class="specs-value">14 cm</div>
+                              </div>
+                              <div class="specs-row">
+                                <div class="specs-label">Handle </div>
+                                <div class="specs-value">18 cm</div>
+                              </div>
+                              <div class="specs-row">
+                                <div class="specs-label">Weight</div>
+                                <div class="specs-value">0.8 kg</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="specs-group">
+                            <h4>Materials & Care</h4>
+                            <div class="specs-table">
+                              <div class="specs-row">
+                                <div class="specs-label">Exterior</div>
+                                <div class="specs-value">Genuine Cowhide Leather</div>
+                              </div>
+                              <div class="specs-row">
+                                <div class="specs-label">Interior Lining</div>
+                                <div class="specs-value">Premium Cotton Canvas</div>
+                              </div>
+
+                              <div class="specs-row">
+                                <div class="specs-label">Care Instructions</div>
+                                <div class="specs-value">Wipe with a damp cloth. Avoid harsh chemicals.</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Product Details Section -->
+    <!-- Checkout Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true"
+      dir="rtl">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header" style="border-bottom: 1px solid var(--osma-primary);">
+            <h5 class="modal-title" id="checkoutModalLabel" style="color: var(--osma-primary); font-weight: bold;">إتمام
+              الطلب</h5>
+            <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="checkoutForm">
+              <div class="mb-3 text-end">
+                <label class="form-label fw-bold">الاسم بالكامل</label>
+                <input type="text" id="custName" class="form-control" placeholder="اكتب اسمك هنا" required>
+              </div>
+              <div class="mb-3 text-end">
+                <label class="form-label fw-bold">رقم الهاتف</label>
+                <input type="tel" id="custPhone" class="form-control text-end" placeholder="مثال: 01012345678" required
+                  dir="ltr">
+              </div>
+              <div class="mb-4 text-end">
+                <label class="form-label fw-bold">العنوان بالتفصيل</label>
+                <textarea id="custAddress" class="form-control" rows="2"
+                  placeholder="المحافظة، المنطقة، الشارع، رقم العمارة" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark w-100 py-2" id="confirmOrderBtn"
+                style="font-size: 18px; font-weight: bold;">
+                تأكيد الطلب
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="footer-main" style="background-color: var(--osma-bg);">
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo text-decoration-none">
+                <span class="sitename" style="color: var(--osma-primary); font-size: 28px; font-weight: 700;">OSMA
+                  Bags</span>
+              </a>
+
+              <p>
+                Discover premium bags designed for elegance, style, and everyday functionality.
+                From classic handbags to modern backpacks and travel luggage, we offer the perfect match for every
+                occasion.
+              </p>
+
+              <div class="social-links mt-4">
+                <h5 style="color: var(--osma-primary);">Follow Us</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                  <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4 style="color: var(--osma-primary);">Shop</h4>
+              <ul class="footer-links">
+                <li><a href="category.html">New Arrivals</a></li>
+                <li><a href="category.html">Best Sellers</a></li>
+                <li><a href="category.html">Handbags</a></li>
+                <li><a href="category.html">Backpacks</a></li>
+                <li><a href="category.html">Travel Bags</a></li>
+                <li><a href="category.html">Special Offers</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4 style="color: var(--osma-primary);">Customer Service</h4>
+              <ul class="footer-links">
+                <li><a href="support.html">Help Center</a></li>
+                <li><a href="account.html">Track Your Order</a></li>
+                <li><a href="shipping-info.html">Shipping Information</a></li>
+                <li><a href="return-policy.html">Returns & Exchanges</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <h4 style="color: var(--osma-primary);">Contact Information</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt" style="color: var(--osma-primary);"></i>
+                  <span>Cairo, Egypt</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone" style="color: var(--osma-primary);"></i>
+                  <span dir="ltr">+20 112 574 1855</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope" style="color: var(--osma-primary);"></i>
+                  <span>support@osma.com</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-clock" style="color: var(--osma-primary);"></i>
+                  <span>Monday - Friday: 9:00 AM - 6:00 PM<br>Sunday: Closed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row gy-3 align-items-center">
+        <div class="col-lg-6 col-md-12">
+          <div class="copyright">
+            <p>© <span>Copyright</span> <strong class="sitename" style="color: var(--osma-primary);">OSMA</strong>. All
+              Rights Reserved.</p>
+          </div>
+          <div class="credits mt-1">
+            Designed by <a href="https://hassan6102.github.io/cv/" style="color: var(--osma-primary);">Eng.Hassan
+              Mohamed</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12">
+          <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+            <div class="payment-methods">
+              <div class="payment-icons" style="color: var(--osma-primary); font-size: 24px;">
+                <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Customer Support Button (Modern & Clean) -->
+  <div class="cs-float" id="csFloat">
+    <button class="cs-main" id="csMain" aria-expanded="false" aria-label="Customer Support">
+      <i class="bi bi-chat-dots-fill cs-icon"></i>
+    </button>
+
+    <div class="cs-menu" id="csMenu" role="menu">
+      <a class="cs-item" href="https://wa.me/201111447123" target="_blank">
+        <i class="bi bi-whatsapp" style="color: #25D366;"></i>
+        <span>WhatsApp</span>
+      </a>
+      <a class="cs-item" href="tel:+01111447123">
+        <i class="bi bi-telephone-fill" style="color: var(--osma-primary);"></i>
+        <span>Call Us</span>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    /* Clean Support Button CSS */
+    .cs-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9999;
+    }
+
+    .cs-main {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: #8b7355;
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .cs-main:hover {
+      transform: scale(1.05);
+      background-color: var(--osma-hover);
+    }
+
+.cs-icon {
+      font-size: 24px;
+      transition: transform 0.3s ease;
+      pointer-events: none; /* إضافة السطر ده */
+    }
+
+    .cs-float.open .cs-icon {
+      transform: rotate(360deg);
+      content: "\F62A"; /* تتغير لعلامة X في البوتستراب أيكونز لو حابب تظبطها بالجافاسكريبت، بس الدوران شغال كويس */
+    }
+
+    .cs-menu {
+      position: absolute;
+      right: 0;
+      bottom: 70px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 10px 0;
+      width: 180px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .cs-float.open .cs-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .cs-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 15px;
+      transition: background-color 0.2s ease;
+    }
+
+    .cs-item i {
+      font-size: 18px;
+    }
+
+    .cs-item:hover {
+      background-color: #f8f9fa;
+      color: var(--osma-primary);
+    }
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const csFloat = document.getElementById("csFloat");
+    const csMain = document.getElementById("csMain");
+
+    if (csMain && csFloat) {
+      // Toggle Menu
+      csMain.addEventListener("click", function (e) {
+        e.preventDefault(); // منع أي سلوك افتراضي
+        e.stopPropagation(); // منع انتقال الضغطة لباقي الصفحة
+        csFloat.classList.toggle("open");
+        
+        // تغيير حالة aria للـ Accessibility
+        const isOpen = csFloat.classList.contains("open");
+        csMain.setAttribute("aria-expanded", isOpen);
+      });
+
+      // Close when clicking outside
+      document.addEventListener("click", function (e) {
+        if (!csFloat.contains(e.target)) {
+          csFloat.classList.remove("open");
+          csMain.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  });
+</script> 
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+    style="background-color: var(--osma-primary);"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/drift-zoom/Drift.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- كود ربط صفحة التفاصيل بـ Firebase -->
+  <!-- كود ربط صفحة التفاصيل بـ Firebase مع دعم معرض الصور -->
+  <!-- كود ربط صفحة التفاصيل بـ Firebase مع دعم معرض الصور والمواصفات الديناميكية -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, doc, getDoc, setDoc, addDoc, collection, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    // إعدادات فايربيز الحقيقية بتاعتك
+    const firebaseConfig = {
+      apiKey: "AIzaSyA1jQa2Bo9U7UBDRWjSLHbY8Q42xbOlA8k",
+      authDomain: "bag-store-app-55b26.firebaseapp.com",
+      projectId: "bag-store-app-55b26",
+      storageBucket: "bag-store-app-55b26.firebasestorage.app",
+      messagingSenderId: "876785296161",
+      appId: "1:876785296161:web:320fea9a586bf48f84d460",
+      measurementId: "G-M6YS1LFRCD"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function loadSingleProduct() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+
+      if (!productId) {
+        document.querySelector('.product-title').textContent = "المنتج غير متوفر";
+        return;
+      }
+
+      try {
+        const docRef = doc(db, "products", productId);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const p = docSnap.data();
+
+          // 1. تحديث النصوص والأسعار
+          document.querySelector('.product-title').textContent = p.name;
+          const priceElements = document.querySelectorAll('.current-price, .product-price');
+          priceElements.forEach(el => el.textContent = `EGP ${p.price}`);
+
+          const oldPriceElem = document.querySelector('.original-price');
+          const discountBadge = document.querySelector('.discount-badge');
+
+          if (p.oldPrice && p.oldPrice > p.price) {
+            if (oldPriceElem) {
+              oldPriceElem.textContent = `EGP ${p.oldPrice}`;
+              oldPriceElem.style.display = 'inline-block';
+            }
+            if (discountBadge) {
+              const discount = Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100);
+              discountBadge.textContent = `وفر ${discount}%`;
+              discountBadge.style.display = 'inline-block';
+            }
+          } else {
+            if (oldPriceElem) oldPriceElem.style.display = 'none';
+            if (discountBadge) discountBadge.style.display = 'none';
+          }
+
+          document.querySelector('.product-category').textContent = p.category || 'شنط';
+
+          // 2. تحديث الصور (الرئيسية والمعرض)
+          const mainImgSrc = p.imageUrl || p.image || 'assets/img/icon - Copy.png';
+          let allImages = [mainImgSrc];
+
+          if (p.gallery && Array.isArray(p.gallery)) {
+            allImages = allImages.concat(p.gallery);
+          }
+
+          const mainImg = document.getElementById('main-product-image');
+          const mainLink = document.getElementById('main-image-link');
+          const thumbsContainer = document.getElementById('product-thumbnails');
+          const stickyImg = document.querySelector('.sticky-add-to-cart .product-thumbnail');
+
+          if (mainImg) {
+            mainImg.src = allImages[0];
+            mainImg.setAttribute('data-zoom', allImages[0]);
+          }
+          if (mainLink) mainLink.href = allImages[0];
+          if (stickyImg) stickyImg.src = allImages[0];
+
+          if (thumbsContainer) {
+            let thumbsHtml = '';
+            allImages.forEach((img, index) => {
+              const activeClass = index === 0 ? 'active' : '';
+              thumbsHtml += `
+              <div class="thumbnail-item ${activeClass}" style="cursor:pointer; margin-bottom: 10px;">
+                <img src="${img}" class="img-fluid thumb-img-click" data-large="${img}" alt="صورة الشنطة" style="aspect-ratio: 1; object-fit: cover; border-radius: 8px; border: 2px solid transparent; width: 80px;">
+              </div>
+            `;
+            });
+            thumbsContainer.innerHTML = thumbsHtml;
+
+            const thumbClickables = document.querySelectorAll('.thumb-img-click');
+            thumbClickables.forEach(thumb => {
+              thumb.addEventListener('click', function () {
+                const largeSrc = this.getAttribute('data-large');
+                if (mainImg) {
+                  mainImg.src = largeSrc;
+                  mainImg.setAttribute('data-zoom', largeSrc);
+                }
+                if (mainLink) mainLink.href = largeSrc;
+
+                document.querySelectorAll('.thumbnail-item').forEach(item => {
+                  item.classList.remove('active');
+                  item.querySelector('img').style.borderColor = 'transparent';
+                });
+                this.parentElement.classList.add('active');
+                this.style.borderColor = 'var(--osma-primary, #8b7355)';
+              });
+            });
+
+            if (thumbClickables.length > 0) {
+              thumbClickables[0].style.borderColor = 'var(--osma-primary, #8b7355)';
+            }
+          }
+
+          // 3. تحديث الوصف
+          if (p.description) {
+            const shortDesc = document.querySelector('.product-short-description p');
+            if (shortDesc) shortDesc.textContent = p.description;
+            const accDesc = document.querySelector('#description .product-description p');
+            if (accDesc) accDesc.textContent = p.description;
+          }
+
+          // 4. المخزون
+          const stockCount = document.querySelector('.stock-count');
+          if (stockCount) {
+            if (p.stock > 0) {
+              stockCount.textContent = `(${p.stock} قطعة متاحة)`;
+            } else {
+              const stockInfo = document.querySelector('.stock-info');
+              if (stockInfo) {
+                stockInfo.innerHTML = '<i class="bi bi-x-circle-fill" style="color: red;"></i> <span style="color: red;">نفذت الكمية</span>';
+              }
+            }
+          }
+
+          // 5. قسم المواصفات الديناميكي (اللي كان مفقود)
+          const specsContainer = document.querySelector('#specifications .accordion-body');
+          const specsAccordionItem = specsContainer ? specsContainer.closest('.accordion-item') : null;
+
+          if (p.specs && Object.values(p.specs).some(val => val && val.trim() !== '')) {
+            if (specsContainer) {
+              specsContainer.innerHTML = `
+              <div class="product-specifications">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="specs-group">
+                      <h4>الأبعاد والمقاسات</h4>
+                      <div class="specs-table">
+                        ${p.specs.height ? `<div class="specs-row"><div class="specs-label">الطول</div><div class="specs-value">${p.specs.height}</div></div>` : ''}
+                        ${p.specs.width ? `<div class="specs-row"><div class="specs-label">العرض</div><div class="specs-value">${p.specs.width}</div></div>` : ''}
+                        ${p.specs.depth ? `<div class="specs-row"><div class="specs-label">العمق</div><div class="specs-value">${p.specs.depth}</div></div>` : ''}
+                        ${p.specs.handle ? `<div class="specs-row"><div class="specs-label">طول اليد</div><div class="specs-value">${p.specs.handle}</div></div>` : ''}
+                        ${p.specs.weight ? `<div class="specs-row"><div class="specs-label">الوزن</div><div class="specs-value">${p.specs.weight}</div></div>` : ''}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="specs-group">
+                      <h4>الخامات والعناية</h4>
+                      <div class="specs-table">
+                        ${p.specs.exterior ? `<div class="specs-row"><div class="specs-label">الخامة الخارجية</div><div class="specs-value">${p.specs.exterior}</div></div>` : ''}
+                        ${p.specs.interior ? `<div class="specs-row"><div class="specs-label">البطانة</div><div class="specs-value">${p.specs.interior}</div></div>` : ''}
+                        ${p.specs.care ? `<div class="specs-row"><div class="specs-label">تعليمات العناية</div><div class="specs-value">${p.specs.care}</div></div>` : ''}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+            }
+          } else {
+            if (specsAccordionItem) {
+              specsAccordionItem.style.display = 'none';
+            }
+          }
+
+          // 6. رسم الألوان الديناميكية وتفعيل العداد
+          let selectedColor = '';
+          const optionsContainer = document.getElementById('dynamic-options-container');
+          const colorGroup = document.getElementById('color-group');
+          const colorsWrapper = document.getElementById('dynamic-colors-wrapper');
+          const qtyInput = document.getElementById('orderQuantity');
+
+          if (optionsContainer) optionsContainer.style.display = 'block';
+
+          if (p.colors && Array.isArray(p.colors) && p.colors.length > 0) {
+            if (colorGroup) colorGroup.style.display = 'block';
+            let colorsHtml = '';
+
+            p.colors.forEach((color, index) => {
+              const isActive = index === 0 ? 'active' : '';
+              if (index === 0) selectedColor = color;
+              colorsHtml += `<button type="button" class="custom-color-btn ${isActive}" data-color="${color}">${color}</button>`;
+            });
+            if (colorsWrapper) colorsWrapper.innerHTML = colorsHtml;
+
+            const colorBtns = document.querySelectorAll('.custom-color-btn');
+            colorBtns.forEach(btn => {
+              btn.addEventListener('click', (e) => {
+                colorBtns.forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                selectedColor = e.target.getAttribute('data-color');
+              });
+            });
+          }
+
+          if (document.getElementById('btn-increase')) {
+            document.getElementById('btn-increase').onclick = () => {
+              let current = parseInt(qtyInput.value) || 1;
+              qtyInput.value = current + 1;
+            };
+          }
+
+          if (document.getElementById('btn-decrease')) {
+            document.getElementById('btn-decrease').onclick = () => {
+              let current = parseInt(qtyInput.value) || 1;
+              if (current > 1) qtyInput.value = current - 1;
+            };
+          }
+
+          // 7. زرار الواتساب 
+          const waButtons = document.querySelectorAll('.add-to-cart-btn');
+          waButtons.forEach(btn => {
+            btn.onclick = () => {
+              const qty = parseInt(qtyInput.value) || 1;
+              const colorText = selectedColor ? ` - اللون: ${selectedColor}` : '';
+              const total = p.price * qty;
+              const message = `أهلاً، عايز أطلب الشنطة دي: ${p.name}${colorText} - العدد: ${qty} - الإجمالي: EGP ${total}`;
+              window.open(`https://wa.me/201111447123?text=${encodeURIComponent(message)}`, '_blank');
+            };
+          });
+
+          // 8. إتمام الطلب من الموقع وتسجيله في الداشبورد
+          const checkoutForm = document.getElementById('checkoutForm');
+          const confirmBtn = document.getElementById('confirmOrderBtn');
+
+          if (checkoutForm) {
+            checkoutForm.onsubmit = async (e) => {
+              e.preventDefault();
+              confirmBtn.disabled = true;
+              confirmBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> جاري تسجيل الطلب...';
+
+              const cName = document.getElementById('custName').value.trim();
+              const cPhone = document.getElementById('custPhone').value.trim();
+              const cAddress = document.getElementById('custAddress').value.trim();
+
+              try {
+                const orderQty = parseInt(qtyInput.value) || 1;
+                const finalTotalPrice = p.price * orderQty;
+
+                await addDoc(collection(db, 'orders'), {
+                  customerName: cName,
+                  customerPhone: cPhone,
+                  address: cAddress,
+                  productName: p.name,
+                  productId: productId,
+                  color: selectedColor || 'غير محدد',
+                  quantity: orderQty,
+                  price: p.price,
+                  totalPrice: finalTotalPrice,
+                  status: 'جديد',
+                  createdAt: serverTimestamp()
+                });
+
+                const customerRef = doc(db, 'customers', cPhone);
+                const customerSnap = await getDoc(customerRef);
+
+                if (customerSnap.exists()) {
+                  const custData = customerSnap.data();
+                  await setDoc(customerRef, {
+                    ...custData,
+                    totalOrders: (custData.totalOrders || 0) + 1,
+                    totalSpent: (custData.totalSpent || 0) + finalTotalPrice,
+                    lastOrderAt: serverTimestamp()
+                  });
+                } else {
+                  await setDoc(customerRef, {
+                    name: cName,
+                    phone: cPhone,
+                    address: cAddress,
+                    totalOrders: 1,
+                    totalSpent: finalTotalPrice,
+                    createdAt: serverTimestamp()
+                  });
+                }
+
+                const modalEl = document.getElementById('checkoutModal');
+                const modalInstance = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+                modalInstance.hide();
+
+                alert('تم تسجيل طلبك بنجاح! هنتواصل معاك في أقرب وقت لتأكيد الأوردر.');
+                checkoutForm.reset();
+                qtyInput.value = 1;
+
+              } catch (error) {
+                console.error("Order Error: ", error);
+                alert('حدث خطأ أثناء تسجيل الطلب، يرجى المحاولة مرة أخرى أو الطلب عبر واتساب.');
+              } finally {
+                confirmBtn.disabled = false;
+                confirmBtn.textContent = 'تأكيد الطلب';
+              }
+            };
+          }
+        } else {
+          document.querySelector('.product-title').textContent = "المنتج غير موجود أو تم حذفه";
+        }
+      } catch (error) {
+        console.error("Error fetching product:", error);
+      }
+    }
+    loadSingleProduct();
+  </script>
+</body>
+</body>
+
+</html>

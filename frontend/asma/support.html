@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Support - FashionStore</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+</head>
+
+<body class="support-page">
+
+  <header id="header" class="header position-fixed w-100 top-0">
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar py-2">
+      <div class="container-fluid container-xl">
+        <div class="announcement-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": { "delay": 5000 },
+            "slidesPerView": 1,
+            "effect": "slide",
+            "direction": "vertical"
+          }
+        </script>
+          <div class="swiper-wrapper text-center">
+            <div class="swiper-slide">🚚 Free shipping on orders over $50</div>
+            <div class="swiper-slide">💰 30 days money back guarantee</div>
+            <div class="swiper-slide">🎁 20% off on your first order - Use code: FIRST20</div>
+            <div class="swiper-slide">⚡ Flash Sale! Up to 70% off on selected items</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header bg-white shadow-sm">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
+            <img src="assets/img/icon - Copy.png" alt="dobleer Logo" class="logo-img">
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="header-nav d-none d-xl-block">
+            <nav id="navmenu" class="navmenu">
+              <ul class="d-flex list-unstyled mb-0 gap-4">
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="return-policy.html">Return Policy</a></li>
+                <li><a href="shipping-info.html">Shipping Information</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Icons & Actions -->
+          <div class="header-actions d-flex align-items-center gap-3">
+            <!-- Search Toggle -->
+
+
+            <!-- Mobile Navigation Toggle (Triggers Offcanvas) -->
+            <!-- Mobile Navigation Toggle (Triggers Offcanvas) -->
+            <i class="custom-nav-toggle d-xl-none bi bi-list fs-2 text-dark cursor-pointer" data-bs-toggle="offcanvas"
+              data-bs-target="#mobileNavSidebar" aria-controls="mobileNavSidebar"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Form Dropdown (Collapse) -->
+    <div class="collapse position-absolute w-100 bg-white shadow-sm" id="mobileSearch" style="top: 100%; z-index: -1;">
+      <div class="container py-3">
+        <form class="search-form">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control border-0 bg-light" placeholder="Search for products..."
+              style="box-shadow: none;">
+            <button class="btn btn-dark px-4" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Premium Mobile Sidebar Menu (Offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavSidebar" aria-labelledby="mobileNavLabel">
+      <div class="offcanvas-header border-bottom py-3">
+        <h5 class="offcanvas-title fw-bold text-dark" id="mobileNavLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body px-4 py-4">
+        <nav class="mobile-nav">
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0 fs-5">
+            <li><a href="index.html" class="text-decoration-none text-dark active">Home</a></li>
+            <li><a href="about.html" class="text-decoration-none text-dark">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="return-policy.html">Return Policy</a></li>
+            <li><a href="shipping-info.html">Shipping Information</a></li>
+          </ul>
+        </nav>
+
+       
+      </div>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+   
+
+    <!-- Support Section -->
+    <section id="support" class="support section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-5 gx-lg-5">
+          <div class="col-lg-8">
+            <!-- Help Categories -->
+            <div class="help-categories" data-aos="fade-up">
+              <div class="section-heading">
+                <h3>How Can We Help You?</h3>
+                <p>Browse through our help topics or search for specific manufacturing assistance</p>
+              </div>
+
+              <div class="category-grid">
+                <a href="#" class="category-card" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon">
+                    <i class="bi bi-box-seam"></i>
+                  </div>
+                  <h4>Orders &amp; Shipping</h4>
+                  <p>Production status, freight shipping, bulk returns</p>
+                </a>
+
+                <a href="#" class="category-card" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="icon">
+                    <i class="bi bi-credit-card"></i>
+                  </div>
+                  <h4>Payment &amp; Billing</h4>
+                  <p>Wholesale terms, invoices, deposit refunds</p>
+                </a>
+
+                <a href="#" class="category-card" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="icon">
+                    <i class="bi bi-person-circle"></i>
+                  </div>
+                  <h4>Account Help</h4>
+                  <p>Client portal login, brand profile settings</p>
+                </a>
+
+                <a href="#" class="category-card" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="icon">
+                    <i class="bi bi-gift"></i>
+                  </div>
+                  <h4>Products &amp; Services</h4>
+                  <p>Fabric specs, sizing charts, custom label guides</p>
+                </a>
+              </div>
+            </div>
+
+            <!-- Common Help Topics -->
+            <div class="help-topics" data-aos="fade-up" data-aos-delay="100">
+              <div class="section-heading">
+                <h3>Popular Help Topics</h3>
+                <p>Quick solutions to common manufacturing questions</p>
+              </div>
+
+              <div class="topics-grid">
+                <div class="topic-item">
+                  <i class="bi bi-clock-history"></i>
+                  <h5>Track Your Order</h5>
+                  <p>Monitor your apparel's production milestones and track bulk freight shipments in real-time.</p>
+                  <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                <div class="topic-item">
+                  <i class="bi bi-arrow-repeat"></i>
+                  <h5>Return Policy</h5>
+                  <p>Learn about our policies regarding defective garments and pre-production sample revisions.</p>
+                  <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                <div class="topic-item">
+                  <i class="bi bi-shield-check"></i>
+                  <h5>Account Security</h5>
+                  <p>We sign NDAs to protect your brand's custom designs and keep your wholesale data completely secure.</p>
+                  <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                <div class="topic-item">
+                  <i class="bi bi-wallet2"></i>
+                  <h5>Payment Methods</h5>
+                  <p>Discover our accepted B2B payment options, including Bank Wire Transfers and Letters of Credit (L/C).</p>
+                  <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section" data-aos="fade-up" data-aos-delay="200">
+              <div class="section-heading">
+                <h3>Frequently Asked Questions</h3>
+                <p>Quick answers to questions you may have about working with us</p>
+              </div>
+
+              <div class="faq-list">
+                <div class="faq-item">
+                  <h3>
+                    How do I track my bulk order?
+                    <i class="bi bi-chevron-down faq-toggle"></i>
+                  </h3>
+                  <div class="faq-answer">
+                    <p>You can track your order's production stages (cutting, sewing, finishing) and shipping status by logging into your client dashboard, or by reaching out directly to your assigned account manager.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    What payment methods do you accept for manufacturing?
+                    <i class="bi bi-chevron-down faq-toggle"></i>
+                  </h3>
+                  <div class="faq-answer">
+                    <p>For wholesale and custom manufacturing, we accept Bank Wire Transfers (T/T) and Letters of Credit (L/C). We also accept major credit cards and PayPal for smaller sample orders.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    How can I change my client portal password?
+                    <i class="bi bi-chevron-down faq-toggle"></i>
+                  </h3>
+                  <div class="faq-answer">
+                    <p>You can easily update your password by navigating to your Account Settings page after logging in, or by clicking the 'Forgot Password' link on the login screen if you are locked out.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4">
+            <div class="support-sidebar" data-aos="fade-up" data-aos-delay="100">
+              <!-- Contact Support -->
+              <div class="contact-support">
+                <div class="icon-box">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <h4>Need More Help?</h4>
+                <p>Our production support team is available to assist you</p>
+                <div class="support-actions">
+                  <a href="#" class="btn-chat">
+                    <i class="bi bi-chat-dots"></i>
+                    Live Chat
+                  </a>
+                  <a href="#" class="btn-email">
+                    <i class="bi bi-envelope"></i>
+                    Send Email
+                  </a>
+                  <div class="divider">or call us</div>
+                  <a href="tel:1234567890" class="phone-number">
+                    <i class="bi bi-telephone"></i>
+                    +1 (555) 123-4567
+                  </a>
+                </div>
+              </div>
+
+              <!-- Support Resources -->
+              <div class="support-resources">
+                <h5>Support Resources</h5>
+                <ul>
+                  <li>
+                    <i class="bi bi-file-text"></i>
+                    <a href="#">Material Sourcing Guides</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-play-circle"></i>
+                    <a href="#">Production Process Videos</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-book"></i>
+                    <a href="#">Certifications &amp; Specs</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-download"></i>
+                    <a href="#">Tech Pack Templates</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Business Hours -->
+              <div class="business-hours">
+                <h5>Factory Hours</h5>
+                <ul>
+                  <li>
+                    <span>Monday - Friday:</span>
+                    <span>9:00 AM - 8:00 PM</span>
+                  </li>
+                  <li>
+                    <span>Saturday:</span>
+                    <span>10:00 AM - 6:00 PM</span>
+                  </li>
+                  <li>
+                    <span>Sunday:</span>
+                    <span>Closed</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Support Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">FashionStore</span>
+              </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut,
+                consectetur lorem. Proin eget tortor risus.</p>
+
+              <div class="social-links mt-4">
+                <h5>Connect With Us</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                  <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Shop</h4>
+              <ul class="footer-links">
+                <li><a href="category.html">New Arrivals</a></li>
+                <li><a href="category.html">Bestsellers</a></li>
+                <li><a href="category.html">Women's Clothing</a></li>
+                <li><a href="category.html">Men's Clothing</a></li>
+                <li><a href="category.html">Accessories</a></li>
+                <li><a href="category.html">Sale</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Support</h4>
+              <ul class="footer-links">
+                <li><a href="support.html">Help Center</a></li>
+                <li><a href="account.html">Order Status</a></li>
+                <li><a href="shiping-info.html">Shipping Info</a></li>
+                <li><a href="return-policy.html">Returns &amp; Exchanges</a></li>
+                <li><a href="#">Size Guide</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <h4>Contact Information</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>123 Fashion Street, New York, NY 10001</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span>hello@example.com</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-clock"></i>
+                  <span>Monday-Friday: 9am-6pm<br>Saturday: 10am-4pm<br>Sunday: Closed</span>
+                </div>
+              </div>
+
+              <div class="app-buttons mt-4">
+                <a href="#" class="app-btn">
+                  <i class="bi bi-apple"></i>
+                  <span>App Store</span>
+                </a>
+                <a href="#" class="app-btn">
+                  <i class="bi bi-google-play"></i>
+                  <span>Google Play</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="sitename">Hassan</strong>. All Rights Reserved.</p>
+            </div>
+            <div class="credits mt-1">
+
+              Designed by <a href="https://hassan6102.github.io/cv/">Eng.Hassan Mohamed</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              <div class="payment-methods">
+                <div class="payment-icons">
+                  <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                  <i class="bi bi-paypal" aria-label="PayPal"></i>
+                  <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                  <i class="bi bi-google" aria-label="Google Pay"></i>
+                  <i class="bi bi-shop" aria-label="Shop Pay"></i>
+                  <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+                </div>
+              </div>
+
+              <div class="legal-links">
+                <a href="tos.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tos.html">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer> <!-- Floating Customer Support Button (Modern & Clean) -->
+  <div class="cs-float" id="csFloat">
+    <button class="cs-main" id="csMain" aria-expanded="false" aria-label="Customer Support">
+      <i class="bi bi-chat-dots-fill cs-icon"></i>
+    </button>
+
+    <div class="cs-menu" id="csMenu" role="menu">
+      <a class="cs-item" href="https://wa.me/201125741855" target="_blank">
+        <i class="bi bi-whatsapp" style="color: #25D366;"></i>
+        <span>WhatsApp</span>
+      </a>
+      <a class="cs-item" href="tel:+201125741855">
+        <i class="bi bi-telephone-fill" style="color: var(--osma-primary);"></i>
+        <span>Call Us</span>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    /* Clean Support Button CSS */
+    .cs-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9999;
+    }
+
+    .cs-main {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: #8b7355;
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .cs-main:hover {
+      transform: scale(1.05);
+      background-color: var(--osma-hover);
+    }
+
+.cs-icon {
+      font-size: 24px;
+      transition: transform 0.3s ease;
+      pointer-events: none; /* إضافة السطر ده */
+    }
+
+    .cs-float.open .cs-icon {
+      transform: rotate(360deg);
+      content: "\F62A"; /* تتغير لعلامة X في البوتستراب أيكونز لو حابب تظبطها بالجافاسكريبت، بس الدوران شغال كويس */
+    }
+
+    .cs-menu {
+      position: absolute;
+      right: 0;
+      bottom: 70px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 10px 0;
+      width: 180px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .cs-float.open .cs-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .cs-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 15px;
+      transition: background-color 0.2s ease;
+    }
+
+    .cs-item i {
+      font-size: 18px;
+    }
+
+    .cs-item:hover {
+      background-color: #f8f9fa;
+      color: var(--osma-primary);
+    }
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const csFloat = document.getElementById("csFloat");
+    const csMain = document.getElementById("csMain");
+
+    if (csMain && csFloat) {
+      // Toggle Menu
+      csMain.addEventListener("click", function (e) {
+        e.preventDefault(); // منع أي سلوك افتراضي
+        e.stopPropagation(); // منع انتقال الضغطة لباقي الصفحة
+        csFloat.classList.toggle("open");
+        
+        // تغيير حالة aria للـ Accessibility
+        const isOpen = csFloat.classList.contains("open");
+        csMain.setAttribute("aria-expanded", isOpen);
+      });
+
+      // Close when clicking outside
+      document.addEventListener("click", function (e) {
+        if (!csFloat.contains(e.target)) {
+          csFloat.classList.remove("open");
+          csMain.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  });
+</script> 
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/drift-zoom/Drift.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
