@@ -826,7 +826,7 @@
             ? `<span class="current-price">EGP ${p.price}</span> <span class="old-price" style="text-decoration: line-through; color: #999; font-size: 14px; margin-left: 5px;">EGP ${p.oldPrice}</span>`
             : `<span class="current-price">EGP ${p.price}</span>`;
           const badgeHtml = hasDiscount
-            ? `<span class="badge sale" style="background: var(--osma-primary); position: absolute; top: 10px; left: 10px; z-index: 2;">تخفيض</span>`
+            ? `<span class="badge sale" style="background: var(--osma-primary); position: absolute; top: 10px; left: 10px; z-index: 2;">sale</span>`
             : ``;
 const waLink = `https://wa.me/201111447123?text=${encodeURIComponent('أهلاً، عايز أطلب الشنطة دي: ' + p.name + ' - كود المنتج: ' + p.sku)}`;
           // --- 1. كود السلايدر اللي تحت (All Bags) هيفضل شغال زي ما هو ---
@@ -837,7 +837,7 @@ const waLink = `https://wa.me/201111447123?text=${encodeURIComponent('أهلاً
                   ${badgeHtml}
                   <img src="${finalImg}" alt="${p.name}" style="aspect-ratio: 1; object-fit: cover; width: 100%;">
                   <div class="product-overlay">
-                    <a href="${waLink}" target="_blank" class="btn-cart" style="text-decoration:none;"><i class="bi bi-whatsapp"></i> اطلب عبر واتساب</a>
+                    <a href="${waLink}" target="_blank" class="btn-cart" style="text-decoration:none;"><i class="bi bi-whatsapp"></i>  Order via WhatsApp </a>
                     <div class="product-actions">
                       <a href="product-details.html?id=${p.id}" class="action-btn"><i class="bi bi-eye"></i></a>
                     </div>
