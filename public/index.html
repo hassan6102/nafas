@@ -924,6 +924,55 @@
     }
 
     loadProducts();
+    // دالة جلب الإعلانات وتشغيل السلايدر
+    async function loadAnnouncements() {
+      const annContainer = document.getElementById('dynamic-announcements');
+      if (!annContainer) return;
+
+      try {
+        const docRef = doc(db, 'settings', 'announcements');
+        const docSnap = await getDoc(docRef);
+
+        // لو في إعلانات في الداشبورد
+        if (docSnap.exists() && docSnap.data().messages && docSnap.data().messages.length > 0) {
+          const messages = docSnap.data().messages;
+          let html = '';
+          messages.forEach(msg => {
+            html += `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">${msg}</div>`;
+          });
+          annContainer.innerHTML = html;
+        } else {
+          // لو الداشبورد فاضية، اعرض رسالة ترحيب
+          annContainer.innerHTML = `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">✨ أهلاً بكم في متجر OSMA Bags ✨</div>`;
+        }
+
+        // تشغيل السلايدر بعد ما الداتا تترص بـ 100 جزء من الثانية عشان نضمن إن الـ HTML اترسم
+        setTimeout(() => {
+          if (typeof Swiper !== 'undefined') {
+             // تدمير أي سلايدر قديم عشان ميهنجش
+             const sliderElem = document.querySelector('.announcement-slider');
+             if (sliderElem && sliderElem.swiper) {
+                 sliderElem.swiper.destroy(true, true);
+             }
+             
+             // تشغيل السلايدر الجديد
+             new Swiper('.announcement-slider', {
+               loop: true,
+               speed: 600,
+               autoplay: { delay: 3000, disableOnInteraction: false }, // disableOnInteraction عشان يفضل شغال على طول
+               slidesPerView: 1,
+               direction: "vertical"
+             });
+          }
+        }, 100);
+
+      } catch (error) {
+        console.error("Error loading announcements:", error);
+      }
+    }
+
+    // متنساش تستدعي الدالة عشان تشتغل
+    loadAnnouncements();
   </script>
 </body>
 
