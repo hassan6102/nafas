@@ -161,12 +161,11 @@
   <header id="header" class="header position-fixed w-100 top-0">
 
     <!-- Announcement Bar -->
-    <div class="announcement-bar py-2" style="background-color: #8b7355; color: #fff;">
+    <div class="announcement-bar py-2" style="background-color: var(--osma-primary); color: #fff;">
       <div class="container-fluid container-xl">
         <div class="announcement-slider swiper">
           <div class="swiper-wrapper text-center" id="dynamic-announcements">
-            <!-- سيتم حقن الإعلانات هنا عبر الجافاسكريبت -->
-            <div class="swiper-slide">جاري تحميل العروض...</div>
+            <div class="swiper-slide" style="font-size: 14px;">جاري تحميل العروض...</div>
           </div>
         </div>
       </div>
@@ -777,7 +776,8 @@
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getFirestore, collection, getDocs, query } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    // تم إضافة doc و getDoc هنا عشان الإعلانات تشتغل
+    import { getFirestore, collection, getDocs, query, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyA1jQa2Bo9U7UBDRWjSLHbY8Q42xbOlA8k",
@@ -792,8 +792,53 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
+    // ==========================================
+    // 1. دالة جلب الإعلانات وتشغيل شريط الأخبار
+    // ==========================================
+    async function loadAnnouncements() {
+      const annContainer = document.getElementById('dynamic-announcements');
+      if (!annContainer) return;
+
+      try {
+        const docRef = doc(db, 'settings', 'announcements');
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists() && docSnap.data().messages && docSnap.data().messages.length > 0) {
+          const messages = docSnap.data().messages;
+          let html = '';
+          messages.forEach(msg => {
+            html += `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">${msg}</div>`;
+          });
+          annContainer.innerHTML = html;
+        } else {
+          annContainer.innerHTML = `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">✨ أهلاً بكم في متجر OSMA Bags ✨</div>`;
+        }
+
+        setTimeout(() => {
+          if (typeof Swiper !== 'undefined') {
+             const sliderElem = document.querySelector('.announcement-slider');
+             if (sliderElem && sliderElem.swiper) {
+                 sliderElem.swiper.destroy(true, true);
+             }
+             new Swiper('.announcement-slider', {
+               loop: true,
+               speed: 600,
+               autoplay: { delay: 3000, disableOnInteraction: false },
+               slidesPerView: 1,
+               direction: "vertical"
+             });
+          }
+        }, 100);
+
+      } catch (error) {
+        console.error("Error loading announcements:", error);
+      }
+    }
+
+    // ==========================================
+    // 2. دالة جلب المنتجات (الكود الخاص بك)
+    // ==========================================
     async function loadProducts() {
-      // الـ ID الجديد بتاع الشريطين
       const marqueeContainer = document.getElementById('osma-dual-marquees');
       const swiperWrapper = document.getElementById('all-products-swiper');
 
@@ -825,7 +870,7 @@
             ? `<span class="badge sale" style="background: var(--osma-primary); position: absolute; top: 10px; left: 10px; z-index: 2;">sale</span>`
             : ``;
           const waLink = `https://wa.me/201111447123?text=${encodeURIComponent('أهلاً، عايز أطلب الشنطة دي: ' + p.name + ' - كود المنتج: ' + p.sku)}`;
-          // --- 1. كود السلايدر اللي تحت (All Bags) هيفضل شغال زي ما هو ---
+          
           swiperHtml += `
             <div class="swiper-slide filter-${p.category ? p.category.replace(/\s+/g, '') : 'all'}">
               <div class="product-card">
@@ -862,16 +907,11 @@
           }, 100);
         }
 
-        // --- 2. الكود الجديد لبناء الشريطين المتحركين (Marquees) ---
         if (marqueeContainer && allProducts.length > 0) {
-          // هناخد أول 10 منتجات بس للبيست سيلر
           const top10 = allProducts.slice(0, 10);
-
-          // نقسمهم 5 فوق و 5 تحت (لو المنتجات أقل من 10 هيكررهم عشان الشكل ميبوظش)
           const row1 = top10.slice(0, 5);
           const row2 = top10.length > 5 ? top10.slice(5, 10) : row1;
 
-          // دالة بتولد شكل الكارت
           const generateCards = (items) => {
             return items.map(p => {
               const finalImg = p.imageUrl || p.image || 'assets/img/icon - Copy.png';
@@ -903,11 +943,9 @@
             }).join('');
           };
 
-          // توليد المحتوى (بنكرره مرتين عشان حركة الـ Scroll تبقى متصلة ومتقطعش)
           const html1 = generateCards(row1) + generateCards(row1);
           const html2 = generateCards(row2) + generateCards(row2);
 
-          // تركيب الشريطين في الصفحة وعكس اتجاهاتهم
           marqueeContainer.innerHTML = `
             <div class="osma-marquee-track move-left">
                ${html1}
@@ -923,56 +961,9 @@
       }
     }
 
-    loadProducts();
-    // دالة جلب الإعلانات وتشغيل السلايدر
-    async function loadAnnouncements() {
-      const annContainer = document.getElementById('dynamic-announcements');
-      if (!annContainer) return;
-
-      try {
-        const docRef = doc(db, 'settings', 'announcements');
-        const docSnap = await getDoc(docRef);
-
-        // لو في إعلانات في الداشبورد
-        if (docSnap.exists() && docSnap.data().messages && docSnap.data().messages.length > 0) {
-          const messages = docSnap.data().messages;
-          let html = '';
-          messages.forEach(msg => {
-            html += `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">${msg}</div>`;
-          });
-          annContainer.innerHTML = html;
-        } else {
-          // لو الداشبورد فاضية، اعرض رسالة ترحيب
-          annContainer.innerHTML = `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">✨ أهلاً بكم في متجر OSMA Bags ✨</div>`;
-        }
-
-        // تشغيل السلايدر بعد ما الداتا تترص بـ 100 جزء من الثانية عشان نضمن إن الـ HTML اترسم
-        setTimeout(() => {
-          if (typeof Swiper !== 'undefined') {
-             // تدمير أي سلايدر قديم عشان ميهنجش
-             const sliderElem = document.querySelector('.announcement-slider');
-             if (sliderElem && sliderElem.swiper) {
-                 sliderElem.swiper.destroy(true, true);
-             }
-             
-             // تشغيل السلايدر الجديد
-             new Swiper('.announcement-slider', {
-               loop: true,
-               speed: 600,
-               autoplay: { delay: 3000, disableOnInteraction: false }, // disableOnInteraction عشان يفضل شغال على طول
-               slidesPerView: 1,
-               direction: "vertical"
-             });
-          }
-        }, 100);
-
-      } catch (error) {
-        console.error("Error loading announcements:", error);
-      }
-    }
-
-    // متنساش تستدعي الدالة عشان تشتغل
+    // استدعاء الدوال عشان تشتغل أول ما الصفحة تفتح
     loadAnnouncements();
+    loadProducts();
   </script>
 </body>
 
