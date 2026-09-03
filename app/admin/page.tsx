@@ -1,7 +1,7 @@
 'use client'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../../lib/firebase';
-import { collection, addDoc, serverTimestamp, onSnapshot, query, orderBy, deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp, onSnapshot, query, orderBy, deleteDoc, doc, updateDoc, setDoc } from 'firebase/firestore';
 import { useEffect, useMemo, useState } from 'react'
 import { cloneSeed, loadState, saveState } from '../../types/store'
 import {
@@ -14,12 +14,13 @@ import {
 const nav = [
   { id: 'dashboard', label: 'الرئيسية', icon: LayoutDashboard },
   { id: 'products', label: 'المنتجات', icon: ShoppingBag },
-  { id: 'categories', label: 'الأقسام', icon: Tag }, // السطر الجديد
+  { id: 'categories', label: 'الأقسام', icon: Tag }, 
   { id: 'inventory', label: 'المخزون', icon: Box },
   { id: 'orders', label: 'الطلبات', icon: ShoppingCart },
   { id: 'customers', label: 'العملاء', icon: Users },
   { id: 'coupons', label: 'الكوبونات', icon: Tag },
   { id: 'activity', label: 'سجل النشاطات', icon: Activity },
+  { id: 'settings', label: 'إعدادات المتجر', icon: Settings },
 ]
 
 const products = [
@@ -1212,6 +1213,92 @@ function ActivityLog() {
     </div>
   );
 }
+function StoreSettings({ toast }: { toast: (m: string) => void }) {
+  const [messages, setMessages] = useState<string[]>([]);
+  const [newMessage, setNewMessage] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+
+  // جلب الإعلانات من قاعدة البيانات
+  useEffect(() => {
+    const docRef = doc(db, 'settings', 'announcements');
+    const unsubscribe = onSnapshot(docRef, (docSnap) => {
+      if (docSnap.exists()) {
+        setMessages(docSnap.data().messages || []);
+      }
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // حفظ التعديلات في قاعدة البيانات
+  const handleSave = async (updatedMessages: string[]) => {
+    setSaving(true);
+    try {
+      await setDoc(doc(db, 'settings', 'announcements'), { messages: updatedMessages });
+      toast('تم تحديث شريط الإعلانات بنجاح');
+    } catch (error) {
+      toast('حدث خطأ أثناء الحفظ');
+    }
+    setSaving(false);
+  };
+
+  const addMessage = () => {
+    if (!newMessage.trim()) return;
+    const updated = [...messages, newMessage];
+    setMessages(updated);
+    setNewMessage('');
+    handleSave(updated);
+  };
+
+  const removeMessage = (index: number) => {
+    const updated = messages.filter((_, i) => i !== index);
+    setMessages(updated);
+    handleSave(updated);
+  };
+
+  return (
+    <div className="page-content">
+      <div className="page-title">
+        <div>
+          <p className="eyebrow">إعدادات المتجر</p>
+          <h1>شريط الإعلانات العُلوي</h1>
+          <p className="subtle">أضف أو احذف الرسائل المتحركة التي تظهر للعملاء أعلى الموقع.</p>
+        </div>
+      </div>
+
+      <section className="panel form-panel">
+        <h2>إضافة إعلان جديد</h2>
+        <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+          <input
+            value={newMessage}
+            onChange={e => setNewMessage(e.target.value)}
+            placeholder="مثال: 🚚 شحن مجاني للطلبات فوق 500 جنيه..."
+            style={{ flex: 1, padding: '10px', borderRadius: '6px', border: '1px solid var(--border-color)', background: 'transparent', color: 'var(--text-color)' }}
+          />
+          <button className="primary-button" onClick={addMessage} disabled={saving}>
+            {saving ? 'جاري الحفظ...' : 'إضافة'}
+          </button>
+        </div>
+
+        <h2>الإعلانات الحالية</h2>
+        {loading ? <p>جاري التحميل...</p> : (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {messages.length === 0 && <p className="muted" style={{ padding: '10px 0' }}>لا توجد إعلانات حالياً.</p>}
+            {messages.map((msg, idx) => (
+              <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg-color)', padding: '12px 15px', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+                <strong>{msg}</strong>
+                <button className="icon-button" onClick={() => removeMessage(idx)} title="حذف الإعلان">
+                  <X size={18} color="red" />
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+    </div>
+  );
+}
 export default function Page() {
   const [page, setPage] = useState('dashboard'); const [mobileOpen, setMobileOpen] = useState(false); const [dark, setDark] = useState(false); const [toastMsg, setToastMsg] = useState(''); const [storeState, setStoreState] = useState(() => cloneSeed());
   useEffect(() => { const saved = loadState(); setStoreState(saved); setDark(window.localStorage.getItem('theme') === 'dark'); }, []);
@@ -1291,9 +1378,8 @@ export default function Page() {
         {page === 'customers' && <Customers toast={toast} />}
         {page === 'coupons' && <Coupons toast={toast} />}
         {page === 'activity' && <ActivityLog />}
-
-        {!['dashboard', 'products', 'add-product', 'categories', 'inventory', 'orders', 'customers', 'coupons', 'activity'].includes(page) && <GenericPage id={page} setPage={go} />}
-      </div>
+        {page === 'settings' && <StoreSettings toast={toast} />}
+{!['dashboard', 'products', 'add-product', 'categories', 'inventory', 'orders', 'customers', 'coupons', 'activity', 'settings'].includes(page) && <GenericPage id={page} setPage={go} />}      </div>
 
       {/* نوافذ ورسائل التأكيد */}
       {mobileOpen && <div className="overlay" onClick={() => setMobileOpen(false)} />}

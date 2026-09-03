@@ -545,8 +545,8 @@
       </div>
     </section><!-- /Product Details Section -->
     <!-- Checkout Modal -->
-    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true"
-      dir="ltr">
+    <!-- Checkout Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true" dir="ltr">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header" style="border-bottom: 1px solid var(--osma-primary);">
@@ -562,19 +562,36 @@
               </div>
               <div class="mb-3 text-start">
                 <label class="form-label fw-bold">Phone Number</label>
-                <input type="tel" id="custPhone" class="form-control text-start" placeholder="Example: 01012345678"
-                  required>
+                <input type="tel" id="custPhone" class="form-control text-start" placeholder="Example: 01012345678" required>
               </div>
               <div class="mb-4 text-start">
                 <label class="form-label fw-bold">Detailed Address</label>
-                <textarea id="custAddress" class="form-control" rows="2"
-                  placeholder="City, Area, Street, Building Number" required></textarea>
+                <textarea id="custAddress" class="form-control" rows="2" placeholder="City, Area, Street, Building Number" required></textarea>
               </div>
-              <button type="submit" class="btn btn-dark w-100 py-2" id="confirmOrderBtn"
-                style="font-size: 18px; font-weight: bold;">
+              <button type="submit" class="btn btn-dark w-100 py-2" id="confirmOrderBtn" style="font-size: 18px; font-weight: bold;">
                 Confirm Order
               </button>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- نافذة تأكيد الطلب بنجاح (Success Modal) -->
+    <div class="modal fade" id="successOrderModal" tabindex="-1" aria-hidden="true" dir="rtl">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center shadow-lg" style="border-radius: 20px; border: none; padding: 2rem 1.5rem;">
+          <div class="modal-body">
+            <div style="width: 85px; height: 85px; background: rgba(37, 211, 102, 0.1); color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 45px; box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <h3 style="color: var(--osma-primary); font-weight: 800; margin-bottom: 15px; font-size: 24px;">تم تأكيد طلبك بنجاح! ✨</h3>
+            <p style="color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 25px;">
+              شكراً لثقتك في <strong>OSMA Bags</strong>.<br>لقد استلمنا طلبك، وسيقوم فريق المبيعات بالتواصل معك قريباً لتأكيد تفاصيل الشحن. 🚚
+            </p>
+            <button type="button" class="btn w-100 py-3" data-bs-dismiss="modal" style="background-color: var(--osma-primary); color: #fff; font-weight: bold; border-radius: 12px; font-size: 17px;">
+              متابعة التسوق
+            </button>
           </div>
         </div>
       </div>
@@ -803,7 +820,7 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
     import { getFirestore, doc, getDoc, setDoc, addDoc, collection, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-    // إعدادات فايربيز الحقيقية بتاعتك
+    // إعدادات فايربيز الحقيقية
     const firebaseConfig = {
       apiKey: "AIzaSyA1jQa2Bo9U7UBDRWjSLHbY8Q42xbOlA8k",
       authDomain: "bag-store-app-55b26.firebaseapp.com",
@@ -935,7 +952,7 @@
             }
           }
 
-          // 5. Dynamic Specifications Section (which was missing)
+          // 5. المواصفات الديناميكية
           const specsContainer = document.querySelector('#specifications .accordion-body');
           const specsAccordionItem = specsContainer ? specsContainer.closest('.accordion-item') : null;
 
@@ -1022,24 +1039,29 @@
           }
 
           // 7. زرار الواتساب 
+         // 7. زرار الواتساب 
           const waButtons = document.querySelectorAll('.add-to-cart-btn');
           waButtons.forEach(btn => {
             btn.onclick = () => {
               const qty = parseInt(qtyInput.value) || 1;
               const colorText = selectedColor ? ` - اللون: ${selectedColor}` : '';
               const total = p.price * qty;
-              const message = `أهلاً، عايز أطلب الشنطة دي: ${p.name}${colorText} - العدد: ${qty} - الإجمالي: EGP ${total}`;
+              
+              // سحب كود المنتج وإضافته للرسالة لو موجود
+              const skuText = p.sku ? ` - كود المنتج: ${p.sku}` : '';
+              
+              const message = `أهلاً، عايز أطلب الشنطة دي: ${p.name}${skuText}${colorText} - العدد: ${qty} `;
               window.open(`https://wa.me/201111447123?text=${encodeURIComponent(message)}`, '_blank');
             };
           });
-
-          // 8. إتمام الطلب من الموقع وتسجيله في الداشبورد
+          // 8. إتمام الطلب من الموقع وتسجيله في الداشبورد وإظهار رسالة النجاح
           const checkoutForm = document.getElementById('checkoutForm');
           const confirmBtn = document.getElementById('confirmOrderBtn');
 
           if (checkoutForm) {
-            checkoutForm.onsubmit = async (e) => {
-              e.preventDefault();
+            checkoutForm.addEventListener('submit', async (e) => {
+              e.preventDefault(); // منع المتصفح من عمل ريفرش للصفحة
+
               confirmBtn.disabled = true;
               confirmBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> جاري تسجيل الطلب...';
 
@@ -1051,6 +1073,7 @@
                 const orderQty = parseInt(qtyInput.value) || 1;
                 const finalTotalPrice = p.price * orderQty;
 
+                // إضافة الطلب في قاعدة البيانات
                 await addDoc(collection(db, 'orders'), {
                   customerName: cName,
                   customerPhone: cPhone,
@@ -1065,6 +1088,7 @@
                   createdAt: serverTimestamp()
                 });
 
+                // تحديث بيانات العميل أو إضافته
                 const customerRef = doc(db, 'customers', cPhone);
                 const customerSnap = await getDoc(customerRef);
 
@@ -1087,11 +1111,17 @@
                   });
                 }
 
-                const modalEl = document.getElementById('checkoutModal');
-                const modalInstance = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
-                modalInstance.hide();
+                // إخفاء نافذة الدفع
+                const checkoutModalEl = document.getElementById('checkoutModal');
+                const checkoutModalInstance = window.bootstrap.Modal.getInstance(checkoutModalEl) || new window.bootstrap.Modal(checkoutModalEl);
+                checkoutModalInstance.hide();
 
-                alert('تم تسجيل طلبك بنجاح! هنتواصل معاك في أقرب وقت لتأكيد الأوردر.');
+                // إظهار نافذة النجاح 
+                const successModalEl = document.getElementById('successOrderModal');
+                const successModal = new window.bootstrap.Modal(successModalEl);
+                successModal.show();
+
+                // تفريغ الحقول بعد النجاح
                 checkoutForm.reset();
                 qtyInput.value = 1;
 
@@ -1099,10 +1129,11 @@
                 console.error("Order Error: ", error);
                 alert('حدث خطأ أثناء تسجيل الطلب، يرجى المحاولة مرة أخرى أو الطلب عبر واتساب.');
               } finally {
+                // إرجاع الزرار لحالته الأصلية
                 confirmBtn.disabled = false;
-                confirmBtn.textContent = 'تأكيد الطلب';
+                confirmBtn.textContent = 'Confirm Order';
               }
-            };
+            });
           }
         } else {
           document.querySelector('.product-title').textContent = "المنتج غير موجود أو تم حذفه";
