@@ -103,24 +103,11 @@
   <header id="header" class="header position-fixed w-100 top-0">
 
     <!-- Announcement Bar -->
-    <div class="announcement-bar py-2">
+    <div class="announcement-bar py-2" style="background-color: var(--osma-primary); color: #fff;">
       <div class="container-fluid container-xl">
-        <div class="announcement-slider swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-          {
-            "loop": true,
-            "speed": 600,
-            "autoplay": { "delay": 5000 },
-            "slidesPerView": 1,
-            "effect": "slide",
-            "direction": "vertical"
-          }
-        </script>
-          <div class="swiper-wrapper text-center">
-            <div class="swiper-slide">🚚 Free shipping on orders over $50</div>
-            <div class="swiper-slide">💰 30 days money back guarantee</div>
-            <div class="swiper-slide">🎁 20% off on your first order - Use code: FIRST20</div>
-            <div class="swiper-slide">⚡ Flash Sale! Up to 70% off on selected items</div>
+        <div class="announcement-slider swiper">
+          <div class="swiper-wrapper text-center" id="dynamic-announcements">
+            <div class="swiper-slide" style="font-size: 14px;">جاري تحميل العروض...</div>
           </div>
         </div>
       </div>
@@ -703,7 +690,67 @@
       });
     }
   });
-</script> 
+</script>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    // إعدادات فايربيز الخاصة بمتجرك
+    const firebaseConfig = {
+      apiKey: "AIzaSyA1jQa2Bo9U7UBDRWjSLHbY8Q42xbOlA8k",
+      authDomain: "bag-store-app-55b26.firebaseapp.com",
+      projectId: "bag-store-app-55b26",
+      storageBucket: "bag-store-app-55b26.firebasestorage.app",
+      messagingSenderId: "876785296161",
+      appId: "1:876785296161:web:320fea9a586bf48f84d460",
+      measurementId: "G-M6YS1LFRCD"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function loadAnnouncements() {
+      const annContainer = document.getElementById('dynamic-announcements');
+      if (!annContainer) return;
+
+      try {
+        const docRef = doc(db, 'settings', 'announcements');
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists() && docSnap.data().messages && docSnap.data().messages.length > 0) {
+          const messages = docSnap.data().messages;
+          let html = '';
+          messages.forEach(msg => {
+            html += `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">${msg}</div>`;
+          });
+          annContainer.innerHTML = html;
+        } else {
+          annContainer.innerHTML = `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">✨ أهلاً بكم في متجر OSMA Bags ✨</div>`;
+        }
+
+        setTimeout(() => {
+          if (typeof Swiper !== 'undefined') {
+             const sliderElem = document.querySelector('.announcement-slider');
+             if (sliderElem && sliderElem.swiper) {
+                 sliderElem.swiper.destroy(true, true);
+             }
+             new Swiper('.announcement-slider', {
+               loop: true,
+               speed: 600,
+               autoplay: { delay: 3000, disableOnInteraction: false },
+               slidesPerView: 1,
+               direction: "vertical"
+             });
+          }
+        }, 100);
+
+      } catch (error) {
+        console.error("Error loading announcements:", error);
+      }
+    }
+
+    loadAnnouncements();
+  </script>
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
