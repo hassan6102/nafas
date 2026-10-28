@@ -5,55 +5,53 @@
 --------------------------------------------------------------*/
 /* Fonts */
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* Global Colors */
 :root {
-  --background-color: #FFFFFF;
-  /* خلفية بيضاء نقية وأساسية للموقع */
-  --default-color: #4A4A4A;
-  /* رمادي غامق للنصوص العادية (أفضل من الأسود الصريح في القراءة الطويلة عشان ميتعبش العين) */
-  --heading-color: #000000;
-  /* أسود صريح وقوي للعناوين عشان تلفت الانتباه وتبرز */
-  --accent-color: #212121;
-  /* أسود مطفي (فحمي) للأزرار والروابط، بيدي شكل شيك جداً على الخلفية البيضاء */
-  --surface-color: #F5F5F5;
-  /* رمادي فاتح جداً (Off-white) لبطاقات المحتوى (Cards) عشان يفصلها بهدوء عن الخلفية البيضاء */
+  --background-color: #F5F0E7;
+  /* خلفية صفحات الموقع (الآيفوري الدافئ) */
+  --default-color: #292927;
+  /* للنصوص العادية (الفحمي) */
+  --heading-color: #292927;
+  /* للعناوين (الفحمي) */
+  --accent-color: #B08A5A;
+  /* للأزرار والروابط والتفاصيل (البرونز الذهبي) */
+  --surface-color: #B9AA97;
+  /* لبطاقات المحتوى والخلفيات الثانوية (التاوب) */
   --contrast-color: #FFFFFF;
-  /* لون أبيض للنصوص اللي هتتكتب جوه الأزرار السوداء */
+  /* لون أبيض للنصوص داخل الأزرار */
 }
 
 /* ألوان قائمة التنقل (Nav Menu Colors) */
 :root {
-  --nav-color: #4A4A4A;
-  /* لون روابط القائمة رمادي غامق */
-  --nav-hover-color: #000000;
-  /* يتحول للأسود الصريح عند تمرير الماوس (Hover) */
-  --nav-mobile-background-color: #FFFFFF;
-  /* خلفية الموبايل منيو بيضاء */
-  --nav-dropdown-background-color: #F5F5F5;
-  /* خلفية القائمة المنسدلة رمادي فاتح جداً للتمييز */
-  --nav-dropdown-color: #4A4A4A;
-  --nav-dropdown-hover-color: #000000;
+  --nav-color: #292927;
+  /* لون روابط القائمة (الفحمي) */
+  --nav-hover-color: #B08A5A;
+  /* عند تمرير الماوس (البرونز الذهبي) */
+  --nav-mobile-background-color: #F5F0E7;
+  /* خلفية الموبايل منيو (الآيفوري الدافئ) */
+  --nav-dropdown-background-color: #B9AA97;
+  /* خلفية القائمة المنسدلة (التاوب) */
+  --nav-dropdown-color: #292927;
+  --nav-dropdown-hover-color: #B08A5A;
 }
 
 /* إعدادات الألوان المسبقة (Color Presets) */
-
 .light-background {
-  /* خيار إضافي لو حبيت سكشن يكون رمادي أفتح شوية من الخلفية الأساسية */
-  --background-color: #F8F9FA;
-  --surface-color: #FFFFFF;
-  --default-color: #4A4A4A;
-  --heading-color: #000000;
-  --accent-color: #212121;
+  --background-color: #F5F0E7;
+  --surface-color: #B9AA97;
+  --default-color: #292927;
+  --heading-color: #292927;
+  --accent-color: #B08A5A;
   --contrast-color: #FFFFFF;
 }
 
 .dark-background {
-  /* السكشن ده اتعكس عشان لو حبيت تعمل قسم واحد بس في الموقع لونه أسود كنوع من كسر الملل البصري */
-  --background-color: #1A1A1A;
-  --surface-color: #2D2D2D;
-  --default-color: #E0E0E0;
-  --heading-color: #FFFFFF;
-  --accent-color: #FFFFFF;
-  --contrast-color: #000000;
+  --background-color: #292927;
+  --surface-color: #292927;
+  --default-color: #F5F0E7;
+  --heading-color: #F5F0E7;
+  --accent-color: #B08A5A;
+  --contrast-color: #292927;
 }
 /* Smooth scroll */
 :root {
@@ -12830,4 +12828,65 @@ section,
   max-height: 60px;
   width: 100px;
   object-fit: contain;
+}
+/* =====================================================================
+   تظبيط وتجميل قائمة الموبايل (Mobile Menu)
+   ===================================================================== */
+@media (max-width: 991px) {
+  /* خلفية المينيو نفسه */
+  .navmenu {
+    background-color: var(--nf-ivory) !important;
+    padding: 24px 20px !important;
+    border-radius: 0 0 28px 28px !important; /* دوران ناعم من تحت */
+    box-shadow: 0 20px 40px rgba(60, 30, 35, 0.08) !important;
+    border-bottom: 1px solid var(--nf-line) !important;
+  }
+
+  /* تباعد الروابط */
+  .navmenu ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* تصميم الروابط على شكل كروت صغيرة */
+  .navmenu a {
+    background-color: #ffffff !important;
+    border: 1px solid var(--nf-line) !important;
+    border-radius: 16px !important;
+    padding: 14px 20px !important;
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    color: var(--nf-ink) !important;
+    display: block !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* تأثير التمرير (Hover) والصفحة النشطة */
+  .navmenu a:hover, 
+  .navmenu a.active {
+    background-color: var(--nf-soft) !important;
+    color: var(--osma-primary) !important;
+    border-color: var(--osma-primary) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(143, 107, 60, 0.12) !important;
+  }
+
+  /* تظبيط القوائم المنسدلة (Dropdowns) لو موجودة */
+  .navmenu .dropdown ul {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 10px !important;
+    margin-top: 8px !important;
+    box-shadow: none !important;
+  }
+  
+  .navmenu .dropdown ul a {
+    background-color: var(--nf-cream) !important;
+    border-color: transparent !important;
+    font-size: 0.95rem !important;
+    padding: 10px 18px !important;
+  }
 }

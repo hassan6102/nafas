@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Tos - FashionStore</title>
-  <meta name="description" content="">
+  <title>كل العطور | نفس</title>
+  <meta name="description" content="تصفح كل عطور نفس — فلتر حسب الفئة والماركة والعائلة العطرية.">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/nafas-icon.png" rel="icon" type="image/png">
+  <link href="assets/img/nafas-apple-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -29,13 +29,14 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/nafas.css" rel="stylesheet">
 
   <style>
     /* تعريف ألوان البراند عشان الزرار يقرأها صح */
     :root {
-      --osma-primary: #8b7355;
-      --osma-hover: #6a563f;
-      --osma-bg: #f8f6f0;
+      --osma-primary: #8F6B3C;
+      --osma-hover: #765730;
+      --osma-bg: #F5F0E7;
     }
 
     /* تصميم احترافي لفلاتر الأقسام */
@@ -74,9 +75,18 @@
       color: #fff;
       /* الكلمة هتبقى بيضاء */
       border-color: var(--osma-primary);
-      box-shadow: 0 8px 20px rgba(139, 115, 85, 0.3);
+      box-shadow: 0 8px 20px rgba(143, 107, 60, 0.3);
       transform: translateY(-2px);
     }
+
+    /* شريط البحث والفلاتر */
+    .osma-toolbar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; }
+    .osma-search { position: relative; flex: 1 1 260px; max-width: 360px; }
+    .osma-search i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #999; }
+    .osma-search input { width: 100%; padding: 10px 14px 10px 38px; border: 1px solid #e5e5e5; border-radius: 30px; background: #fff; }
+    .osma-toolbar select { padding: 10px 14px; border: 1px solid #e5e5e5; border-radius: 30px; background: #fff; color: #444; }
+    .osma-check { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: #555; cursor: pointer; margin: 0; }
+    .osma-reset { border: 0; background: transparent; color: var(--osma-primary); font-weight: 600; cursor: pointer; }
   </style>
 </head>
 
@@ -102,18 +112,18 @@
 
           <!-- Logo -->
           <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
-            <img src="assets/img/icon - Copy.png" alt="dobleer Logo" class="logo-img">
+            <img src="assets/img/nafas-mark.png" alt="شعار نفس" class="logo-img"><span class="nafas-wordmark">نفس<small>NAFAS</small></span>
           </a>
 
           <!-- Desktop Navigation -->
           <div class="header-nav d-none d-xl-block">
             <nav id="navmenu" class="navmenu">
               <ul class="d-flex list-unstyled mb-0 gap-4">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="return-policy.html">Return Policy</a></li>
-                <li><a href="shipping-info.html">Shipping Information</a></li>
+                <li><a href="index.html" class="">الرئيسية</a></li><li><a href="tos.html" class="active ">كل العطور</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                <li><a href="return-policy.html">سياسة الاسترجاع</a></li>
+                <li><a href="shipping-info.html">معلومات الشحن</a></li>
               </ul>
             </nav>
           </div>
@@ -138,7 +148,7 @@
       <div class="container py-3">
         <form class="search-form">
           <div class="input-group input-group-lg">
-            <input type="text" class="form-control border-0 bg-light" placeholder="Search for products..."
+            <input type="text" class="form-control border-0 bg-light" placeholder="ابحث عن عطر..."
               style="box-shadow: none;">
             <button class="btn btn-dark px-4" type="submit">
               <i class="bi bi-search"></i>
@@ -149,19 +159,19 @@
     </div>
 
     <!-- Premium Mobile Sidebar Menu (Offcanvas) -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavSidebar" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavSidebar" aria-labelledby="mobileNavLabel">
       <div class="offcanvas-header border-bottom py-3">
-        <h5 class="offcanvas-title fw-bold text-dark" id="mobileNavLabel">Menu</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title fw-bold text-dark" id="mobileNavLabel">القائمة</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="إغلاق"></button>
       </div>
       <div class="offcanvas-body px-4 py-4">
         <nav class="mobile-nav">
           <ul class="list-unstyled d-flex flex-column gap-3 mb-0 fs-5">
-            <li><a href="index.html" class="text-decoration-none text-dark active">Home</a></li>
-            <li><a href="about.html" class="text-decoration-none text-dark">About</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="return-policy.html">Return Policy</a></li>
-            <li><a href="shipping-info.html">Shipping Information</a></li>
+            <li><a href="index.html" class="text-decoration-none text-dark">الرئيسية</a></li><li><a href="tos.html" class="active text-decoration-none text-dark">كل العطور</a></li>
+            <li><a href="about.html" class="text-decoration-none text-dark">من نحن</a></li>
+            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+            <li><a href="return-policy.html">سياسة الاسترجاع</a></li>
+            <li><a href="shipping-info.html">معلومات الشحن</a></li>
           </ul>
         </nav>
 
@@ -176,28 +186,32 @@
     <!-- All Products Section with Filter -->
     <section id="all-products" class="best-sellers section">
 
-      <!-- Section Title & Filter -->
       <div class="container section-title">
-        <h2>All Bags Collection</h2>
-        <p>Explore our complete collection. Filter by category to find your perfect match.</p>
+        <h2>كل العطور</h2>
+        <p>تصفح كل عطورنا. رتّبها وفلترها حسب الفئة والماركة والعائلة العطرية عشان توصل لريحتك المثالية.</p>
 
-        <!-- أزرار الفلتر بشكل احترافي -->
-        <div class="row mt-5 mb-4">
-          <div class="col-12">
-            <div class="product-filters d-flex justify-content-center">
-              <ul class="custom-filter-nav" id="category-filters">
-                <li class="custom-filter-btn filter-active" data-filter="all">All Bags</li>
-                <!-- الفلاتر هتتضاف هنا أوتوماتيك -->
-              </ul>
-            </div>
-          </div>
+        <div class="osma-toolbar mt-4">
+          <div class="osma-search"><i class="bi bi-search"></i><input id="f-search" type="search" placeholder="ابحث بالاسم أو الماركة أو النوتة..."></div>
+          <select id="f-gender" aria-label="الفئة"><option value="">رجالي وحريمي</option></select>
+          <select id="f-brand" aria-label="الماركة"><option value="">كل الماركات</option></select>
+          <select id="f-family" aria-label="العائلة العطرية"><option value="">كل العائلات العطرية</option></select>
+          <select id="f-sort" aria-label="الترتيب">
+            <option value="new">الأحدث</option>
+            <option value="price-asc">السعر: من الأقل للأعلى</option>
+            <option value="price-desc">السعر: من الأعلى للأقل</option>
+            <option value="discount">أكبر خصم</option>
+            <option value="name">الاسم (أ – ي)</option>
+          </select>
+          <label class="osma-check"><input type="checkbox" id="f-sale"> عليه خصم</label>
+          <label class="osma-check"><input type="checkbox" id="f-stock"> متوفر فقط</label>
+          <button type="button" id="f-reset" class="osma-reset">مسح الفلاتر</button>
         </div>
+        <p id="result-count" class="text-muted mt-3 mb-0" style="font-size:.95rem;"></p>
       </div>
 
       <div class="container mt-4">
-        <!-- المنتجات هتترص هنا أوتوماتيك من فايربيز -->
         <div class="row g-4" id="products-grid-tos">
-          <p class="text-center w-100" style="color: var(--osma-primary);">جاري تحميل المنتجات...</p>
+          <p class="text-center w-100" style="color: var(--osma-primary);">جاري تحميل العطور...</p>
         </div>
       </div>
 
@@ -213,27 +227,26 @@
         <!-- 1. Brand & Social -->
         <div class="col-md-6">
           <a href="index.html" class="logo text-decoration-none">
-            <span class="sitename" style="color: var(--osma-primary); font-size: 28px; font-weight: 700;">OSMA Bags</span>
+            <span class="sitename" style="color: var(--osma-primary); font-size: 28px; font-weight: 700;">نفس للعطور</span>
           </a>
           <!-- ضفنا mx-auto عشان البلوكات اللي ليها عرض محدد تتسنتر -->
           <p class="mt-3 text-muted mx-auto" style="max-width: 80%;">
-            Premium bags designed for elegance, style, and everyday functionality.
+            عطور لكل شخصية، بروائح تدوم طويلاً وتوصلك لحد باب بيتك.
           </p>
           <!-- خلينا المسافات بين الأيقونات متساوية من الناحيتين باستخدام mx-2 -->
           <div class="social-links mt-3">
-            <a href="https://www.facebook.com/share/18bEfZnFVM/?mibextid=wwXIfr" class="mx-2 text-dark fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/osma_egy?igsi=cm90NTdnbWUwZ2Q1" class="mx-2 text-dark fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.tiktok.com/@osma.egy?_r=1&_t=ZS-999WFKWcTu1" class="mx-2 text-dark fs-5" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="mx-2 text-dark fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="mx-2 text-dark fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="mx-2 text-dark fs-5" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
           </div>
         </div>
 
         <!-- 2. Contact Info -->
         <div class="col-md-6">
-          <h5 style="color: var(--osma-primary);">Contact Us</h5>
+          <h5 style="color: var(--osma-primary);">تواصل معنا</h5>
           <ul class="list-unstyled mt-3" style="line-height: 2;">
-            <li><i class="bi bi-geo-alt me-2" style="color: var(--osma-primary);"></i> Cairo, Egypt</li>
-            <li><i class="bi bi-telephone me-2" style="color: var(--osma-primary);"></i> <span dir="ltr">+201111447123</span></li>
-            <li><i class="bi bi-envelope me-2" style="color: var(--osma-primary);"></i> osma@gmail.com</li>
+            <li><i class="bi bi-geo-alt me-2" style="color: var(--osma-primary);"></i> مصر</li>
+            <li><i class="bi bi-telephone me-2" style="color: var(--osma-primary);"></i> <span dir="ltr">01034934915</span></li>
           </ul>
         </div>
 
@@ -247,14 +260,14 @@
       
       <!-- حقوق النشر -->
       <p class="mb-2 text-muted" style="font-size: 1.1rem;">
-        © <strong>OSMA</strong>. All Rights Reserved.
+        © <strong>نفس</strong>. جميع الحقوق محفوظة.
       </p>
       
       <!-- اسم المصمم -->
       <div class="mb-3">
-        <span class="text-muted" style="font-size: 1.1rem;">Designed by</span><br>
+        <span class="text-muted" style="font-size: 1.1rem;">تصميم وتطوير</span><br>
         <a href="https://hassan6102.github.io/portfolio/" class="text-decoration-none fw-bold mt-1 d-inline-block" style="color: var(--osma-primary); font-size: 1rem; letter-spacing: 0.5px;">
-          Eng. Hassan Mohamed
+          م. حسن محمد
         </a>
       </div>
       
@@ -262,18 +275,18 @@
   </div>
 </footer><!-- Floating Customer Support Button (Modern & Clean) -->
   <div class="cs-float" id="csFloat">
-    <button class="cs-main" id="csMain" aria-expanded="false" aria-label="Customer Support">
+    <button class="cs-main" id="csMain" aria-expanded="false" aria-label="خدمة العملاء">
       <i class="bi bi-chat-dots-fill cs-icon"></i>
     </button>
 
     <div class="cs-menu" id="csMenu" role="menu">
-      <a class="cs-item" href="https://wa.me/201111447123" target="_blank">
+      <a class="cs-item" href="https://wa.me/201034934915" target="_blank">
         <i class="bi bi-whatsapp" style="color: #25D366;"></i>
-        <span>WhatsApp</span>
+        <span>واتساب</span>
       </a>
-      <a class="cs-item" href="tel:+201111447123">
+      <a class="cs-item" href="tel:+201034934915">
         <i class="bi bi-telephone-fill" style="color: var(--osma-primary);"></i>
-        <span>Call Us</span>
+        <span>اتصل بنا</span>
       </a>
     </div>
   </div>
@@ -291,14 +304,14 @@
       width: 55px;
       height: 55px;
       border-radius: 50%;
-      background-color: #8b7355;
+      background-color: #8F6B3C;
       color: white;
       border: none;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
+      box-shadow: 0 4px 15px rgba(143, 107, 60, 0.3);
       transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
@@ -408,6 +421,117 @@
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
   <!-- Main JS File -->
+  <script>
+/* نفس — أدوات مشتركة للمتجر (كروت العطور، الأحجام، الأسعار، واتساب) */
+(function () {
+  'use strict';
+
+  var PHONE = '01034934915';
+  var WA = '201034934915';
+  var FALLBACK_IMG = 'assets/img/nafas-mark.png';
+
+  function strip(s) { return String(s == null ? '' : s).replace(/[\u064B-\u065F\u0670]/g, '').trim(); }
+  function t(kind, v) { return v; } // قيم الداشبورد عربي أصلاً
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function money(n) { return Number(n || 0).toLocaleString('en-US') + ' ج.م'; }
+
+  // المنتجات المخفية / المسودات ما بتظهرش للعميل
+  function isVisible(p) { return !p.status || strip(p.status) === strip('منشور'); }
+  function hasBadge(p, name) { return (p.badges || []).some(function (b) { return strip(b) === strip(name); }); }
+
+  function variantsOf(p) {
+    if (Array.isArray(p.variants) && p.variants.length) {
+      return p.variants.map(function (v) {
+        return { size: Number(v.size) || 0, price: Number(v.price) || 0, oldPrice: Number(v.oldPrice) || 0, stock: Math.max(0, Number(v.stock) || 0), sku: v.sku || '' };
+      }).sort(function (a, b) { return a.size - b.size; });
+    }
+    return [{ size: 0, price: Number(p.price) || 0, oldPrice: Number(p.oldPrice) || 0, stock: Math.max(0, Number(p.stock) || 0), sku: '' }];
+  }
+  function totalStock(p) { return variantsOf(p).reduce(function (s, v) { return s + v.stock; }, 0); }
+  function discountPct(v) { return v.oldPrice > v.price ? Math.round((v.oldPrice - v.price) / v.oldPrice * 100) : 0; }
+  function bestDiscount(p) { return Math.max.apply(null, variantsOf(p).map(discountPct)); }
+  function createdMs(p) { return p.createdAt && p.createdAt.seconds ? p.createdAt.seconds * 1000 : 0; }
+  function imageOf(p) { return p.imageUrl || p.image || FALLBACK_IMG; }
+
+  // أرخص حجم متاح (أو أرخص حجم لو الكل نافد)
+  function cheapest(p) {
+    var vs = variantsOf(p);
+    var pool = vs.filter(function (v) { return v.stock > 0; });
+    if (!pool.length) pool = vs;
+    return pool.reduce(function (m, v) { return v.price < m.price ? v : m; }, pool[0]);
+  }
+  function sizeRange(p) {
+    var s = variantsOf(p).map(function (v) { return v.size; }).filter(Boolean);
+    if (!s.length) return '';
+    var a = Math.min.apply(null, s), b = Math.max.apply(null, s);
+    return a === b ? a + ' مل' : a + ' – ' + b + ' مل';
+  }
+
+  function searchText(p) {
+    var n = p.notes || {};
+    return [p.name, p.nameEn, p.brand, p.sku, p.concentration, p.similarTo]
+      .concat(n.top || [], n.middle || [], n.base || [], p.families || []).join(' ').toLowerCase();
+  }
+
+  function waLink(p, o) {
+    o = o || {};
+    var parts = ['السلام عليكم، عايز أطلب العطر ده: ' + p.name];
+    if (p.brand) parts.push('الماركة: ' + p.brand);
+    if (o.variant && o.variant.size) parts.push('الحجم: ' + o.variant.size + ' مل');
+    if (o.qty) parts.push('العدد: ' + o.qty);
+    if (o.variant && o.variant.price) parts.push('السعر: ' + o.variant.price + ' ج.م');
+    var sku = (o.variant && o.variant.sku) || p.sku;
+    if (sku) parts.push('كود المنتج: ' + sku);
+    return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(parts.join(' - '));
+  }
+
+  // كارت العطر الموحد (الرئيسية + كل العطور + مشابهة)
+  function cardHtml(p) {
+    var out = totalStock(p) === 0;
+    var low = cheapest(p);
+    var multi = variantsOf(p).length > 1;
+    var link = 'product-details.html?id=' + encodeURIComponent(p.id);
+    var badges = [];
+    if (out) badges.push('<span class="nf-badge nf-badge-out">نفد</span>');
+    else {
+      var pct = discountPct(low);
+      if (pct) badges.push('<span class="nf-badge nf-badge-sale">خصم ' + pct + '%</span>');
+      (p.badges || []).slice(0, 2).forEach(function (b) { badges.push('<span class="nf-badge">' + esc(b) + '</span>'); });
+    }
+    var price = (multi ? '<small class="nf-from">يبدأ من</small>' : '') +
+      '<span class="current-price">' + money(low.price) + '</span>' +
+      (low.oldPrice > low.price ? ' <span class="old-price" style="text-decoration:line-through;color:#999;font-size:14px;margin-inline-start:6px;">' + money(low.oldPrice) + '</span>' : '');
+    var meta = [p.concentration, p.gender, sizeRange(p)].filter(Boolean).map(esc).join(' · ');
+    return '<div class="product-card' + (out ? ' nf-soldout' : '') + '">' +
+      '<div class="product-image position-relative">' +
+      (badges.length ? '<div class="nf-badges">' + badges.join('') + '</div>' : '') +
+      '<a href="' + link + '"><img src="' + esc(imageOf(p)) + '" alt="' + esc(p.name) + '" loading="lazy" style="aspect-ratio:1;object-fit:cover;width:100%;"></a>' +
+      '<div class="product-overlay"><div class="product-actions">' +
+      '<a href="' + link + '" class="action-btn" title="التفاصيل"><i class="bi bi-eye"></i></a>' +
+      (out ? '' : '<a href="' + waLink(p) + '" target="_blank" rel="noopener" class="action-btn" title="اطلب عبر واتساب"><i class="bi bi-whatsapp"></i></a>') +
+      '</div></div></div>' +
+      '<div class="product-details text-center mt-3">' +
+      '<div class="product-category" style="color:#6F675C;font-size:.9rem;">' + esc(p.brand || 'عطر') + '</div>' +
+      '<h5 class="product-title mt-1 mb-1"><a href="' + link + '" style="color:#292927;text-decoration:none;font-weight:800;">' + esc(p.name) + '</a></h5>' +
+      (meta ? '<div class="nf-card-meta">' + meta + '</div>' : '') +
+      '<div class="product-price" style="color:var(--osma-primary);font-weight:800;font-size:1.1rem;">' + price + '</div>' +
+      '</div></div>';
+  }
+
+  window.NafasPerfume = {
+    PHONE: PHONE, WA: WA, FALLBACK_IMG: FALLBACK_IMG,
+    t: t, esc: esc, strip: strip, money: money, isVisible: isVisible, hasBadge: hasBadge,
+    variantsOf: variantsOf, totalStock: totalStock, discountPct: discountPct, bestDiscount: bestDiscount,
+    createdMs: createdMs, imageOf: imageOf, cheapest: cheapest, sizeRange: sizeRange, searchText: searchText,
+    waLink: waLink, cardHtml: cardHtml
+  };
+})();
+
+</script>
   <script src="assets/js/main.js"></script>
   <!-- كود ربط صفحة كل المنتجات بـ Firebase مع الفلترة -->
   <script type="module">
@@ -426,109 +550,84 @@
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
+    const OP = window.NafasPerfume;
+
+    const $ = (id) => document.getElementById(id);
+    const state = { cat: 'all', search: '', gender: '', brand: '', family: '', sort: 'new', sale: false, stock: false };
+    let allProducts = [];
+
+    const fillSelect = (el, values, labelFn) => {
+      values.forEach(v => { const o = document.createElement('option'); o.value = v; o.textContent = labelFn ? labelFn(v) : v; el.appendChild(o); });
+    };
+
+    function applyFilters() {
+      const q = state.search.trim().toLowerCase();
+      let items = allProducts.filter(p => {
+        if (state.gender && p.gender !== state.gender) return false;
+        if (state.brand && p.brand !== state.brand) return false;
+        if (state.family && !(p.families || []).includes(state.family)) return false;
+        if (state.sale && OP.bestDiscount(p) === 0) return false;
+        if (state.stock && OP.totalStock(p) === 0) return false;
+        if (q && !OP.searchText(p).includes(q)) return false;
+        return true;
+      });
+      const price = (p) => OP.cheapest(p).price;
+      const sorters = {
+        'new': (a, b) => OP.createdMs(b) - OP.createdMs(a),
+        'price-asc': (a, b) => price(a) - price(b),
+        'price-desc': (a, b) => price(b) - price(a),
+        'discount': (a, b) => OP.bestDiscount(b) - OP.bestDiscount(a),
+        'name': (a, b) => String(a.name).localeCompare(String(b.name))
+      };
+      items.sort(sorters[state.sort]);
+      // العطور المتاحة قبل النافدة
+      items = items.filter(p => OP.totalStock(p) > 0).concat(items.filter(p => OP.totalStock(p) === 0));
+
+      const grid = $('products-grid-tos');
+      $('result-count').textContent = `${items.length} ${items.length === 1 ? 'عطر' : 'عطور'}`;
+      grid.innerHTML = items.length
+        ? items.map(p => `<div class="col-6 col-lg-3 product-item">${OP.cardHtml(p)}</div>`).join('')
+        : '<p class="text-center w-100">لا توجد عطور مطابقة للفلاتر. جرّب تمسح الفلاتر.</p>';
+    }
 
     async function loadAllProducts() {
-      const grid = document.getElementById('products-grid-tos');
-      const filterContainer = document.getElementById('category-filters');
+      const grid = $('products-grid-tos');
       if (!grid) return;
-
       try {
-        const q = query(collection(db, 'products'));
-        const querySnapshot = await getDocs(q);
+        const snap = await getDocs(query(collection(db, 'products')));
+        snap.forEach((d) => {
+          const p = d.data(); p.id = d.id;
+          if (OP.isVisible(p)) allProducts.push(p);   // المخفي والمسودات ما بتظهرش
+        });
+        if (allProducts.length === 0) { grid.innerHTML = '<p class="text-center w-100">لا توجد عطور متاحة حالياً.</p>'; return; }
 
-        if (querySnapshot.empty) {
-          grid.innerHTML = '<p class="text-center w-100">لا توجد منتجات حالياً.</p>';
-          return;
-        }
+        const uniq = (arr) => [...new Set(arr.filter(Boolean))];
+        fillSelect($('f-gender'), uniq(allProducts.map(p => p.gender)), (g) => OP.t('gender', g));
+        fillSelect($('f-brand'), uniq(allProducts.map(p => p.brand)).sort());
+        fillSelect($('f-family'), uniq(allProducts.flatMap(p => p.families || [])), (f) => OP.t('family', f));
 
-        let allProducts = [];
-        let categories = new Set(); // عشان نجمع الأقسام بدون تكرار
+        // روابط جاهزة من الصفحة الرئيسية: ?sale=1 / ?gender= / ?brand=
+        const params = new URLSearchParams(location.search);
+        if (params.get('sale')) { state.sale = true; $('f-sale').checked = true; }
+        if (params.get('gender')) { state.gender = params.get('gender'); $('f-gender').value = state.gender; }
+        if (params.get('brand')) { state.brand = params.get('brand'); $('f-brand').value = state.brand; }
 
-        querySnapshot.forEach((doc) => {
-          const p = doc.data();
-          p.id = doc.id;
-          allProducts.push(p);
-          if (p.category) {
-            categories.add(p.category);
-          }
+        $('f-search').addEventListener('input', (e) => { state.search = e.target.value; applyFilters(); });
+        [['f-gender', 'gender'], ['f-brand', 'brand'], ['f-family', 'family'], ['f-sort', 'sort']].forEach(([id, key]) =>
+          $(id).addEventListener('change', (e) => { state[key] = e.target.value; applyFilters(); }));
+        [['f-sale', 'sale'], ['f-stock', 'stock']].forEach(([id, key]) =>
+          $(id).addEventListener('change', (e) => { state[key] = e.target.checked; applyFilters(); }));
+        $('f-reset').addEventListener('click', () => {
+          Object.assign(state, { search: '', gender: '', brand: '', family: '', sort: 'new', sale: false, stock: false });
+          ['f-search', 'f-gender', 'f-brand', 'f-family'].forEach(id => $(id).value = '');
+          $('f-sort').value = 'new'; $('f-sale').checked = false; $('f-stock').checked = false;
+          applyFilters();
         });
 
-        // إنشاء أزرار الفلتر أوتوماتيك
-        categories.forEach(cat => {
-          const filterId = cat.replace(/\s+/g, '-').toLowerCase();
-          filterContainer.innerHTML += `<li class="custom-filter-btn" data-filter="${filterId}">${cat}</li>`;
-        });
-
-        // دالة لعرض المنتجات
-        function renderProducts(productsToRender) {
-          let html = '';
-          if (productsToRender.length === 0) {
-            grid.innerHTML = '<p class="text-center w-100">لا توجد منتجات في هذا القسم.</p>';
-            return;
-          }
-
-          productsToRender.forEach((p) => {
-            const finalImg = p.imageUrl || p.image || 'assets/img/icon - Copy.png';
-            const hasDiscount = p.oldPrice && p.oldPrice > p.price;
-            const priceHtml = hasDiscount
-              ? `<span class="current-price">EGP ${p.price}</span> <span class="old-price" style="text-decoration: line-through; color: #999; font-size: 14px; margin-left: 5px;">EGP ${p.oldPrice}</span>`
-              : `<span class="current-price">EGP ${p.price}</span>`;
-
-            const badgeHtml = hasDiscount
-              ? `<div class="product-badge sale">- ${Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100)}%</div>`
-              : ``;
-
-            const waLink = `https://wa.me/201111447123?text=${encodeURIComponent('أهلاً، عايز أطلب الشنطة دي: ' + p.name + ' - كود المنتج: ' + p.sku)}`; html += `
-              <div class="col-6 col-lg-3 product-item">
-                <div class="product-card">
-                  <div class="product-image position-relative">
-                    ${badgeHtml}
-                    <img src="${finalImg}" alt="${p.name}" style="aspect-ratio: 1; object-fit: cover; width: 100%;">
-                    <div class="product-overlay">
-                      <div class="product-actions">
-                        <a href="product-details.html?id=${p.id}" class="action-btn" title="التفاصيل"><i class="bi bi-eye"></i></a>
-                        <a href="${waLink}" target="_blank" class="action-btn" title="واتساب"><i class="bi bi-whatsapp"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-details text-center mt-3">
-                    <div class="product-category" style="color: #666; font-size: 0.9rem;">${p.category || 'شنط'}</div>
-                    <h5 class="product-title mt-1 mb-2"><a href="product-details.html?id=${p.id}" style="color: #222; text-decoration: none; font-weight: 600;">${p.name}</a></h5>
-                    <div class="product-price" style="color: var(--osma-primary); font-weight: 700; font-size: 1.1rem;">${priceHtml}</div>
-                  </div>
-                </div>
-              </div>
-            `;
-          });
-          grid.innerHTML = html;
-        }
-
-        // عرض كل المنتجات في البداية
-        renderProducts(allProducts);
-
-        // تشغيل زراير الفلتر
-        const filterBtns = document.querySelectorAll('#category-filters li');
-        filterBtns.forEach(btn => {
-          btn.addEventListener('click', function () {
-            // إزالة الأكتيف من كل الزراير
-            filterBtns.forEach(b => b.classList.remove('filter-active'));
-            // إضافة الأكتيف للزرار اللي اتداس عليه
-            this.classList.add('filter-active');
-
-            const filterValue = this.getAttribute('data-filter');
-
-            if (filterValue === 'all') {
-              renderProducts(allProducts);
-            } else {
-              const filtered = allProducts.filter(p => p.category && p.category.replace(/\s+/g, '-').toLowerCase() === filterValue);
-              renderProducts(filtered);
-            }
-          });
-        });
-
+        applyFilters();
       } catch (error) {
-        console.error("Error loading products: ", error);
-        grid.innerHTML = '<p class="text-center text-danger w-100">حدث خطأ في الاتصال بقاعدة البيانات.</p>';
+        console.error('Error loading products: ', error);
+        grid.innerHTML = '<p class="text-center text-danger w-100">تعذّر تحميل العطور. حدّث الصفحة وحاول تاني.</p>';
       }
     }
 
@@ -568,7 +667,7 @@
           });
           annContainer.innerHTML = html;
         } else {
-          annContainer.innerHTML = `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">✨ أهلاً بكم في متجر OSMA Bags ✨</div>`;
+          annContainer.innerHTML = `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">✨ أهلاً بكم في متجر نفس للعطور ✨</div>`;
         }
 
         setTimeout(() => {

@@ -3,6 +3,9 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(req: NextRequest) {
   // بنشيك لو اللينك بيبدأ بـ /admin
+  if (process.env.NODE_ENV === 'development') {
+    return NextResponse.next();
+  }
   if (req.nextUrl.pathname.startsWith('/admin')) {
     const authHeader = req.headers.get('authorization');
     

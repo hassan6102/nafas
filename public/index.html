@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>OSMA | Premium Bags</title>
-  <meta name="description" content="Premium Bags Collection by OSMA">
-  <meta name="keywords" content="OSMA, bags, handbags, backpacks, travel bags">
+  <title>نفس | للعطور</title>
+  <meta name="description" content="نفس للعطور — عطور رجالي وحريمي بروائح تدوم طويلاً، توصيل لحد باب بيتك">
+  <meta name="keywords" content="نفس, عطور, برفان, عطور رجالي, عطور حريمي, عود, عطر">
 
-  <link href="assets/img/icon.jpg" rel="icon">
-  <link href="assets/img/icon.jpg" rel="apple-touch-icon">
+  <link href="assets/img/nafas-icon.png" rel="icon" type="image/png">
+  <link href="assets/img/nafas-apple-icon.png" rel="apple-touch-icon">
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
 
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
@@ -27,29 +27,30 @@
   <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
 
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/nafas.css" rel="stylesheet">
 
   <!-- OSMA Brand Colors Customization -->
   <style>
     :root {
-      --osma-primary: #8b7355;
-      /* البني الترابي من اللوجو */
-      --osma-hover: #6a563f;
-      /* درجة أغمق للـ Hover */
-      --osma-bg: #f8f6f0;
-      /* الكريمي الفاتح للخلفية */
+      --osma-primary: #B08A5A;
+      /* البرونز الذهبي لعلامة نَفَس */
+      --osma-hover: #98754A;
+      /* درجة أغمق من البرونز للـ Hover */
+      --osma-bg: #F5F0E7;
+      /* الآيفوري الدافئ للخلفية */
     }
 
     body {
       background-color: var(--osma-bg) !important;
     }
 
-    /* تغيير ألوان الأزرار والـ Badges للون البراند */
+    /* تغيير ألوان الأزرار والـ Badges للون البرونز الذهبي */
     .btn-dark,
     .btn-shop,
     .view-all-btn {
       background-color: var(--osma-primary) !important;
       border-color: var(--osma-primary) !important;
-      color: #fff !important;
+      color: #ffffff !important;
     }
 
     .btn-dark:hover,
@@ -71,11 +72,11 @@
     .badge.sale,
     .badge.bg-success {
       background-color: var(--osma-primary) !important;
-      color: #fff !important;
+      color: #ffffff !important;
     }
 
     .slide-badge {
-      background-color: rgba(139, 115, 85, 0.1) !important;
+      background-color: rgba(176, 138, 90, 0.1) !important; /* لون البرونز بشفافية 10% */
       color: var(--osma-primary) !important;
     }
 
@@ -92,12 +93,13 @@
     .btn-cart:hover {
       background-color: var(--osma-primary) !important;
       border-color: var(--osma-primary) !important;
-      color: #fff !important;
+      color: #ffffff !important;
     }
-  </style>
+</style>
   <style>
     /* كود الجذر الآمن لشريط المنتجات المتحرك */
     .osma-marquee-wrapper {
+      direction: ltr; /* مهم: الحركة لازم تبدأ من الشمال حتى في الصفحة العربية */
       overflow: hidden;
       width: 100%;
       display: flex;
@@ -151,6 +153,7 @@
     .osma-marquee-card {
       width: 260px;
       flex-shrink: 0;
+      direction: rtl; /* النص جوه الكارت يفضل عربي */
     }
   </style>
 
@@ -179,7 +182,7 @@
           <!-- Logo -->
           <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
             <!-- مسار لوجو أوسما الخاص بك -->
-            <img src="assets/img/icon - Copy.png" alt="OSMA Logo" class="logo-img">
+            <img src="assets/img/nafas-mark.png" alt="شعار نفس" class="logo-img"><span class="nafas-wordmark">نفس<small>NAFAS</small></span>
           </a>
 
           <!-- Desktop Navigation -->
@@ -187,11 +190,11 @@
           <div class="header-nav d-none d-xl-block">
             <nav id="navmenu" class="navmenu">
               <ul class="d-flex list-unstyled mb-0 gap-4">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="faq.html">FAQs</a></li>
-                <li><a href="return-policy.html">Return Policy</a></li>
-                <li><a href="shipping-info.html">Shipping Info</a></li>
+                <li><a href="index.html" class="active">الرئيسية</a></li><li><a href="tos.html" class="">كل العطور</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                <li><a href="return-policy.html">سياسة الاسترجاع</a></li>
+                <li><a href="shipping-info.html">معلومات الشحن</a></li>
               </ul>
             </nav>
           </div>
@@ -211,7 +214,7 @@
       <div class="container py-3">
         <form class="search-form">
           <div class="input-group input-group-lg">
-            <input type="text" class="form-control border-0 bg-light" placeholder="Search for bags..."
+            <input type="text" class="form-control border-0 bg-light" placeholder="ابحث عن عطر..."
               style="box-shadow: none;">
             <button class="btn btn-dark px-4" type="submit">
               <i class="bi bi-search"></i>
@@ -221,19 +224,19 @@
       </div>
     </div>
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavSidebar" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavSidebar" aria-labelledby="mobileNavLabel">
       <div class="offcanvas-header border-bottom py-3">
-        <h5 class="offcanvas-title fw-bold text-dark" id="mobileNavLabel">Menu</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title fw-bold text-dark" id="mobileNavLabel">القائمة</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="إغلاق"></button>
       </div>
       <div class="offcanvas-body px-4 py-4">
         <nav class="mobile-nav">
           <ul class="list-unstyled d-flex flex-column gap-3 mb-0 fs-5">
-            <li><a href="index.html" class="text-decoration-none text-dark active">Home</a></li>
-            <li><a href="about.html" class="text-decoration-none text-dark">About Us</a></li>
-            <li><a href="faq.html" class="text-decoration-none text-dark">FAQs</a></li>
-            <li><a href="return-policy.html" class="text-decoration-none text-dark">Return Policy</a></li>
-            <li><a href="shipping-info.html" class="text-decoration-none text-dark">Shipping Info</a></li>
+            <li><a href="index.html" class="text-decoration-none text-dark active">الرئيسية</a></li><li><a href="tos.html" class="text-decoration-none text-dark">كل العطور</a></li>
+            <li><a href="about.html" class="text-decoration-none text-dark">من نحن</a></li>
+            <li><a href="faq.html" class="text-decoration-none text-dark">الأسئلة الشائعة</a></li>
+            <li><a href="return-policy.html" class="text-decoration-none text-dark">سياسة الاسترجاع</a></li>
+            <li><a href="shipping-info.html" class="text-decoration-none text-dark">معلومات الشحن</a></li>
           </ul>
         </nav>
 
@@ -273,56 +276,17 @@
               <div class="row align-items-center">
                 <div class="col-lg-6 content-col" data-aos="fade-right" data-aos-delay="100">
                   <div class="slide-content">
-                    <span class="slide-badge">OSMA New Collection</span>
-                    <h1>Discover Our <span>Premium Bags</span> Collection</h1>
-                    <p>Explore our latest collection of high-quality bags. From classic leather handbags and crossbody
-                      bags to smart backpacks and travel luggage, find the perfect match for every occasion.</p>
+                    <span class="slide-badge" data-hero="new.badge">وصل حديثاً</span>
+                    <h1 data-hero-title="new">اكتشف <span>بصمتك العطرية</span></h1>
+                    <p data-hero="new.text">تصفح أحدث عطورنا — من الحمضيات المنعشة والزهور إلى الأخشاب الدافئة والعود. اختار الريحة اللي بتحكي قصتك.</p>
                     <div class="slide-cta">
-                      <a href="tos.html" class="btn btn-shop">Shop New Collection <i class="bi bi-arrow-right"></i></a>
+                      <a href="tos.html" class="btn btn-shop" data-hero-btn="new">تسوّق الوارد حديثاً <i class="bi bi-arrow-left"></i></a>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-6 image-col" data-aos="fade-left" data-aos-delay="200">
                   <div class="product-showcase">
-                    <div class="product-grid">
-                      <div class="product-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="product-image">
-                          <img src="assets/img/new/KOTTY Mens Regular Fit Mide Rise Strachable Jeans.png"
-                            alt="Classic Handbag">
-                        </div>
-                        <div class="product-info">
-                          <h4>Handbag</h4>
-                          <span class="price">EGP 799</span>
-                        </div>
-                      </div>
-                      <div class="product-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="product-image">
-                          <img src="assets/img/new/BAGGY PULL-ON CARGO PANTS.png" alt="Travel Backpack">
-                        </div>
-                        <div class="product-info">
-                          <h4>Backpack</h4>
-                          <span class="price">EGP 849</span>
-                        </div>
-                      </div>
-                      <div class="product-item" data-aos="fade-up" data-aos-delay="500">
-                        <div class="product-image">
-                          <img src="assets/img/new/download (5).png" alt="Crossbody Bag">
-                        </div>
-                        <div class="product-info">
-                          <h4>Crossbody</h4>
-                          <span class="price">EGP 399</span>
-                        </div>
-                      </div>
-                      <div class="product-item" data-aos="fade-up" data-aos-delay="600">
-                        <div class="product-image">
-                          <img src="assets/img/new/download (9).png" alt="Smart Laptop Bag">
-                        </div>
-                        <div class="product-info">
-                          <h4>Laptop Bag</h4>
-                          <span class="price">EGP 459</span>
-                        </div>
-                      </div>
-                    </div>
+                    <div class="product-grid" id="hero-products-grid"></div>
                   </div>
                 </div>
               </div>
@@ -333,31 +297,30 @@
               <div class="row align-items-center">
                 <div class="col-lg-6 content-col" data-aos="fade-right" data-aos-delay="100">
                   <div class="slide-content">
-                    <span class="slide-badge">Limited Time Offer</span>
-                    <h1>Premium <span>Bags Sale</span> Up To 50% Off</h1>
-                    <p>Upgrade your style with premium bags at unbeatable prices. Enjoy huge discounts on handbags,
-                      backpacks, laptop bags, and everyday travel essentials.</p>
+                    <span class="slide-badge" data-hero="offer.badge">عرض لفترة محدودة</span>
+                    <h1 data-hero-title="offer">عروض <span>العطور الحصرية</span></h1>
+                    <p data-hero="offer.text">أسعار مميزة على عطور مختارة لحد نفاد الكمية. احجز ريحتك المفضلة قبل ما تخلص.</p>
                     <div class="slide-cta">
-                      <a href="#" class="btn btn-shop">Shop the Sale <i class="bi bi-arrow-right"></i></a>
+                      <a href="tos.html?sale=1" class="btn btn-shop" data-hero-btn="offer">تسوّق العروض <i class="bi bi-arrow-left"></i></a>
                     </div>
                     <div class="countdown-container">
-                      <div class="countdown-label">Offer ends in:</div>
+                      <div class="countdown-label">ينتهي العرض خلال:</div>
                       <div class="countdown d-flex" data-count="2026/12/31">
                         <div>
                           <h3 class="count-days"></h3>
-                          <h4>Days</h4>
+                          <h4>يوم</h4>
                         </div>
                         <div>
                           <h3 class="count-hours"></h3>
-                          <h4>Hours</h4>
+                          <h4>ساعة</h4>
                         </div>
                         <div>
                           <h3 class="count-minutes"></h3>
-                          <h4>Minutes</h4>
+                          <h4>دقيقة</h4>
                         </div>
                         <div>
                           <h3 class="count-seconds"></h3>
-                          <h4>Seconds</h4>
+                          <h4>ثانية</h4>
                         </div>
                       </div>
                     </div>
@@ -366,18 +329,18 @@
                 <div class="col-lg-6 image-col" data-aos="fade-left" data-aos-delay="200">
                   <div class="sale-showcase">
                     <div class="main-product">
-                      <img src="assets/img/new/download (10).jpeg" alt="Bags Sale">
+                      <img id="sale-main-img" src="assets/img/nafas-mark.png" alt="عطر عليه عرض" style="aspect-ratio:1;object-fit:cover;">
                       <div class="discount-badge">
-                        <span class="percent">50%</span>
-                        <span class="text">OFF</span>
+                        <span class="percent" id="sale-percent"></span>
+                        <span class="text">خصم</span>
                       </div>
                     </div>
                     <div class="floating-tag" data-aos="zoom-in" data-aos-delay="300">
                       <div class="tag-content">
-                        <span class="tag-label">Best Selling Bag</span>
+                        <span class="tag-label" id="sale-label">عرض خاص</span>
                         <span class="tag-price">
-                          <span class="old-price">EGP 1299</span>
-                          <span class="new-price" style="color:#8b7355;">EGP 649</span>
+                          <span class="old-price" id="sale-old"></span>
+                          <span class="new-price" id="sale-new" style="color:#a65f66;"></span>
                         </span>
                       </div>
                     </div>
@@ -390,25 +353,24 @@
               <div class="row align-items-center">
                 <div class="col-lg-6 content-col" data-aos="fade-right" data-aos-delay="100">
                   <div class="slide-content">
-                    <span class="slide-badge">OSMA Premium</span>
-                    <h1>Luxury <span>Handbags</span></h1>
-                    <p>Designed for elegance, durability, and modern style. Discover our premium collection of luxury
-                      bags crafted for your everyday journey and special occasions.</p>
+                    <span class="slide-badge" data-hero="featured.badge">نفس</span>
+                    <h1 data-hero-title="featured">عطور <span>فاخرة</span></h1>
+                    <p data-hero="featured.text">عطور مختارة بعناية وبثبات يدوم. اكتشف روائح أنيقة لكل موسم ولكل مناسبة.</p>
                     <div class="slide-cta">
-                      <a href="#" class="btn btn-shop">Explore Collection <i class="bi bi-arrow-right"></i></a>
+                      <a href="tos.html" id="feat-link" class="btn btn-shop" data-hero-btn="featured">استكشف التشكيلة <i class="bi bi-arrow-left"></i></a>
                     </div>
                     <div class="feature-list">
                       <div class="feature-item">
-                        <i class="bi bi-check-circle-fill" style="color:#8b7355;"></i>
-                        <span>Premium Leather & Fabric</span>
+                        <i class="bi bi-check-circle-fill" style="color:#a65f66;"></i>
+                        <span>عطور مختارة بعناية</span>
                       </div>
                       <div class="feature-item">
-                        <i class="bi bi-check-circle-fill" style="color:#8b7355;"></i>
-                        <span>Spacious & Practical</span>
+                        <i class="bi bi-check-circle-fill" style="color:#a65f66;"></i>
+                        <span>روائح بثبات يدوم</span>
                       </div>
                       <div class="feature-item">
-                        <i class="bi bi-check-circle-fill" style="color:#8b7355;"></i>
-                        <span>Modern & Stylish Designs</span>
+                        <i class="bi bi-check-circle-fill" style="color:#a65f66;"></i>
+                        <span>أحجام تناسب كل ميزانية</span>
                       </div>
                     </div>
                   </div>
@@ -416,17 +378,15 @@
                 <div class="col-lg-6 image-col" data-aos="fade-left" data-aos-delay="200">
                   <div class="featured-showcase">
                     <div class="featured-image">
-                      <img src="assets/img/new/b5bfb41fa9d58400c40e2e4257757668.jpg" alt="Featured Bag">
-                      <div class="featured-badge" style="background:#8b7355;">
+                      <img id="feat-img" src="assets/img/nafas-mark.png" alt="عطر مميز" style="aspect-ratio:1;object-fit:cover;">
+                      <div class="featured-badge" style="background:#a65f66;">
                         <i class="bi bi-star-fill"></i>
-                        <span>Best Seller</span>
+                        <span>الأكثر مبيعًا</span>
                       </div>
                     </div>
                     <div class="floating-review" data-aos="fade-up" data-aos-delay="300">
 
-                      <div class="review-text">
-                        "Excellent quality, perfect size, and incredibly elegant."
-                      </div>
+                      <div class="review-text" id="feat-note">عطور تختارها بنفسك، وتوصلك لحد باب بيتك.</div>
 
                     </div>
                   </div>
@@ -445,9 +405,8 @@
 
       <!-- Section Title -->
       <div class="container section-title">
-        <h2>Best Selling Bags</h2>
-        <p>Discover our most popular bags, crafted with premium quality, modern designs, and maximum utility for every
-          journey.</p>
+        <h2>الأكثر مبيعًا</h2>
+        <p>العطور اللي عملاؤنا بيختاروها أكتر، لثباتها وأناقتها.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -455,7 +414,7 @@
         <div class="container-fluid overflow-hidden">
           <!-- الحاوية الجديدة اللي الجافاسكريبت هيرمي فيها الشريطين -->
           <div id="osma-dual-marquees" class="osma-marquee-wrapper">
-            <p class="text-center w-100" style="color: var(--osma-primary);">جاري تحميل أفضل المبيعات...</p>
+            <p class="text-center w-100" style="color: var(--osma-primary);">جاري تحميل الأكثر مبيعًا...</p>
           </div>
         </div>
       </div>
@@ -469,8 +428,8 @@
         <div class="row">
           <div class="col-12">
             <div class="product-filters mb-5 d-flex justify-content-center">
-              <ul class="d-flex flex-wrap gap-2 list-unstyled">
-                <li class="filter-active" style="cursor: pointer;" data-filter="*">All Bags</li>
+              <ul class="d-flex flex-wrap gap-2 list-unstyled" id="home-filters">
+                <li class="filter-active" style="cursor: pointer;" data-gender="*">كل العطور</li>
               </ul>
             </div>
           </div>
@@ -493,7 +452,7 @@
 
         <div class="text-center mt-5">
           <a href="tos.html" class="view-all-btn btn">
-            Shop All Bags <i class="bi bi-arrow-right"></i>
+            تسوّق كل العطور <i class="bi bi-arrow-left"></i>
           </a>
         </div>
 
@@ -507,7 +466,7 @@
         position: relative;
       }
 
-      /* ألوان أسهم السلايدر لتتماشى مع OSMA */
+      /* ألوان أسهم السلايدر لتتماشى مع نفس */
       .mySwiper .swiper-button-next,
       .mySwiper .swiper-button-prev {
         top: auto !important;
@@ -565,32 +524,30 @@
           <!-- 1. Brand & Social -->
           <div class="col-md-6">
             <a href="index.html" class="logo text-decoration-none">
-              <span class="sitename" style="color: var(--osma-primary); font-size: 28px; font-weight: 700;">OSMA
-                Bags</span>
+              <span class="sitename" style="color: var(--osma-primary); font-size: 28px; font-weight: 700;">نفس للعطور</span>
             </a>
             <!-- ضفنا mx-auto عشان البلوكات اللي ليها عرض محدد تتسنتر -->
             <p class="mt-3 text-muted mx-auto" style="max-width: 80%;">
-              Premium bags designed for elegance, style, and everyday functionality.
+              عطور لكل شخصية، بروائح تدوم طويلاً وتوصلك لحد باب بيتك.
             </p>
             <!-- خلينا المسافات بين الأيقونات متساوية من الناحيتين باستخدام mx-2 -->
             <div class="social-links mt-3">
-              <a href="https://www.facebook.com/share/18bEfZnFVM/?mibextid=wwXIfr" class="mx-2 text-dark fs-5"
+              <a href="#" class="mx-2 text-dark fs-5"
                 aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/osma_egy?igsi=cm90NTdnbWUwZ2Q1" class="mx-2 text-dark fs-5"
+              <a href="#" class="mx-2 text-dark fs-5"
                 aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.tiktok.com/@osma.egy?_r=1&_t=ZS-999WFKWcTu1" class="mx-2 text-dark fs-5"
+              <a href="#" class="mx-2 text-dark fs-5"
                 aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
             </div>
           </div>
 
           <!-- 2. Contact Info -->
           <div class="col-md-6">
-            <h5 style="color: var(--osma-primary);">Contact Us</h5>
+            <h5 style="color: var(--osma-primary);">تواصل معنا</h5>
             <ul class="list-unstyled mt-3" style="line-height: 2;">
-              <li><i class="bi bi-geo-alt me-2" style="color: var(--osma-primary);"></i> Cairo, Egypt</li>
+              <li><i class="bi bi-geo-alt me-2" style="color: var(--osma-primary);"></i> مصر</li>
               <li><i class="bi bi-telephone me-2" style="color: var(--osma-primary);"></i> <span
-                  dir="ltr">+201111447123</span></li>
-              <li><i class="bi bi-envelope me-2" style="color: var(--osma-primary);"></i> osma@gmail.com</li>
+                  dir="ltr">01034934915</span></li>
             </ul>
           </div>
 
@@ -604,15 +561,15 @@
 
         <!-- حقوق النشر -->
         <p class="mb-2 text-muted" style="font-size: 1.1rem;">
-          © <strong>OSMA</strong>. All Rights Reserved.
+          © <strong>نفس</strong>. جميع الحقوق محفوظة.
         </p>
 
         <!-- اسم المصمم -->
         <div class="mb-3">
-          <span class="text-muted" style="font-size: 1.1rem;">Designed by</span><br>
+          <span class="text-muted" style="font-size: 1.1rem;">تصميم وتطوير</span><br>
           <a href="https://hassan6102.github.io/portfolio/" class="text-decoration-none fw-bold mt-1 d-inline-block"
             style="color: var(--osma-primary); font-size: 1rem; letter-spacing: 0.5px;">
-            Eng. Hassan Mohamed
+            م. حسن محمد
           </a>
         </div>
 
@@ -622,18 +579,18 @@
 
   <!-- Floating Customer Support Button (Modern & Clean) -->
   <div class="cs-float" id="csFloat">
-    <button class="cs-main" id="csMain" aria-expanded="false" aria-label="Customer Support">
+    <button class="cs-main" id="csMain" aria-expanded="false" aria-label="خدمة العملاء">
       <i class="bi bi-chat-dots-fill cs-icon"></i>
     </button>
 
     <div class="cs-menu" id="csMenu" role="menu">
-      <a class="cs-item" href="https://wa.me/201111447123" target="_blank">
+      <a class="cs-item" href="https://wa.me/201034934915" target="_blank">
         <i class="bi bi-whatsapp" style="color: #25D366;"></i>
-        <span>WhatsApp</span>
+        <span>واتساب</span>
       </a>
-      <a class="cs-item" href="tel:+01111447123">
+      <a class="cs-item" href="tel:+201034934915">
         <i class="bi bi-telephone-fill" style="color: var(--osma-primary);"></i>
-        <span>Call Us</span>
+        <span>اتصل بنا</span>
       </a>
     </div>
   </div>
@@ -658,7 +615,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
+      box-shadow: 0 4px 15px rgba(166, 95, 102, 0.3);
       transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
@@ -772,6 +729,117 @@
     window.Drift = function () { }; /* السطر ده هيسكت رسالة الزووم */
   </script>
   <!-- 6. ملف التشغيل بتاع القالب (لازم يكون آخر حاجة) -->
+  <script>
+/* نفس — أدوات مشتركة للمتجر (كروت العطور، الأحجام، الأسعار، واتساب) */
+(function () {
+  'use strict';
+
+  var PHONE = '01034934915';
+  var WA = '201034934915';
+  var FALLBACK_IMG = 'assets/img/nafas-mark.png';
+
+  function strip(s) { return String(s == null ? '' : s).replace(/[\u064B-\u065F\u0670]/g, '').trim(); }
+  function t(kind, v) { return v; } // قيم الداشبورد عربي أصلاً
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function money(n) { return Number(n || 0).toLocaleString('en-US') + ' ج.م'; }
+
+  // المنتجات المخفية / المسودات ما بتظهرش للعميل
+  function isVisible(p) { return !p.status || strip(p.status) === strip('منشور'); }
+  function hasBadge(p, name) { return (p.badges || []).some(function (b) { return strip(b) === strip(name); }); }
+
+  function variantsOf(p) {
+    if (Array.isArray(p.variants) && p.variants.length) {
+      return p.variants.map(function (v) {
+        return { size: Number(v.size) || 0, price: Number(v.price) || 0, oldPrice: Number(v.oldPrice) || 0, stock: Math.max(0, Number(v.stock) || 0), sku: v.sku || '' };
+      }).sort(function (a, b) { return a.size - b.size; });
+    }
+    return [{ size: 0, price: Number(p.price) || 0, oldPrice: Number(p.oldPrice) || 0, stock: Math.max(0, Number(p.stock) || 0), sku: '' }];
+  }
+  function totalStock(p) { return variantsOf(p).reduce(function (s, v) { return s + v.stock; }, 0); }
+  function discountPct(v) { return v.oldPrice > v.price ? Math.round((v.oldPrice - v.price) / v.oldPrice * 100) : 0; }
+  function bestDiscount(p) { return Math.max.apply(null, variantsOf(p).map(discountPct)); }
+  function createdMs(p) { return p.createdAt && p.createdAt.seconds ? p.createdAt.seconds * 1000 : 0; }
+  function imageOf(p) { return p.imageUrl || p.image || FALLBACK_IMG; }
+
+  // أرخص حجم متاح (أو أرخص حجم لو الكل نافد)
+  function cheapest(p) {
+    var vs = variantsOf(p);
+    var pool = vs.filter(function (v) { return v.stock > 0; });
+    if (!pool.length) pool = vs;
+    return pool.reduce(function (m, v) { return v.price < m.price ? v : m; }, pool[0]);
+  }
+  function sizeRange(p) {
+    var s = variantsOf(p).map(function (v) { return v.size; }).filter(Boolean);
+    if (!s.length) return '';
+    var a = Math.min.apply(null, s), b = Math.max.apply(null, s);
+    return a === b ? a + ' مل' : a + ' – ' + b + ' مل';
+  }
+
+  function searchText(p) {
+    var n = p.notes || {};
+    return [p.name, p.nameEn, p.brand, p.sku, p.concentration, p.similarTo]
+      .concat(n.top || [], n.middle || [], n.base || [], p.families || []).join(' ').toLowerCase();
+  }
+
+  function waLink(p, o) {
+    o = o || {};
+    var parts = ['السلام عليكم، عايز أطلب العطر ده: ' + p.name];
+    if (p.brand) parts.push('الماركة: ' + p.brand);
+    if (o.variant && o.variant.size) parts.push('الحجم: ' + o.variant.size + ' مل');
+    if (o.qty) parts.push('العدد: ' + o.qty);
+    if (o.variant && o.variant.price) parts.push('السعر: ' + o.variant.price + ' ج.م');
+    var sku = (o.variant && o.variant.sku) || p.sku;
+    if (sku) parts.push('كود المنتج: ' + sku);
+    return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(parts.join(' - '));
+  }
+
+  // كارت العطر الموحد (الرئيسية + كل العطور + مشابهة)
+  function cardHtml(p) {
+    var out = totalStock(p) === 0;
+    var low = cheapest(p);
+    var multi = variantsOf(p).length > 1;
+    var link = 'product-details.html?id=' + encodeURIComponent(p.id);
+    var badges = [];
+    if (out) badges.push('<span class="nf-badge nf-badge-out">نفد</span>');
+    else {
+      var pct = discountPct(low);
+      if (pct) badges.push('<span class="nf-badge nf-badge-sale">خصم ' + pct + '%</span>');
+      (p.badges || []).slice(0, 2).forEach(function (b) { badges.push('<span class="nf-badge">' + esc(b) + '</span>'); });
+    }
+    var price = (multi ? '<small class="nf-from">يبدأ من</small>' : '') +
+      '<span class="current-price">' + money(low.price) + '</span>' +
+      (low.oldPrice > low.price ? ' <span class="old-price" style="text-decoration:line-through;color:#999;font-size:14px;margin-inline-start:6px;">' + money(low.oldPrice) + '</span>' : '');
+    var meta = [p.concentration, p.gender, sizeRange(p)].filter(Boolean).map(esc).join(' · ');
+    return '<div class="product-card' + (out ? ' nf-soldout' : '') + '">' +
+      '<div class="product-image position-relative">' +
+      (badges.length ? '<div class="nf-badges">' + badges.join('') + '</div>' : '') +
+      '<a href="' + link + '"><img src="' + esc(imageOf(p)) + '" alt="' + esc(p.name) + '" loading="lazy" style="aspect-ratio:1;object-fit:cover;width:100%;"></a>' +
+      '<div class="product-overlay"><div class="product-actions">' +
+      '<a href="' + link + '" class="action-btn" title="التفاصيل"><i class="bi bi-eye"></i></a>' +
+      (out ? '' : '<a href="' + waLink(p) + '" target="_blank" rel="noopener" class="action-btn" title="اطلب عبر واتساب"><i class="bi bi-whatsapp"></i></a>') +
+      '</div></div></div>' +
+      '<div class="product-details text-center mt-3">' +
+      '<div class="product-category" style="color:#7b7173;font-size:.9rem;">' + esc(p.brand || 'عطر') + '</div>' +
+      '<h5 class="product-title mt-1 mb-1"><a href="' + link + '" style="color:#1d1b1c;text-decoration:none;font-weight:800;">' + esc(p.name) + '</a></h5>' +
+      (meta ? '<div class="nf-card-meta">' + meta + '</div>' : '') +
+      '<div class="product-price" style="color:var(--osma-primary);font-weight:800;font-size:1.1rem;">' + price + '</div>' +
+      '</div></div>';
+  }
+
+  window.NafasPerfume = {
+    PHONE: PHONE, WA: WA, FALLBACK_IMG: FALLBACK_IMG,
+    t: t, esc: esc, strip: strip, money: money, isVisible: isVisible, hasBadge: hasBadge,
+    variantsOf: variantsOf, totalStock: totalStock, discountPct: discountPct, bestDiscount: bestDiscount,
+    createdMs: createdMs, imageOf: imageOf, cheapest: cheapest, sizeRange: sizeRange, searchText: searchText,
+    waLink: waLink, cardHtml: cardHtml
+  };
+})();
+
+</script>
   <script src="assets/js/main.js"></script>
 
   <script type="module">
@@ -811,7 +879,7 @@
           });
           annContainer.innerHTML = html;
         } else {
-          annContainer.innerHTML = `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">✨ أهلاً بكم في متجر OSMA Bags ✨</div>`;
+          annContainer.innerHTML = `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">✨ أهلاً بكم في متجر نفس للعطور ✨</div>`;
         }
 
         setTimeout(() => {
@@ -836,130 +904,210 @@
     }
 
     // ==========================================
-    // 2. دالة جلب المنتجات (الكود الخاص بك)
+    // 2. دالة جلب العطور وعرضها (الهيرو + الأكثر مبيعًا + الكتالوج)
     // ==========================================
-    async function loadProducts() {
-      const marqueeContainer = document.getElementById('osma-dual-marquees');
-      const swiperWrapper = document.getElementById('all-products-swiper');
+    const OP = window.NafasPerfume;
+    let catalogSwiper = null;
 
-      if (swiperWrapper) swiperWrapper.innerHTML = '';
+    function setText(id, v) { const el = document.getElementById(id); if (el) el.textContent = v; }
+    function pdLink(p) { return 'product-details.html?id=' + encodeURIComponent(p.id); }
 
+    // ==========================================
+    // أول سيكشن (الهيرو): الكلام والصور بيتحكم فيها من الداش بورد (settings/hero)
+    // ==========================================
+    function pickProduct(all, id) { return id ? all.find(p => p.id === id) : null; }
+
+    async function loadHeroCfg() {
       try {
-        const q = query(collection(db, 'products'));
-        const querySnapshot = await getDocs(q);
+        const s = await getDoc(doc(db, 'settings', 'hero'));
+        return s.exists() ? s.data() : null;
+      } catch (e) { console.error('hero settings', e); return null; }
+    }
 
-        if (querySnapshot.empty) {
-          if (marqueeContainer) marqueeContainer.innerHTML = '<p class="text-center w-100">لا توجد منتجات حالياً.</p>';
-          return;
+    function applyHeroTexts(cfg) {
+      const sl = (cfg && cfg.slides) || {};
+      [['new', 'new'], ['offer', 'sale'], ['featured', 'featured']].forEach(([key, cls]) => {
+        const s = sl[key];
+        const slide = document.querySelector('.hero .slide-' + cls);
+        if (!s || !slide) return;
+        const set = (sel, v) => { const el = slide.querySelector(sel); if (el && typeof v === 'string' && v.trim()) el.textContent = v; };
+        set('[data-hero$=".badge"]', s.badge);
+        set('[data-hero$=".text"]', s.text);
+        const h1 = slide.querySelector('[data-hero-title]');
+        if (h1 && (s.title || s.highlight)) h1.innerHTML = OP.esc(s.title || '') + ' <span>' + OP.esc(s.highlight || '') + '</span>';
+        const btn = slide.querySelector('[data-hero-btn]');
+        if (btn) {
+          if (s.buttonText) btn.innerHTML = OP.esc(s.buttonText) + ' <i class="bi bi-arrow-left"></i>';
+          if (s.buttonLink) { btn.setAttribute('href', s.buttonLink); btn.setAttribute('data-custom-link', '1'); }
         }
-
-        let allProducts = [];
-        let swiperHtml = '';
-
-        querySnapshot.forEach((doc) => {
-          const p = doc.data();
-          p.id = doc.id;
-          allProducts.push(p);
-
-          const finalImg = p.imageUrl || p.image || 'assets/img/icon - Copy.png';
-          const hasDiscount = p.oldPrice && p.oldPrice > p.price;
-          const priceHtml = hasDiscount
-            ? `<span class="current-price">EGP ${p.price}</span> <span class="old-price" style="text-decoration: line-through; color: #999; font-size: 14px; margin-left: 5px;">EGP ${p.oldPrice}</span>`
-            : `<span class="current-price">EGP ${p.price}</span>`;
-          const badgeHtml = hasDiscount
-            ? `<span class="badge sale" style="background: var(--osma-primary); position: absolute; top: 10px; left: 10px; z-index: 2;">sale</span>`
-            : ``;
-          const waLink = `https://wa.me/201111447123?text=${encodeURIComponent('أهلاً، عايز أطلب الشنطة دي: ' + p.name + ' - كود المنتج: ' + p.sku)}`;
-          
-          swiperHtml += `
-            <div class="swiper-slide filter-${p.category ? p.category.replace(/\s+/g, '') : 'all'}">
-              <div class="product-card">
-                <div class="product-image position-relative">
-                  ${badgeHtml}
-                  <img src="${finalImg}" alt="${p.name}" style="aspect-ratio: 1; object-fit: cover; width: 100%;">
-                  <div class="product-overlay">
-                    <a href="${waLink}" target="_blank" class="btn-cart" style="text-decoration:none;"><i class="bi bi-whatsapp"></i>  Order via WhatsApp </a>
-                    <div class="product-actions">
-                      <a href="product-details.html?id=${p.id}" class="action-btn"><i class="bi bi-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-info text-center mt-3">
-                  <h5 class="product-title"><a href="product-details.html?id=${p.id}">${p.name}</a></h5>
-                  <div class="product-price mt-2">${priceHtml}</div>
-                </div>
-              </div>
-            </div>
-          `;
+      });
+      const b = sl.featured && Array.isArray(sl.featured.bullets) ? sl.featured.bullets : null;
+      if (b && b.length) {
+        document.querySelectorAll('.slide-featured .feature-item').forEach((it, i) => {
+          it.style.display = b[i] ? '' : 'none';
+          const sp = it.querySelector('span');
+          if (sp && b[i]) sp.textContent = b[i];
         });
+      }
+      setupCountdown(sl.offer);
+    }
 
-        if (swiperWrapper) {
-          swiperWrapper.innerHTML = swiperHtml;
-          setTimeout(() => {
-            if (typeof Swiper !== 'undefined') {
-              const swiper = new Swiper('.mySwiper', {
-                slidesPerView: 1, spaceBetween: 20, observer: true, observeParents: true,
-                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-                pagination: { el: '.swiper-pagination', clickable: true },
-                breakpoints: { 640: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } }
-              });
-            }
-          }, 100);
-        }
+    // عدّاد العرض: بنفصل عداد القالب القديم ونشغّل عدادنا بالتاريخ اللي إنت كاتبه
+    function setupCountdown(s) {
+      const box = document.querySelector('.slide-sale .countdown-container');
+      if (!box || !s) return;
+      if (s.showCountdown === false) { box.style.display = 'none'; return; }
+      const lbl = box.querySelector('.countdown-label');
+      if (lbl && s.countdownLabel) lbl.textContent = s.countdownLabel;
+      if (!s.countdownDate) return;
+      const old = box.querySelector('.countdown');
+      if (!old) return;
+      const fresh = old.cloneNode(true);
+      fresh.removeAttribute('data-count');
+      old.replaceWith(fresh);
+      const target = new Date(String(s.countdownDate).replace(/-/g, '/') + ' 23:59:59').getTime();
+      const put = (c, v) => { const el = fresh.querySelector(c); if (el) el.textContent = String(v).padStart(2, '0'); };
+      const tick = () => {
+        let d = target - Date.now(); if (!(d > 0)) d = 0;
+        put('.count-days', Math.floor(d / 864e5)); put('.count-hours', Math.floor(d / 36e5) % 24);
+        put('.count-minutes', Math.floor(d / 6e4) % 60); put('.count-seconds', Math.floor(d / 1e3) % 60);
+      };
+      tick(); setInterval(tick, 1000);
+    }
 
-        if (marqueeContainer && allProducts.length > 0) {
-          const top10 = allProducts.slice(0, 10);
-          const row1 = top10.slice(0, 5);
-          const row2 = top10.length > 5 ? top10.slice(5, 10) : row1;
+    function fillHeroProducts(all, sl) {
+      // سلايد 1: 4 عطور (المختارة الأول، والباقي من الأحدث)
+      const grid = document.getElementById('hero-products-grid');
+      if (grid) {
+        const chosen = (((sl.new && sl.new.productIds) || []).map(id => pickProduct(all, id))).filter(Boolean);
+        const four = chosen.concat(all.filter(p => !chosen.includes(p))).slice(0, 4);
+        grid.innerHTML = four.map(p => {
+          const low = OP.cheapest(p);
+          return `<div class="product-item"><a href="${pdLink(p)}" style="text-decoration:none;color:inherit;display:block;">
+            <div class="product-image"><img src="${OP.esc(OP.imageOf(p))}" alt="${OP.esc(p.name)}" style="aspect-ratio:1;object-fit:cover;width:100%;"></div>
+            <div class="product-info"><h4>${OP.esc(p.name)}</h4><span class="price">${OP.money(low.price)}</span></div></a></div>`;
+        }).join('');
+      }
 
-          const generateCards = (items) => {
-            return items.map(p => {
-              const finalImg = p.imageUrl || p.image || 'assets/img/icon - Copy.png';
-              const hasDiscount = p.oldPrice && p.oldPrice > p.price;
-              const priceHtml = hasDiscount
-                ? `<span class="current-price">EGP ${p.price}</span> <span class="old-price" style="text-decoration: line-through; color: #999; font-size: 14px; margin-left: 5px;">EGP ${p.oldPrice}</span>`
-                : `<span class="current-price">EGP ${p.price}</span>`;
-              const waLink = `https://wa.me/201111447123?text=${encodeURIComponent('أهلاً، عايز أطلب الشنطة دي: ' + p.name + ' - كود المنتج: ' + p.sku)}`;
-              return `
-                <div class="osma-marquee-card">
-                  <div class="product-card" style="margin: 0; height: 100%;">
-                    <div class="product-image position-relative">
-                      <img src="${finalImg}" alt="${p.name}" style="aspect-ratio: 1; object-fit: cover; width: 100%;">
-                      <div class="product-overlay">
-                        <div class="product-actions">
-                          <a href="product-details.html?id=${p.id}" class="action-btn" title="التفاصيل"><i class="bi bi-eye"></i></a>
-                          <a href="${waLink}" target="_blank" class="action-btn" title="واتساب"><i class="bi bi-whatsapp"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-details text-center mt-3">
-                      <div class="product-category" style="color: #666; font-size: 0.9rem;">${p.category || 'شنط'}</div>
-                      <h4 class="product-title mt-1 mb-2"><a href="product-details.html?id=${p.id}" style="color: #222; text-decoration: none; font-weight: 600;">${p.name}</a></h4>
-                      <div class="product-price" style="color: var(--osma-primary); font-weight: 700; font-size: 1.1rem;">${priceHtml}</div>
-                    </div>
-                  </div>
-                </div>
-              `;
-            }).join('');
-          };
+      // سلايد 2: العرض (العطر المختار أو صاحب أكبر خصم)
+      const sale = pickProduct(all, sl.offer && sl.offer.productId) || [...all].sort((a, b) => OP.bestDiscount(b) - OP.bestDiscount(a))[0] || all[0];
+      const saleVariant = OP.variantsOf(sale).sort((a, b) => OP.discountPct(b) - OP.discountPct(a))[0];
+      const pct = OP.discountPct(saleVariant);
+      const saleImg = document.getElementById('sale-main-img');
+      if (saleImg) { saleImg.src = (sl.offer && sl.offer.image) || OP.imageOf(sale); saleImg.alt = sale.name; }
+      setText('sale-label', sale.name);
+      setText('sale-new', OP.money(pct ? saleVariant.price : OP.cheapest(sale).price));
+      const oldEl = document.getElementById('sale-old');
+      if (oldEl) { oldEl.textContent = pct ? OP.money(saleVariant.oldPrice) : ''; oldEl.style.display = pct ? '' : 'none'; }
+      const badge = document.querySelector('.slide-sale .discount-badge');
+      if (badge) { badge.style.display = pct ? '' : 'none'; setText('sale-percent', pct + '%'); }
 
-          const html1 = generateCards(row1) + generateCards(row1);
-          const html2 = generateCards(row2) + generateCards(row2);
+      // سلايد 3: العطر المميز
+      const feat = pickProduct(all, sl.featured && sl.featured.productId) || all.find(p => p.isFeatured) || all[0];
+      const featImg = document.getElementById('feat-img');
+      if (featImg) { featImg.src = (sl.featured && sl.featured.image) || OP.imageOf(feat); featImg.alt = feat.name; }
+      const notes = ((feat.notes && feat.notes.top) || []).slice(0, 3).join(', ');
+      setText('feat-note', notes ? `${feat.name} — نوتات افتتاحية: ${notes}` : feat.name);
+      const featLink = document.getElementById('feat-link');
+      if (featLink && !featLink.hasAttribute('data-custom-link')) featLink.href = pdLink(feat);
+    }
 
-          marqueeContainer.innerHTML = `
-            <div class="osma-marquee-track move-left">
-               ${html1}
-            </div>
-            <div class="osma-marquee-track move-right">
-               ${html2}
-            </div>
-          `;
-        }
+    function reinitHeroSlider(el) {
+      if (!el || typeof Swiper === 'undefined') return;
+      let conf = {};
+      try { conf = JSON.parse(el.querySelector('.swiper-config').textContent); } catch (_) { }
+      const n = el.querySelectorAll('.swiper-wrapper > .swiper-slide').length;
+      if (n < 2) { conf.loop = false; conf.autoplay = false; }
+      new Swiper(el, conf);
+      document.querySelectorAll('.hero .swiper-button-next, .hero .swiper-button-prev').forEach(b => { b.style.display = n < 2 ? 'none' : ''; });
+    }
 
-      } catch (error) {
-        console.error("Error loading products: ", error);
+    async function renderHero(all, cfg) {
+      // نستنى الصفحة تخلص تحميل عشان سكريبت القالب يكون شغّل السلايدر قبل ما نعدّل عليه
+      if (document.readyState !== 'complete') await new Promise(r => window.addEventListener('load', r, { once: true }));
+      const sliderEl = document.querySelector('.hero-slider');
+      if (sliderEl && sliderEl.swiper) sliderEl.swiper.destroy(true, true);
+
+      const sl = (cfg && cfg.slides) || {};
+      applyHeroTexts(cfg);
+      if (all.length) fillHeroProducts(all, sl);
+      [['new', 'new'], ['offer', 'sale'], ['featured', 'featured']].forEach(([key, cls]) => {
+        if (sl[key] && sl[key].enabled === false) { const el = document.querySelector('.hero .slide-' + cls); if (el) el.remove(); }
+      });
+      reinitHeroSlider(sliderEl);
+    }
+
+    function renderBest(all) {
+      const marqueeContainer = document.getElementById('osma-dual-marquees');
+      if (!marqueeContainer) return;
+      const best = all.filter(p => OP.hasBadge(p, 'الأكثر مبيعًا') || p.isFeatured);
+      const pool = (best.length >= 4 ? best : all).slice(0, 10);
+      const fill = (arr) => { let r = arr.slice(); while (r.length > 0 && r.length < 6) r = r.concat(arr); return r; };
+      const row1 = fill(pool.slice(0, 5));
+      const row2 = fill(pool.length > 5 ? pool.slice(5, 10) : pool.slice(0, 5));
+      const cards = (items) => items.map(p => `<div class="osma-marquee-card">${OP.cardHtml(p).replace('class="product-card', 'style="margin:0;height:100%" class="product-card')}</div>`).join('');
+      marqueeContainer.innerHTML = `
+        <div class="osma-marquee-track move-left">${cards(row1)}${cards(row1)}</div>
+        <div class="osma-marquee-track move-right">${cards(row2)}${cards(row2)}</div>`;
+    }
+
+    function renderCatalog(items) {
+      const wrapper = document.getElementById('all-products-swiper');
+      if (!wrapper) return;
+      if (catalogSwiper) { catalogSwiper.destroy(true, true); catalogSwiper = null; }
+      wrapper.innerHTML = items.length
+        ? items.map(p => `<div class="swiper-slide">${OP.cardHtml(p)}</div>`).join('')
+        : '<p class="text-center w-100" style="color:var(--osma-primary);">لا توجد عطور في هذا التصنيف حالياً.</p>';
+      if (typeof Swiper !== 'undefined') {
+        catalogSwiper = new Swiper('.mySwiper', {
+          slidesPerView: 1, spaceBetween: 20, observer: true, observeParents: true,
+          navigation: { nextEl: '.mySwiper .swiper-button-next', prevEl: '.mySwiper .swiper-button-prev' },
+          breakpoints: { 640: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } }
+        });
       }
     }
+
+    function setupFilters(all) {
+      const ul = document.getElementById('home-filters');
+      if (!ul) return;
+      const genders = [...new Set(all.map(p => p.gender).filter(Boolean))];
+      ul.innerHTML = `<li class="filter-active" style="cursor:pointer;" data-gender="*">كل العطور</li>` +
+        genders.map(g => `<li style="cursor:pointer;" data-gender="${OP.esc(g)}">${OP.esc(OP.t('gender', g))}</li>`).join('');
+      ul.querySelectorAll('li').forEach(li => li.addEventListener('click', () => {
+        ul.querySelectorAll('li').forEach(x => x.classList.remove('filter-active'));
+        li.classList.add('filter-active');
+        const g = li.getAttribute('data-gender');
+        renderCatalog(g === '*' ? all : all.filter(p => p.gender === g));
+      }));
+    }
+
+    async function loadProducts() {
+      const marqueeContainer = document.getElementById('osma-dual-marquees');
+      try {
+        const querySnapshot = await getDocs(query(collection(db, 'products')));
+        const all = [];
+        querySnapshot.forEach((d) => {
+          const p = d.data(); p.id = d.id;
+          if (OP.isVisible(p)) all.push(p);   // المخفي والمسودات ما بتظهرش
+        });
+        all.sort((a, b) => OP.createdMs(b) - OP.createdMs(a));
+
+        const heroCfg = await loadHeroCfg();
+        if (all.length === 0) {
+          renderHero([], heroCfg);
+          if (marqueeContainer) marqueeContainer.innerHTML = '<p class="text-center w-100">لا توجد عطور متاحة حالياً.</p>';
+          return;
+        }
+        renderHero(all, heroCfg);
+        renderBest(all);
+        setupFilters(all);
+        renderCatalog(all);
+      } catch (error) {
+        console.error('Error loading products: ', error);
+        if (marqueeContainer) marqueeContainer.innerHTML = '<p class="text-center text-danger w-100">تعذّر تحميل العطور. حدّث الصفحة وحاول تاني.</p>';
+      }
+    }
+
 
     // استدعاء الدوال عشان تشتغل أول ما الصفحة تفتح
     loadAnnouncements();

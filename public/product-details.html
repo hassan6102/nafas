@@ -1,177 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Product Details - OSMA Bags</title>
-  <meta name="description" content="OSMA Premium Bags Details">
-  <meta name="keywords" content="OSMA, bags, handbags, premium">
+  <title>العطر | نفس للعطور</title>
+  <meta name="description" content="تفاصيل العطر من نفس للعطور">
 
-  <!-- Favicons -->
-  <link href="assets/img/icon.jpg" rel="icon">
-  <link href="assets/img/icon.jpg" rel="apple-touch-icon">
+  <link href="assets/img/nafas-icon.png" rel="icon" type="image/png">
+  <link href="assets/img/nafas-apple-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- OSMA Brand Colors Customization -->
-  <style>
-    :root {
-      --osma-primary: #8b7355;
-      --osma-hover: #6a563f;
-      --osma-bg: #f8f6f0;
-    }
-
-    body {
-      background-color: var(--osma-bg) !important;
-    }
-
-    .btn-dark,
-    .btn-shop,
-    .view-all-btn,
-    .btn-primary,
-    .add-to-cart-btn {
-      background-color: var(--osma-primary) !important;
-      border-color: var(--osma-primary) !important;
-      color: #fff !important;
-    }
-
-    .btn-dark:hover,
-    .btn-shop:hover,
-    .view-all-btn:hover,
-    .btn-primary:hover,
-    .add-to-cart-btn:hover {
-      background-color: var(--osma-hover) !important;
-      border-color: var(--osma-hover) !important;
-    }
-
-    .price,
-    .current-price,
-    .product-price,
-    .rating-value {
-      color: var(--osma-primary) !important;
-      font-weight: 700;
-    }
-
-    .discount-badge,
-    .badge.bg-danger,
-    .badge.sale,
-    .badge.bg-success,
-    .badge-sale,
-    .badge-new {
-      background-color: var(--osma-primary) !important;
-      color: #fff !important;
-    }
-
-    .header-nav nav ul li a.active,
-    .header-nav nav ul li a:hover {
-      color: var(--osma-primary) !important;
-    }
-
-    .product-title a:hover {
-      color: var(--osma-primary) !important;
-    }
-
-    .action-btn:hover,
-    .btn-cart:hover,
-    .buy-now-btn:hover {
-      background-color: var(--osma-primary) !important;
-      border-color: var(--osma-primary) !important;
-      color: #fff !important;
-    }
-
-    .nav-tabs .nav-link.active {
-      color: var(--osma-primary) !important;
-      border-color: var(--osma-primary) !important;
-    }
-
-    .accordion-button:not(.collapsed) {
-      color: var(--osma-primary) !important;
-      background-color: rgba(139, 115, 85, 0.1) !important;
-    }
-
-    .page-title {
-      background-color: #fff !important;
-      border-bottom: 1px solid rgba(139, 115, 85, 0.1);
-      margin-top: 130px;
-      /* لتعويض مساحة الهيدر الثابت */
-    }
-
-    /* تصميم معرض الصور المصغرة */
-    .product-gallery-container {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .main-image-wrapper {
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      background: #f9f9f9;
-    }
-
-    .main-image-wrapper img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      transition: opacity 0.3s ease;
-    }
-
-    .thumbnails-wrapper {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      padding-bottom: 5px;
-      scrollbar-width: thin;
-    }
-
-    .thumb-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      object-fit: cover;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: all 0.2s ease;
-      opacity: 0.7;
-    }
-
-    .thumb-img:hover {
-      opacity: 1;
-    }
-
-    .thumb-img.active {
-      border-color: var(--osma-primary, #8b7355);
-      opacity: 1;
-      box-shadow: 0 2px 8px rgba(139, 115, 85, 0.3);
-    }
-  </style>
+  <link href="assets/css/nafas.css" rel="stylesheet">
 </head>
 
 <body class="product-details-page">
 
-  <!-- OSMA Header -->
-  <header id="header" class="header position-fixed w-100 top-0" style="z-index: 999;">
+  <header id="header" class="header position-fixed w-100 top-0">
 
-   <!-- Announcement Bar -->
+    <!-- Announcement Bar -->
     <div class="announcement-bar py-2" style="background-color: var(--osma-primary); color: #fff;">
       <div class="container-fluid container-xl">
         <div class="announcement-slider swiper">
@@ -189,25 +43,26 @@
 
           <!-- Logo -->
           <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
-            <img src="assets/img/icon - Copy.png" alt="OSMA Logo" class="logo-img">
-
+            <!-- مسار لوجو أوسما الخاص بك -->
+            <img src="assets/img/nafas-mark.png" alt="شعار نفس" class="logo-img"><span class="nafas-wordmark">نفس<small>NAFAS</small></span>
           </a>
 
-          <!-- Desktop Navigation (English) -->
+          <!-- Desktop Navigation -->
+          <!-- Desktop Navigation -->
           <div class="header-nav d-none d-xl-block">
             <nav id="navmenu" class="navmenu">
               <ul class="d-flex list-unstyled mb-0 gap-4">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="faq.html">FAQs</a></li>
-                <li><a href="return-policy.html">Return Policy</a></li>
-                <li><a href="shipping-info.html">Shipping Info</a></li>
+                <li><a href="index.html">الرئيسية</a></li><li><a href="tos.html" class="">كل العطور</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                <li><a href="return-policy.html">سياسة الاسترجاع</a></li>
+                <li><a href="shipping-info.html">معلومات الشحن</a></li>
               </ul>
             </nav>
           </div>
-
-          <!-- Actions -->
           <div class="header-actions d-flex align-items-center gap-3">
+
+
 
             <i class="custom-nav-toggle d-xl-none bi bi-list fs-2 text-dark cursor-pointer" data-bs-toggle="offcanvas"
               data-bs-target="#mobileNavSidebar" aria-controls="mobileNavSidebar"></i>
@@ -217,20 +72,33 @@
       </div>
     </div>
 
-    <!-- Mobile Nav Sidebar (English) -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavSidebar" aria-labelledby="mobileNavLabel">
+    <div class="collapse position-absolute w-100 bg-white shadow-sm" id="mobileSearch" style="top: 100%; z-index: -1;">
+      <div class="container py-3">
+        <form class="search-form">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control border-0 bg-light" placeholder="ابحث عن عطر..."
+              style="box-shadow: none;">
+            <button class="btn btn-dark px-4" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavSidebar" aria-labelledby="mobileNavLabel">
       <div class="offcanvas-header border-bottom py-3">
-        <h5 class="offcanvas-title fw-bold text-dark" id="mobileNavLabel">Menu</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title fw-bold text-dark" id="mobileNavLabel">القائمة</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="إغلاق"></button>
       </div>
       <div class="offcanvas-body px-4 py-4">
         <nav class="mobile-nav">
           <ul class="list-unstyled d-flex flex-column gap-3 mb-0 fs-5">
-            <li><a href="index.html" class="text-decoration-none text-dark">Home</a></li>
-            <li><a href="about.html" class="text-decoration-none text-dark">About Us</a></li>
-            <li><a href="faq.html" class="text-decoration-none text-dark">FAQs</a></li>
-            <li><a href="return-policy.html" class="text-decoration-none text-dark">Return Policy</a></li>
-            <li><a href="shipping-info.html" class="text-decoration-none text-dark">Shipping Info</a></li>
+            <li><a href="index.html" class="text-decoration-none text-dark">الرئيسية</a></li><li><a href="tos.html" class="text-decoration-none text-dark">كل العطور</a></li>
+            <li><a href="about.html" class="text-decoration-none text-dark">من نحن</a></li>
+            <li><a href="faq.html" class="text-decoration-none text-dark">الأسئلة الشائعة</a></li>
+            <li><a href="return-policy.html" class="text-decoration-none text-dark">سياسة الاسترجاع</a></li>
+            <li><a href="shipping-info.html" class="text-decoration-none text-dark">معلومات الشحن</a></li>
           </ul>
         </nav>
 
@@ -238,349 +106,122 @@
         </div>
       </div>
     </div>
+
   </header>
 
-  <main class="main">
+  <main class="nf-main">
+    <div class="container">
 
+      <nav class="nf-crumbs" aria-label="مسار الصفحة">
+        <a href="index.html">الرئيسية</a><i class="bi bi-chevron-left"></i>
+        <a href="tos.html">كل العطور</a><i class="bi bi-chevron-left"></i>
+        <span id="crumb-name">...</span>
+      </nav>
 
-
-    <!-- Product Details Section -->
-    <section id="product-details" class="product-details section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-5">
-          <!-- Product Images Column -->
-          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-delay="200">
-            <div class="product-gallery">
-              <!-- Vertical Thumbnails -->
-              <div class="thumbnails-vertical">
-                <div class="thumbnails-container" id="product-thumbnails">
-                  <!-- صورة مصغرة أولى نظيفة -->
-                  <div class="thumbnail-item active">
-                    <img id="thumb-image" src="assets/img/icon - Copy.png" alt="Product Thumbnail" class="img-fluid"
-                      style="aspect-ratio: 1; object-fit: cover;">
-                  </div>
-                </div>
-              </div>
-
-              <!-- Main Image -->
-              <div class="main-image-wrapper">
-                <div class="image-zoom-container">
-                  <a id="main-image-link" href="assets/img/icon - Copy.png" class="glightbox"
-                    data-gallery="product-gallery">
-                    <img src="assets/img/icon - Copy.png" alt="Product Image" class="img-fluid main-image drift-zoom"
-                      id="main-product-image" data-zoom="assets/img/icon - Copy.png"
-                      style="aspect-ratio: 1; object-fit: cover; width: 100%;">
-                    <div class="zoom-overlay">
-                      <i class="bi bi-zoom-in"></i>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product Info Column -->
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-            <div class="product-info-wrapper" id="product-info-sticky">
-              <!-- Product Meta -->
-              <div class="product-meta">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <span class="product-category" style="color: var(--osma-primary);">Handbags</span>
-                  <div class="product-share">
-                    <button class="share-btn" aria-label="Share product">
-                      <i class="bi bi-share"></i>
-                    </button>
-                    <div class="share-dropdown">
-                      <a href="#" aria-label="Share on Facebook"><i class="bi bi-facebook"></i></a>
-                      <a href="#" aria-label="Share on Twitter"><i class="bi bi-twitter-x"></i></a>
-                      <a href="#" aria-label="Share on Pinterest"><i class="bi bi-pinterest"></i></a>
-                      <a href="#" aria-label="Share via Email"><i class="bi bi-envelope"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <h1 class="product-title">OSMA Classic Leather Handbag</h1>
-
-                <div class="product-rating">
-                  <div class="stars" style="color: var(--osma-primary);">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <span class="rating-value">4.8</span>
-                  </div>
-                  <a href="#reviews" class="rating-count" style="color: #666;">42 Reviews</a>
-                </div>
-              </div>
-
-              <!-- Product Price -->
-              <div class="product-price-container">
-                <div class="price-wrapper">
-                  <span class="current-price">EGP 950</span>
-                  <span class="original-price">EGP 1250</span>
-                </div>
-                <span class="discount-badge">Save 24%</span>
-                <div class="stock-info">
-                  <i class="bi bi-check-circle-fill" style="color: var(--osma-primary);"></i>
-                  <span>In Stock</span>
-                  <span class="stock-count">(12 items left)</span>
-                </div>
-              </div>
-
-              <!-- Product Description -->
-              <div class="product-short-description">
-                <p>Elevate your everyday style with the OSMA Classic Leather Handbag. Crafted from premium full-grain
-                  leather, this bag offers a spacious interior, elegant gold-tone hardware, and a versatile design
-                  perfect for both work and casual outings.</p>
-              </div>
-
-              <!-- Product Options (Colors and Quantity) -->
-              <div class="product-options mt-4" id="dynamic-options-container" style="display: none;">
-
-                <!-- Colors (Rendered automatically here) -->
-                <div class="option-group mb-4" id="color-group" style="display: none;">
-                  <h6 class="option-title fw-bold mb-2" style="color: var(--osma-primary);">Select Color:</h6>
-                  <div id="dynamic-colors-wrapper" class="d-flex flex-wrap gap-2">
-                    <!-- JavaScript will inject buttons here -->
-                  </div>
-                </div>
-
-                <!-- Quantity -->
-                <div class="option-group">
-                  <h6 class="option-title fw-bold mb-2" style="color: var(--osma-primary);">Quantity:</h6>
-                  <div class="quantity-selector d-flex align-items-center"
-                    style="width: 140px; border: 1px solid #ddd; border-radius: 25px; overflow: hidden; background: #fff;">
-                    <button type="button" class="btn btn-light rounded-0 border-0 flex-grow-1" id="btn-decrease"
-                      style="background: transparent;">
-                      <i class="bi bi-dash fs-5"></i>
-                    </button>
-                    <input type="number" id="orderQuantity" class="form-control text-center border-0 p-0 fw-bold"
-                      value="1" min="1" readonly style="background: transparent; box-shadow: none; width: 40px;">
-                    <button type="button" class="btn btn-light rounded-0 border-0 flex-grow-1" id="btn-increase"
-                      style="background: transparent;">
-                      <i class="bi bi-plus fs-5"></i>
-                    </button>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- ستايل زراير الألوان الشيك -->
-              <style>
-                .custom-color-btn {
-                  border: 1px solid #ccc;
-                  background: #fff;
-                  color: #333;
-                  padding: 8px 18px;
-                  border-radius: 20px;
-                  font-weight: 500;
-                  transition: all 0.2s ease;
-                }
-
-                .custom-color-btn:hover {
-                  border-color: var(--osma-primary);
-                  color: var(--osma-primary);
-                }
-
-                .custom-color-btn.active {
-                  background: var(--osma-primary);
-                  border-color: var(--osma-primary);
-                  color: #fff;
-                  box-shadow: 0 4px 10px rgba(139, 115, 85, 0.3);
-                }
-              </style>
-              <!-- Action Buttons -->
-              <div class="product-actions d-flex gap-2 mt-4">
-                <button class="btn btn-primary add-to-cart-btn flex-grow-1"
-                  style="background-color: #25D366 !important; border-color: #25D366 !important;">
-                  <i class="bi bi-whatsapp"></i> WhatsApp
-                </button>
-                <button class="btn btn-dark order-website-btn flex-grow-1" data-bs-toggle="modal"
-                  data-bs-target="#checkoutModal">
-                  <i class="bi bi-bag-check"></i> Order Now
-                </button>
-              </div>
-
-              <!-- Delivery Options -->
-              <div class="delivery-options mt-4">
-                <div class="delivery-option">
-                  <i class="bi bi-truck" style="color: var(--osma-primary);"></i>
-                  <div>
-                    <h6>Fast Shipping</h6>
-                    <p>Delivered within 2-4 business days</p>
-                  </div>
-                </div>
-                <div class="delivery-option">
-                  <i class="bi bi-arrow-repeat" style="color: var(--osma-primary);"></i>
-                  <div>
-                    <h6>14-Day Returns</h6>
-                    <p>Hassle-free returns & exchanges</p>
-                  </div>
-                </div>
-                <div class="delivery-option">
-                  <i class="bi bi-shield-check" style="color: var(--osma-primary);"></i>
-                  <div>
-                    <h6>OSMA Guarantee</h6>
-                    <p>Premium quality assurance</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sticky Add to Cart Bar -->
-        <div class="sticky-add-to-cart">
-          <div class="container">
-            <div class="sticky-content">
-              <div class="product-preview">
-                <img src="assets/img/new/3bc26413-824c-4a95-b97d-331237ee7bb3.avif" alt="Product"
-                  class="product-thumbnail">
-                <div class="product-info">
-                  <h5 class="product-title">OSMA Classic Leather Handbag</h5>
-                  <div class="product-price">EGP 950</div>
-                </div>
-              </div>
-              <div class="sticky-actions">
-                <button class="btn btn-primary add-to-cart-btn">
-                  <i class="bi bi-whatsapp"></i> Order via WhatsApp
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product Details Accordion -->
-        <div class="row mt-5" data-aos="fade-up">
-          <div class="col-12">
-            <div class="product-details-accordion">
-
-
-              <!-- Specifications Accordion -->
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#specifications" aria-expanded="false" aria-controls="specifications">
-                    <i class="bi bi-chevron-down me-2" style="font-size: 1.2rem; font-weight: bold;"></i>
-                    Specifications & Dimensions
-                  </button>
-                </h2>
-                <div id="specifications" class="accordion-collapse collapse">
-                  <div class="accordion-body">
-                    <div class="product-specifications">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="specs-group">
-                            <h4>Physical Dimensions</h4>
-                            <div class="specs-table">
-                              <div class="specs-row">
-                                <div class="specs-label">Height</div>
-                                <div class="specs-value">28 cm</div>
-                              </div>
-                              <div class="specs-row">
-                                <div class="specs-label">Width</div>
-                                <div class="specs-value">35 cm</div>
-                              </div>
-                              <div class="specs-row">
-                                <div class="specs-label">Depth</div>
-                                <div class="specs-value">14 cm</div>
-                              </div>
-                              <div class="specs-row">
-                                <div class="specs-label">Handle </div>
-                                <div class="specs-value">18 cm</div>
-                              </div>
-                              <div class="specs-row">
-                                <div class="specs-label">Weight</div>
-                                <div class="specs-value">0.8 kg</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-md-6">
-                          <div class="specs-group">
-                            <h4>Materials & Care</h4>
-                            <div class="specs-table">
-                              <div class="specs-row">
-                                <div class="specs-label">Exterior</div>
-                                <div class="specs-value">Genuine Cowhide Leather</div>
-                              </div>
-                              <div class="specs-row">
-                                <div class="specs-label">Interior Lining</div>
-                                <div class="specs-value">Premium Cotton Canvas</div>
-                              </div>
-
-                              <div class="specs-row">
-                                <div class="specs-label">Care Instructions</div>
-                                <div class="specs-value">Wipe with a damp cloth. Avoid harsh chemicals.</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
+      <div id="state-box" class="text-center py-5">
+        <div class="spinner-border" style="color: var(--osma-primary);" role="status"></div>
+        <p class="mt-3 text-muted">جاري تحميل العطر...</p>
       </div>
-    </section><!-- /Product Details Section -->
-    <!-- Checkout Modal -->
-    <!-- Checkout Modal -->
-    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true" dir="ltr">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header" style="border-bottom: 1px solid var(--osma-primary);">
-            <h5 class="modal-title" id="checkoutModalLabel" style="color: var(--osma-primary); font-weight: bold;">
-              Checkout</h5>
-            <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div id="product-root" hidden>
+
+        <!-- ========== الجزء الأول: الصور + معلومات الشراء ========== -->
+        <section class="nf-hero">
+
+          <div class="nf-gallery">
+            <div class="nf-thumbs" id="thumbs"></div>
+            <div class="nf-stage" id="stage" title="اضغط للتكبير">
+              <div class="nf-stage-tags" id="stage-tags"></div>
+              <button type="button" class="nf-share" id="share-btn" aria-label="مشاركة العطر"><i class="bi bi-share"></i></button>
+              <img id="main-img" src="assets/img/nafas-mark.png" alt="">
+            </div>
           </div>
-          <div class="modal-body">
-            <form id="checkoutForm">
-              <div class="mb-3 text-start">
-                <label class="form-label fw-bold">Full Name</label>
-                <input type="text" id="custName" class="form-control" placeholder="Enter your full name" required>
+
+          <div class="nf-info">
+            <a class="nf-brand" id="brand" href="tos.html"></a>
+            <h1 class="nf-title" id="title"></h1>
+            <div class="nf-title-en" id="title-en" hidden></div>
+            <div class="nf-chips" id="chips"></div>
+            <p class="nf-lead" id="lead" hidden></p>
+
+            <div class="nf-price-row">
+              <span class="nf-price" id="price"></span>
+              <span class="nf-old" id="old" hidden></span>
+              <span class="nf-save" id="save" hidden></span>
+            </div>
+            <div class="nf-stock" id="stock"></div>
+
+            <div id="size-block">
+              <div class="nf-label">اختر الحجم <small>السعر بيتغير حسب الحجم</small></div>
+              <div class="nf-sizes" id="sizes"></div>
+            </div>
+
+            <div class="nf-label">الكمية</div>
+            <div class="nf-buy" id="buy-row">
+              <div class="nf-qty">
+                <button type="button" id="qty-plus" aria-label="زيادة">+</button>
+                <input id="qty" type="number" value="1" min="1" readonly aria-label="الكمية">
+                <button type="button" id="qty-minus" aria-label="نقصان">−</button>
               </div>
-              <div class="mb-3 text-start">
-                <label class="form-label fw-bold">Phone Number</label>
-                <input type="tel" id="custPhone" class="form-control text-start" placeholder="Example: 01012345678" required>
-              </div>
-              <div class="mb-4 text-start">
-                <label class="form-label fw-bold">Detailed Address</label>
-                <textarea id="custAddress" class="form-control" rows="2" placeholder="City, Area, Street, Building Number" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-dark w-100 py-2" id="confirmOrderBtn" style="font-size: 18px; font-weight: bold;">
-                Confirm Order
+              <button type="button" class="nf-btn primary" id="order-btn" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+                <i class="bi bi-bag-check"></i> اطلب الآن
               </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- نافذة تأكيد الطلب بنجاح (Success Modal) -->
-    <div class="modal fade" id="successOrderModal" tabindex="-1" aria-hidden="true" dir="rtl">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content text-center shadow-lg" style="border-radius: 20px; border: none; padding: 2rem 1.5rem;">
-          <div class="modal-body">
-            <div style="width: 85px; height: 85px; background: rgba(37, 211, 102, 0.1); color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 45px; box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);">
-              <i class="bi bi-check-circle-fill"></i>
+              <a class="nf-btn wa" id="wa-btn" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> اطلب عبر واتساب</a>
             </div>
-            <h3 style="color: var(--osma-primary); font-weight: 800; margin-bottom: 15px; font-size: 24px;">تم تأكيد طلبك بنجاح! ✨</h3>
-            <p style="color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 25px;">
-              شكراً لثقتك في <strong>OSMA Bags</strong>.<br>لقد استلمنا طلبك، وسيقوم فريق المبيعات بالتواصل معك قريباً لتأكيد تفاصيل الشحن. 🚚
-            </p>
-            <button type="button" class="btn w-100 py-3" data-bs-dismiss="modal" style="background-color: var(--osma-primary); color: #fff; font-weight: bold; border-radius: 12px; font-size: 17px;">
-              متابعة التسوق
-            </button>
+            <div class="nf-total"><span>الإجمالي</span><strong id="total"></strong></div>
+
+            <div class="nf-trust">
+              <div><i class="bi bi-telephone-inbound"></i><span>نأكد طلبك بمكالمة قبل الشحن</span></div>
+              <div><i class="bi bi-whatsapp"></i><span>اسأل عن العطر على واتساب</span></div>
+              <div><i class="bi bi-truck"></i><span>توصيل لحد باب بيتك</span></div>
+            </div>
           </div>
-        </div>
+        </section>
+
+        <!-- ========== عن العطر ========== -->
+        <section class="nf-section" id="about" hidden>
+          <div class="nf-section-head"><span class="ico"><i class="bi bi-stars"></i></span><h2>عن العطر</h2></div>
+          <p class="nf-prose" id="about-text"></p>
+        </section>
+
+        <!-- ========== رحلة العطر ========== -->
+        <section class="nf-section" id="journey-sec" hidden>
+          <div class="nf-section-head"><span class="ico"><i class="bi bi-droplet-half"></i></span><h2>رحلة العطر</h2></div>
+          <div class="nf-journey" id="journey">
+            <div class="nf-card" id="pyramid-card" hidden>
+              <h3>هرم العطر</h3>
+              <div class="nf-pyramid" id="pyramid"></div>
+            </div>
+            <div class="nf-card" id="meters-card" hidden>
+              <h3>الثبات والفوحان</h3>
+              <div id="meters"></div>
+              <div id="families-wrap" hidden>
+                <h3 style="margin-top:8px">العائلة العطرية</h3>
+                <div class="nf-families" id="families"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== مناسب لـ ========== -->
+        <section class="nf-section" id="when-sec" hidden>
+          <div class="nf-section-head"><span class="ico"><i class="bi bi-calendar2-heart"></i></span><h2>مناسب لـ</h2></div>
+          <div class="nf-seasons" id="seasons" hidden></div>
+          <div class="nf-occasions" id="occasions"></div>
+        </section>
+
+        <!-- ========== تفاصيل ========== -->
+        <section class="nf-section" id="specs-sec" hidden>
+          <div class="nf-section-head"><span class="ico"><i class="bi bi-card-checklist"></i></span><h2>تفاصيل العطر</h2></div>
+          <div class="nf-specs" id="specs"></div>
+        </section>
+
+        <!-- ========== مشابهة ========== -->
+        <section class="nf-section" id="related-sec" hidden>
+          <div class="nf-section-head"><span class="ico"><i class="bi bi-heart"></i></span><h2>عطور قد تعجبك</h2></div>
+          <div class="nf-related" id="related"></div>
+        </section>
+
       </div>
     </div>
   </main>
@@ -593,32 +234,30 @@
           <!-- 1. Brand & Social -->
           <div class="col-md-6">
             <a href="index.html" class="logo text-decoration-none">
-              <span class="sitename" style="color: var(--osma-primary); font-size: 28px; font-weight: 700;">OSMA
-                Bags</span>
+              <span class="sitename" style="color: var(--osma-primary); font-size: 28px; font-weight: 700;">نفس للعطور</span>
             </a>
             <!-- ضفنا mx-auto عشان البلوكات اللي ليها عرض محدد تتسنتر -->
             <p class="mt-3 text-muted mx-auto" style="max-width: 80%;">
-              Premium bags designed for elegance, style, and everyday functionality.
+              عطور لكل شخصية، بروائح تدوم طويلاً وتوصلك لحد باب بيتك.
             </p>
             <!-- خلينا المسافات بين الأيقونات متساوية من الناحيتين باستخدام mx-2 -->
             <div class="social-links mt-3">
-              <a href="https://www.facebook.com/share/18bEfZnFVM/?mibextid=wwXIfr" class="mx-2 text-dark fs-5"
+              <a href="#" class="mx-2 text-dark fs-5"
                 aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/osma_egy?igsi=cm90NTdnbWUwZ2Q1" class="mx-2 text-dark fs-5"
+              <a href="#" class="mx-2 text-dark fs-5"
                 aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.tiktok.com/@osma.egy?_r=1&_t=ZS-999WFKWcTu1" class="mx-2 text-dark fs-5"
+              <a href="#" class="mx-2 text-dark fs-5"
                 aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
             </div>
           </div>
 
           <!-- 2. Contact Info -->
           <div class="col-md-6">
-            <h5 style="color: var(--osma-primary);">Contact Us</h5>
+            <h5 style="color: var(--osma-primary);">تواصل معنا</h5>
             <ul class="list-unstyled mt-3" style="line-height: 2;">
-              <li><i class="bi bi-geo-alt me-2" style="color: var(--osma-primary);"></i> Cairo, Egypt</li>
+              <li><i class="bi bi-geo-alt me-2" style="color: var(--osma-primary);"></i> مصر</li>
               <li><i class="bi bi-telephone me-2" style="color: var(--osma-primary);"></i> <span
-                  dir="ltr">+201111447123</span></li>
-              <li><i class="bi bi-envelope me-2" style="color: var(--osma-primary);"></i> osma@gmail.com</li>
+                  dir="ltr">01034934915</span></li>
             </ul>
           </div>
 
@@ -632,15 +271,15 @@
 
         <!-- حقوق النشر -->
         <p class="mb-2 text-muted" style="font-size: 1.1rem;">
-          © <strong>OSMA</strong>. All Rights Reserved.
+          © <strong>نفس</strong>. جميع الحقوق محفوظة.
         </p>
 
         <!-- اسم المصمم -->
         <div class="mb-3">
-          <span class="text-muted" style="font-size: 1.1rem;">Designed by</span><br>
+          <span class="text-muted" style="font-size: 1.1rem;">تصميم وتطوير</span><br>
           <a href="https://hassan6102.github.io/portfolio/" class="text-decoration-none fw-bold mt-1 d-inline-block"
             style="color: var(--osma-primary); font-size: 1rem; letter-spacing: 0.5px;">
-            Eng. Hassan Mohamed
+            م. حسن محمد
           </a>
         </div>
 
@@ -648,550 +287,518 @@
     </div>
   </footer>
 
+  <!-- شريط الطلب السريع (موبايل) -->
+  <div class="nf-sticky" id="sticky-bar" aria-hidden="true">
+    <img id="sticky-img" src="assets/img/nafas-mark.png" alt="">
+    <div class="t"><b id="sticky-name"></b><span id="sticky-price"></span></div>
+    <button type="button" class="nf-btn primary" id="sticky-btn" data-bs-toggle="modal" data-bs-target="#checkoutModal">اطلب الآن</button>
+  </div>
 
-  
-  <!-- Floating Customer Support Button (Modern & Clean) -->
-  <div class="cs-float" id="csFloat">
-    <button class="cs-main" id="csMain" aria-expanded="false" aria-label="Customer Support">
-      <i class="bi bi-chat-dots-fill cs-icon"></i>
-    </button>
-
-    <div class="cs-menu" id="csMenu" role="menu">
-      <a class="cs-item" href="https://wa.me/201111447123" target="_blank">
-        <i class="bi bi-whatsapp" style="color: #25D366;"></i>
-        <span>WhatsApp</span>
-      </a>
-      <a class="cs-item" href="tel:+01111447123">
-        <i class="bi bi-telephone-fill" style="color: var(--osma-primary);"></i>
-        <span>Call Us</span>
-      </a>
+  <!-- نافذة تأكيد الطلب -->
+  <div class="modal fade nf-modal" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checkoutTitle"><i class="bi bi-bag-check ms-2"></i> تأكيد الطلب</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="nf-summary" id="checkout-summary"></div>
+          <form id="checkoutForm" novalidate>
+            <div class="mb-3">
+              <label class="form-label fw-bold" for="custName">الاسم بالكامل</label>
+              <input type="text" class="form-control" id="custName" placeholder="مثال: محمد أحمد" required autocomplete="name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold" for="custPhone">رقم الموبايل</label>
+              <input type="tel" class="form-control" id="custPhone" dir="ltr" inputmode="tel" placeholder="01012345678" required autocomplete="tel">
+            </div>
+            <div class="mb-4">
+              <label class="form-label fw-bold" for="custAddress">العنوان بالتفصيل</label>
+              <textarea class="form-control" id="custAddress" rows="3" placeholder="المحافظة - المدينة - الشارع - رقم العمارة والشقة" required autocomplete="street-address"></textarea>
+            </div>
+            <button type="submit" class="nf-btn primary w-100" id="confirmOrderBtn">تأكيد الطلب</button>
+            <p class="text-center text-muted mt-3 mb-0" style="font-size:.85rem;">هنتواصل معاك على رقمك لتأكيد الطلب قبل الشحن.</p>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 
-  <style>
-    /* Clean Support Button CSS */
-    .cs-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 9999;
-    }
-
-    .cs-main {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      background-color: #8b7355;
-      color: white;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .cs-main:hover {
-      transform: scale(1.05);
-      background-color: var(--osma-hover);
-    }
-
-    .cs-icon {
-      font-size: 24px;
-      transition: transform 0.3s ease;
-      pointer-events: none;
-      /* إضافة السطر ده */
-    }
-
-    .cs-float.open .cs-icon {
-      transform: rotate(360deg);
-      content: "\F62A";
-      /* تتغير لعلامة X في البوتستراب أيكونز لو حابب تظبطها بالجافاسكريبت، بس الدوران شغال كويس */
-    }
-
-    .cs-menu {
-      position: absolute;
-      right: 0;
-      bottom: 70px;
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 10px 0;
-      width: 180px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .cs-float.open .cs-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .cs-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 20px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      font-size: 15px;
-      transition: background-color 0.2s ease;
-    }
-
-    .cs-item i {
-      font-size: 18px;
-    }
-
-    .cs-item:hover {
-      background-color: #f8f9fa;
-      color: var(--osma-primary);
-    }
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const csFloat = document.getElementById("csFloat");
-      const csMain = document.getElementById("csMain");
-
-      if (csMain && csFloat) {
-        // Toggle Menu
-        csMain.addEventListener("click", function (e) {
-          e.preventDefault(); // منع أي سلوك افتراضي
-          e.stopPropagation(); // منع انتقال الضغطة لباقي الصفحة
-          csFloat.classList.toggle("open");
-
-          // تغيير حالة aria للـ Accessibility
-          const isOpen = csFloat.classList.contains("open");
-          csMain.setAttribute("aria-expanded", isOpen);
-        });
-
-        // Close when clicking outside
-        document.addEventListener("click", function (e) {
-          if (!csFloat.contains(e.target)) {
-            csFloat.classList.remove("open");
-            csMain.setAttribute("aria-expanded", "false");
-          }
-        });
-      }
-    });
-  </script>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
-    style="background-color: var(--osma-primary);"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/drift-zoom/Drift.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <!-- كود ربط صفحة التفاصيل بـ Firebase -->
-  <!-- كود ربط صفحة التفاصيل بـ Firebase مع دعم معرض الصور -->
-  <!-- كود ربط صفحة التفاصيل بـ Firebase مع دعم معرض الصور والمواصفات الديناميكية -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getFirestore, doc, getDoc, setDoc, addDoc, collection, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-    // إعدادات فايربيز الحقيقية
-    const firebaseConfig = {
-      apiKey: "AIzaSyA1jQa2Bo9U7UBDRWjSLHbY8Q42xbOlA8k",
-      authDomain: "bag-store-app-55b26.firebaseapp.com",
-      projectId: "bag-store-app-55b26",
-      storageBucket: "bag-store-app-55b26.firebasestorage.app",
-      messagingSenderId: "876785296161",
-      appId: "1:876785296161:web:320fea9a586bf48f84d460",
-      measurementId: "G-M6YS1LFRCD"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    async function loadSingleProduct() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const productId = urlParams.get('id');
-
-      if (!productId) {
-        document.querySelector('.product-title').textContent = "المنتج غير متوفر";
-        return;
-      }
-
-      try {
-        const docRef = doc(db, "products", productId);
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          const p = docSnap.data();
-
-          // 1. تحديث النصوص والأسعار
-          document.querySelector('.product-title').textContent = p.name;
-          const priceElements = document.querySelectorAll('.current-price, .product-price');
-          priceElements.forEach(el => el.textContent = `EGP ${p.price}`);
-
-          const oldPriceElem = document.querySelector('.original-price');
-          const discountBadge = document.querySelector('.discount-badge');
-
-          if (p.oldPrice && p.oldPrice > p.price) {
-            if (oldPriceElem) {
-              oldPriceElem.textContent = `EGP ${p.oldPrice}`;
-              oldPriceElem.style.display = 'inline-block';
-            }
-            if (discountBadge) {
-              const discount = Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100);
-              discountBadge.textContent = `save ${discount}%`;
-              discountBadge.style.display = 'inline-block';
-            }
-          } else {
-            if (oldPriceElem) oldPriceElem.style.display = 'none';
-            if (discountBadge) discountBadge.style.display = 'none';
-          }
-
-          document.querySelector('.product-category').textContent = p.category || 'شنط';
-
-          // 2. تحديث الصور (الرئيسية والمعرض)
-          const mainImgSrc = p.imageUrl || p.image || 'assets/img/icon - Copy.png';
-          let allImages = [mainImgSrc];
-
-          if (p.gallery && Array.isArray(p.gallery)) {
-            allImages = allImages.concat(p.gallery);
-          }
-
-          const mainImg = document.getElementById('main-product-image');
-          const mainLink = document.getElementById('main-image-link');
-          const thumbsContainer = document.getElementById('product-thumbnails');
-          const stickyImg = document.querySelector('.sticky-add-to-cart .product-thumbnail');
-
-          if (mainImg) {
-            mainImg.src = allImages[0];
-            mainImg.setAttribute('data-zoom', allImages[0]);
-          }
-          if (mainLink) mainLink.href = allImages[0];
-          if (stickyImg) stickyImg.src = allImages[0];
-
-          if (thumbsContainer) {
-            let thumbsHtml = '';
-            allImages.forEach((img, index) => {
-              const activeClass = index === 0 ? 'active' : '';
-              thumbsHtml += `
-              <div class="thumbnail-item ${activeClass}" style="cursor:pointer; margin-bottom: 10px;">
-                <img src="${img}" class="img-fluid thumb-img-click" data-large="${img}" alt="صورة الشنطة" style="aspect-ratio: 1; object-fit: cover; border-radius: 8px; border: 2px solid transparent; width: 80px;">
-              </div>
-            `;
-            });
-            thumbsContainer.innerHTML = thumbsHtml;
-
-            const thumbClickables = document.querySelectorAll('.thumb-img-click');
-            thumbClickables.forEach(thumb => {
-              thumb.addEventListener('click', function () {
-                const largeSrc = this.getAttribute('data-large');
-                if (mainImg) {
-                  mainImg.src = largeSrc;
-                  mainImg.setAttribute('data-zoom', largeSrc);
-                }
-                if (mainLink) mainLink.href = largeSrc;
-
-                document.querySelectorAll('.thumbnail-item').forEach(item => {
-                  item.classList.remove('active');
-                  item.querySelector('img').style.borderColor = 'transparent';
-                });
-                this.parentElement.classList.add('active');
-                this.style.borderColor = 'var(--osma-primary, #8b7355)';
-              });
-            });
-
-            if (thumbClickables.length > 0) {
-              thumbClickables[0].style.borderColor = 'var(--osma-primary, #8b7355)';
-            }
-          }
-
-          // 3. تحديث الوصف
-          if (p.description) {
-            const shortDesc = document.querySelector('.product-short-description p');
-            if (shortDesc) shortDesc.textContent = p.description;
-            const accDesc = document.querySelector('#description .product-description p');
-            if (accDesc) accDesc.textContent = p.description;
-          }
-
-          // 4. المخزون
-          const stockCount = document.querySelector('.stock-count');
-          if (stockCount) {
-            if (p.stock > 0) {
-              stockCount.textContent = `(${p.stock})`;
-            } else {
-              const stockInfo = document.querySelector('.stock-info');
-              if (stockInfo) {
-                stockInfo.innerHTML = '<i class="bi bi-x-circle-fill" style="color: red;"></i> <span style="color: red;">نفذت الكمية</span>';
-              }
-            }
-          }
-
-          // 5. المواصفات الديناميكية
-          const specsContainer = document.querySelector('#specifications .accordion-body');
-          const specsAccordionItem = specsContainer ? specsContainer.closest('.accordion-item') : null;
-
-          if (p.specs && Object.values(p.specs).some(val => val && val.trim() !== '')) {
-            if (specsContainer) {
-              specsContainer.innerHTML = `
-    <div class="product-specifications">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="specs-group">
-            <h4>Dimensions & Measurements</h4>
-            <div class="specs-table">
-              ${p.specs.height ? `<div class="specs-row"><div class="specs-label">Height</div><div class="specs-value">${p.specs.height}</div></div>` : ''}
-              ${p.specs.width ? `<div class="specs-row"><div class="specs-label">Width</div><div class="specs-value">${p.specs.width}</div></div>` : ''}
-              ${p.specs.depth ? `<div class="specs-row"><div class="specs-label">Depth</div><div class="specs-value">${p.specs.depth}</div></div>` : ''}
-              ${p.specs.handle ? `<div class="specs-row"><div class="specs-label">Handle Length</div><div class="specs-value">${p.specs.handle}</div></div>` : ''}
-              ${p.specs.weight ? `<div class="specs-row"><div class="specs-label">Weight</div><div class="specs-value">${p.specs.weight}</div></div>` : ''}
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="specs-group">
-            <h4>Materials & Care</h4>
-            <div class="specs-table">
-              ${p.specs.exterior ? `<div class="specs-row"><div class="specs-label">Exterior Material</div><div class="specs-value">${p.specs.exterior}</div></div>` : ''}
-              ${p.specs.interior ? `<div class="specs-row"><div class="specs-label">Lining</div><div class="specs-value">${p.specs.interior}</div></div>` : ''}
-              ${p.specs.care ? `<div class="specs-row"><div class="specs-label">Care Instructions</div><div class="specs-value">${p.specs.care}</div></div>` : ''}
-            </div>
+  <!-- نجاح الطلب -->
+  <div class="modal fade nf-modal" id="successOrderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center p-5">
+          <div style="font-size:4rem;color:#2e9e5b;line-height:1;"><i class="bi bi-check-circle-fill"></i></div>
+          <h4 class="mt-3 fw-bold">تم استلام طلبك بنجاح</h4>
+          <p class="text-muted">شكراً لاختيارك نفس. هنتصل بيك قريباً لتأكيد الطلب وترتيب التوصيل.</p>
+          <div class="d-flex gap-2 justify-content-center flex-wrap mt-4">
+            <a href="tos.html" class="nf-btn primary" style="flex:none;">تصفّح عطور تانية</a>
+            <button type="button" class="nf-btn wa" style="flex:none;" data-bs-dismiss="modal">إغلاق</button>
           </div>
         </div>
       </div>
     </div>
-    `;
-            }
-          }
-          else {
-            if (specsAccordionItem) {
-              specsAccordionItem.style.display = 'none';
-            }
-          }
+  </div>
 
-          // 6. رسم الألوان الديناميكية وتفعيل العداد
-          let selectedColor = '';
-          const optionsContainer = document.getElementById('dynamic-options-container');
-          const colorGroup = document.getElementById('color-group');
-          const colorsWrapper = document.getElementById('dynamic-colors-wrapper');
-          const qtyInput = document.getElementById('orderQuantity');
+  <div id="preloader" style="display: none;"></div>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+    style="background-color: var(--osma-primary);"><i class="bi bi-arrow-up-short"></i></a>
 
-          if (optionsContainer) optionsContainer.style.display = 'block';
-
-          if (p.colors && Array.isArray(p.colors) && p.colors.length > 0) {
-            if (colorGroup) colorGroup.style.display = 'block';
-            let colorsHtml = '';
-
-            p.colors.forEach((color, index) => {
-              const isActive = index === 0 ? 'active' : '';
-              if (index === 0) selectedColor = color;
-              colorsHtml += `<button type="button" class="custom-color-btn ${isActive}" data-color="${color}">${color}</button>`;
-            });
-            if (colorsWrapper) colorsWrapper.innerHTML = colorsHtml;
-
-            const colorBtns = document.querySelectorAll('.custom-color-btn');
-            colorBtns.forEach(btn => {
-              btn.addEventListener('click', (e) => {
-                colorBtns.forEach(b => b.classList.remove('active'));
-                e.target.classList.add('active');
-                selectedColor = e.target.getAttribute('data-color');
-              });
-            });
-          }
-
-          if (document.getElementById('btn-increase')) {
-            document.getElementById('btn-increase').onclick = () => {
-              let current = parseInt(qtyInput.value) || 1;
-              qtyInput.value = current + 1;
-            };
-          }
-
-          if (document.getElementById('btn-decrease')) {
-            document.getElementById('btn-decrease').onclick = () => {
-              let current = parseInt(qtyInput.value) || 1;
-              if (current > 1) qtyInput.value = current - 1;
-            };
-          }
-
-          // 7. زرار الواتساب 
-         // 7. زرار الواتساب 
-          const waButtons = document.querySelectorAll('.add-to-cart-btn');
-          waButtons.forEach(btn => {
-            btn.onclick = () => {
-              const qty = parseInt(qtyInput.value) || 1;
-              const colorText = selectedColor ? ` - اللون: ${selectedColor}` : '';
-              const total = p.price * qty;
-              
-              // سحب كود المنتج وإضافته للرسالة لو موجود
-              const skuText = p.sku ? ` - كود المنتج: ${p.sku}` : '';
-              
-              const message = `أهلاً، عايز أطلب الشنطة دي: ${p.name}${skuText}${colorText} - العدد: ${qty} `;
-              window.open(`https://wa.me/201111447123?text=${encodeURIComponent(message)}`, '_blank');
-            };
-          });
-          // 8. إتمام الطلب من الموقع وتسجيله في الداشبورد وإظهار رسالة النجاح
-          const checkoutForm = document.getElementById('checkoutForm');
-          const confirmBtn = document.getElementById('confirmOrderBtn');
-
-          if (checkoutForm) {
-            checkoutForm.addEventListener('submit', async (e) => {
-              e.preventDefault(); // منع المتصفح من عمل ريفرش للصفحة
-
-              confirmBtn.disabled = true;
-              confirmBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> جاري تسجيل الطلب...';
-
-              const cName = document.getElementById('custName').value.trim();
-              const cPhone = document.getElementById('custPhone').value.trim();
-              const cAddress = document.getElementById('custAddress').value.trim();
-
-              try {
-                const orderQty = parseInt(qtyInput.value) || 1;
-                const finalTotalPrice = p.price * orderQty;
-
-                // إضافة الطلب في قاعدة البيانات
-                await addDoc(collection(db, 'orders'), {
-                  customerName: cName,
-                  customerPhone: cPhone,
-                  address: cAddress,
-                  productName: p.name,
-                  productId: productId,
-                  color: selectedColor || 'غير محدد',
-                  quantity: orderQty,
-                  price: p.price,
-                  totalPrice: finalTotalPrice,
-                  status: 'جديد',
-                  createdAt: serverTimestamp()
-                });
-
-                // تحديث بيانات العميل أو إضافته
-                const customerRef = doc(db, 'customers', cPhone);
-                const customerSnap = await getDoc(customerRef);
-
-                if (customerSnap.exists()) {
-                  const custData = customerSnap.data();
-                  await setDoc(customerRef, {
-                    ...custData,
-                    totalOrders: (custData.totalOrders || 0) + 1,
-                    totalSpent: (custData.totalSpent || 0) + finalTotalPrice,
-                    lastOrderAt: serverTimestamp()
-                  });
-                } else {
-                  await setDoc(customerRef, {
-                    name: cName,
-                    phone: cPhone,
-                    address: cAddress,
-                    totalOrders: 1,
-                    totalSpent: finalTotalPrice,
-                    createdAt: serverTimestamp()
-                  });
-                }
-
-                // إخفاء نافذة الدفع
-                const checkoutModalEl = document.getElementById('checkoutModal');
-                const checkoutModalInstance = window.bootstrap.Modal.getInstance(checkoutModalEl) || new window.bootstrap.Modal(checkoutModalEl);
-                checkoutModalInstance.hide();
-
-                // إظهار نافذة النجاح 
-                const successModalEl = document.getElementById('successOrderModal');
-                const successModal = new window.bootstrap.Modal(successModalEl);
-                successModal.show();
-
-                // تفريغ الحقول بعد النجاح
-                checkoutForm.reset();
-                qtyInput.value = 1;
-
-              } catch (error) {
-                console.error("Order Error: ", error);
-                alert('حدث خطأ أثناء تسجيل الطلب، يرجى المحاولة مرة أخرى أو الطلب عبر واتساب.');
-              } finally {
-                // إرجاع الزرار لحالته الأصلية
-                confirmBtn.disabled = false;
-                confirmBtn.textContent = 'Confirm Order';
-              }
-            });
-          }
-        } else {
-          document.querySelector('.product-title').textContent = "المنتج غير موجود أو تم حذفه";
-        }
-      } catch (error) {
-        console.error("Error fetching product:", error);
-      }
-    }
-    loadSingleProduct();
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    window.PureCounter = function () { };
+    window.Drift = function () { };
   </script>
+  <script>
+/* نفس — أدوات مشتركة للمتجر (كروت العطور، الأحجام، الأسعار، واتساب) */
+(function () {
+  'use strict';
+
+  var PHONE = '01034934915';
+  var WA = '201034934915';
+  var FALLBACK_IMG = 'assets/img/nafas-mark.png';
+
+  function strip(s) { return String(s == null ? '' : s).replace(/[\u064B-\u065F\u0670]/g, '').trim(); }
+  function t(kind, v) { return v; } // قيم الداشبورد عربي أصلاً
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function money(n) { return Number(n || 0).toLocaleString('en-US') + ' ج.م'; }
+
+  // المنتجات المخفية / المسودات ما بتظهرش للعميل
+  function isVisible(p) { return !p.status || strip(p.status) === strip('منشور'); }
+  function hasBadge(p, name) { return (p.badges || []).some(function (b) { return strip(b) === strip(name); }); }
+
+  function variantsOf(p) {
+    if (Array.isArray(p.variants) && p.variants.length) {
+      return p.variants.map(function (v) {
+        return { size: Number(v.size) || 0, price: Number(v.price) || 0, oldPrice: Number(v.oldPrice) || 0, stock: Math.max(0, Number(v.stock) || 0), sku: v.sku || '' };
+      }).sort(function (a, b) { return a.size - b.size; });
+    }
+    return [{ size: 0, price: Number(p.price) || 0, oldPrice: Number(p.oldPrice) || 0, stock: Math.max(0, Number(p.stock) || 0), sku: '' }];
+  }
+  function totalStock(p) { return variantsOf(p).reduce(function (s, v) { return s + v.stock; }, 0); }
+  function discountPct(v) { return v.oldPrice > v.price ? Math.round((v.oldPrice - v.price) / v.oldPrice * 100) : 0; }
+  function bestDiscount(p) { return Math.max.apply(null, variantsOf(p).map(discountPct)); }
+  function createdMs(p) { return p.createdAt && p.createdAt.seconds ? p.createdAt.seconds * 1000 : 0; }
+  function imageOf(p) { return p.imageUrl || p.image || FALLBACK_IMG; }
+
+  // أرخص حجم متاح (أو أرخص حجم لو الكل نافد)
+  function cheapest(p) {
+    var vs = variantsOf(p);
+    var pool = vs.filter(function (v) { return v.stock > 0; });
+    if (!pool.length) pool = vs;
+    return pool.reduce(function (m, v) { return v.price < m.price ? v : m; }, pool[0]);
+  }
+  function sizeRange(p) {
+    var s = variantsOf(p).map(function (v) { return v.size; }).filter(Boolean);
+    if (!s.length) return '';
+    var a = Math.min.apply(null, s), b = Math.max.apply(null, s);
+    return a === b ? a + ' مل' : a + ' – ' + b + ' مل';
+  }
+
+  function searchText(p) {
+    var n = p.notes || {};
+    return [p.name, p.nameEn, p.brand, p.sku, p.concentration, p.similarTo]
+      .concat(n.top || [], n.middle || [], n.base || [], p.families || []).join(' ').toLowerCase();
+  }
+
+  function waLink(p, o) {
+    o = o || {};
+    var parts = ['السلام عليكم، عايز أطلب العطر ده: ' + p.name];
+    if (p.brand) parts.push('الماركة: ' + p.brand);
+    if (o.variant && o.variant.size) parts.push('الحجم: ' + o.variant.size + ' مل');
+    if (o.qty) parts.push('العدد: ' + o.qty);
+    if (o.variant && o.variant.price) parts.push('السعر: ' + o.variant.price + ' ج.م');
+    var sku = (o.variant && o.variant.sku) || p.sku;
+    if (sku) parts.push('كود المنتج: ' + sku);
+    return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(parts.join(' - '));
+  }
+
+  // كارت العطر الموحد (الرئيسية + كل العطور + مشابهة)
+  function cardHtml(p) {
+    var out = totalStock(p) === 0;
+    var low = cheapest(p);
+    var multi = variantsOf(p).length > 1;
+    var link = 'product-details.html?id=' + encodeURIComponent(p.id);
+    var badges = [];
+    if (out) badges.push('<span class="nf-badge nf-badge-out">نفد</span>');
+    else {
+      var pct = discountPct(low);
+      if (pct) badges.push('<span class="nf-badge nf-badge-sale">خصم ' + pct + '%</span>');
+      (p.badges || []).slice(0, 2).forEach(function (b) { badges.push('<span class="nf-badge">' + esc(b) + '</span>'); });
+    }
+    var price = (multi ? '<small class="nf-from">يبدأ من</small>' : '') +
+      '<span class="current-price">' + money(low.price) + '</span>' +
+      (low.oldPrice > low.price ? ' <span class="old-price" style="text-decoration:line-through;color:#999;font-size:14px;margin-inline-start:6px;">' + money(low.oldPrice) + '</span>' : '');
+    var meta = [p.concentration, p.gender, sizeRange(p)].filter(Boolean).map(esc).join(' · ');
+    return '<div class="product-card' + (out ? ' nf-soldout' : '') + '">' +
+      '<div class="product-image position-relative">' +
+      (badges.length ? '<div class="nf-badges">' + badges.join('') + '</div>' : '') +
+      '<a href="' + link + '"><img src="' + esc(imageOf(p)) + '" alt="' + esc(p.name) + '" loading="lazy" style="aspect-ratio:1;object-fit:cover;width:100%;"></a>' +
+      '<div class="product-overlay"><div class="product-actions">' +
+      '<a href="' + link + '" class="action-btn" title="التفاصيل"><i class="bi bi-eye"></i></a>' +
+      (out ? '' : '<a href="' + waLink(p) + '" target="_blank" rel="noopener" class="action-btn" title="اطلب عبر واتساب"><i class="bi bi-whatsapp"></i></a>') +
+      '</div></div></div>' +
+      '<div class="product-details text-center mt-3">' +
+      '<div class="product-category" style="color:#6F675C;font-size:.9rem;">' + esc(p.brand || 'عطر') + '</div>' +
+      '<h5 class="product-title mt-1 mb-1"><a href="' + link + '" style="color:#292927;text-decoration:none;font-weight:800;">' + esc(p.name) + '</a></h5>' +
+      (meta ? '<div class="nf-card-meta">' + meta + '</div>' : '') +
+      '<div class="product-price" style="color:var(--osma-primary);font-weight:800;font-size:1.1rem;">' + price + '</div>' +
+      '</div></div>';
+  }
+
+  window.NafasPerfume = {
+    PHONE: PHONE, WA: WA, FALLBACK_IMG: FALLBACK_IMG,
+    t: t, esc: esc, strip: strip, money: money, isVisible: isVisible, hasBadge: hasBadge,
+    variantsOf: variantsOf, totalStock: totalStock, discountPct: discountPct, bestDiscount: bestDiscount,
+    createdMs: createdMs, imageOf: imageOf, cheapest: cheapest, sizeRange: sizeRange, searchText: searchText,
+    waLink: waLink, cardHtml: cardHtml
+  };
+})();
+
+  </script>
+  <script src="assets/js/main.js"></script>
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, doc, getDoc, getDocs, setDoc, addDoc, collection, query, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-    // إعدادات فايربيز الخاصة بمتجرك
-    const firebaseConfig = {
-      apiKey: "AIzaSyA1jQa2Bo9U7UBDRWjSLHbY8Q42xbOlA8k",
-      authDomain: "bag-store-app-55b26.firebaseapp.com",
-      projectId: "bag-store-app-55b26",
-      storageBucket: "bag-store-app-55b26.firebasestorage.app",
-      messagingSenderId: "876785296161",
-      appId: "1:876785296161:web:320fea9a586bf48f84d460",
-      measurementId: "G-M6YS1LFRCD"
-    };
+const firebaseConfig = {
+  apiKey: "AIzaSyA1jQa2Bo9U7UBDRWjSLHbY8Q42xbOlA8k",
+  authDomain: "bag-store-app-55b26.firebaseapp.com",
+  projectId: "bag-store-app-55b26",
+  storageBucket: "bag-store-app-55b26.firebasestorage.app",
+  messagingSenderId: "876785296161",
+  appId: "1:876785296161:web:320fea9a586bf48f84d460",
+  measurementId: "G-M6YS1LFRCD"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const OP = window.NafasPerfume;
+const $ = (id) => document.getElementById(id);
+const esc = OP.esc;
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+const LONG = ['', 'ضعيف', 'متوسط', 'جيد', 'قوي', 'قوي جدًا'];
+const SILL = ['', 'قريب من الجلد', 'متوسط', 'ملحوظ', 'قوي', 'يملأ المكان'];
+const SEASON_ICON = { 'صيف': 'bi-sun', 'شتاء': 'bi-snow', 'ربيع': 'bi-flower1', 'خريف': 'bi-wind' };
 
-    async function loadAnnouncements() {
-      const annContainer = document.getElementById('dynamic-announcements');
-      if (!annContainer) return;
+let P = null, PID = '', REF = null, VARS = [], SEL = null, QTY = 1;
 
-      try {
-        const docRef = doc(db, 'settings', 'announcements');
-        const docSnap = await getDoc(docRef);
+function normalizePhone(v) {
+  let s = String(v).replace(/[\s\-()]/g, '').replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+  if (s.startsWith('+20')) s = '0' + s.slice(3);
+  else if (s.startsWith('0020')) s = '0' + s.slice(4);
+  else if (/^20\d{10}$/.test(s)) s = '0' + s.slice(2);
+  return /^01[0125]\d{8}$/.test(s) ? s : '';
+}
 
-        if (docSnap.exists() && docSnap.data().messages && docSnap.data().messages.length > 0) {
-          const messages = docSnap.data().messages;
-          let html = '';
-          messages.forEach(msg => {
-            html += `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">${msg}</div>`;
-          });
-          annContainer.innerHTML = html;
-        } else {
-          annContainer.innerHTML = `<div class="swiper-slide" style="font-size: 15px; font-weight: 500;">✨ أهلاً بكم في متجر OSMA Bags ✨</div>`;
-        }
-
-        setTimeout(() => {
-          if (typeof Swiper !== 'undefined') {
-             const sliderElem = document.querySelector('.announcement-slider');
-             if (sliderElem && sliderElem.swiper) {
-                 sliderElem.swiper.destroy(true, true);
-             }
-             new Swiper('.announcement-slider', {
-               loop: true,
-               speed: 600,
-               autoplay: { delay: 3000, disableOnInteraction: false },
-               slidesPerView: 1,
-               direction: "vertical"
-             });
-          }
-        }, 100);
-
-      } catch (error) {
-        console.error("Error loading announcements:", error);
+// ---------- الإعلانات ----------
+async function loadAnnouncements() {
+  const box = $('dynamic-announcements');
+  if (!box) return;
+  try {
+    const snap = await getDoc(doc(db, 'settings', 'announcements'));
+    const msgs = snap.exists() && snap.data().messages && snap.data().messages.length ? snap.data().messages : ['✨ أهلاً بكم في متجر نفس للعطور ✨'];
+    box.innerHTML = msgs.map(m => `<div class="swiper-slide" style="font-size:15px;font-weight:500;">${m}</div>`).join('');
+    setTimeout(() => {
+      if (typeof Swiper !== 'undefined') {
+        const el = document.querySelector('.announcement-slider');
+        if (el && el.swiper) el.swiper.destroy(true, true);
+        new Swiper('.announcement-slider', { loop: msgs.length > 1, speed: 600, autoplay: { delay: 3000, disableOnInteraction: false }, slidesPerView: 1, direction: 'vertical' });
       }
-    }
+    }, 100);
+  } catch (e) { console.error('announcements', e); }
+}
 
-    loadAnnouncements();
+// ---------- المعرض ----------
+function renderGallery() {
+  const imgs = [...new Set([OP.imageOf(P)].concat(Array.isArray(P.gallery) ? P.gallery : []).filter(Boolean))];
+  const main = $('main-img'), stage = $('stage'), th = $('thumbs');
+  main.onerror = () => { main.onerror = null; main.src = OP.FALLBACK_IMG; };
+  const setMain = (i) => {
+    main.src = imgs[i]; main.alt = P.name;
+    th.querySelectorAll('.nf-thumb').forEach((b, k) => b.classList.toggle('active', k === i));
+  };
+  th.hidden = imgs.length < 2;
+  th.innerHTML = imgs.map((s, i) => `<button type="button" class="nf-thumb${i === 0 ? ' active' : ''}" aria-label="صورة ${i + 1}"><img src="${esc(s)}" alt="" loading="lazy"></button>`).join('');
+  th.querySelectorAll('.nf-thumb').forEach((b, i) => b.addEventListener('click', (e) => { e.stopPropagation(); setMain(i); }));
+  setMain(0);
+  if (imgs.length < 2) document.querySelector('.nf-gallery').style.gridTemplateColumns = '1fr';
+  stage.addEventListener('click', (e) => { if (!e.target.closest('.nf-share')) stage.classList.toggle('zoom'); });
+  stage.addEventListener('mousemove', (e) => {
+    if (!stage.classList.contains('zoom')) return;
+    const r = stage.getBoundingClientRect();
+    main.style.transformOrigin = `${(e.clientX - r.left) / r.width * 100}% ${(e.clientY - r.top) / r.height * 100}%`;
+  });
+  stage.addEventListener('mouseleave', () => stage.classList.remove('zoom'));
+  $('sticky-img').src = imgs[0];
+  $('share-btn').addEventListener('click', async () => {
+    const data = { title: `${P.name} | نفس للعطور`, url: location.href };
+    try {
+      if (navigator.share) await navigator.share(data);
+      else { await navigator.clipboard.writeText(location.href); const i = $('share-btn').querySelector('i'); i.className = 'bi bi-check2'; setTimeout(() => i.className = 'bi bi-share', 1600); }
+    } catch (_) { /* المستخدم لغى المشاركة */ }
+  });
+}
+
+// ---------- الأحجام والسعر والمخزون ----------
+function renderSizes() {
+  const has = VARS.some(v => v.size > 0);
+  $('size-block').hidden = !has;
+  $('sizes').innerHTML = VARS.map((v, i) =>
+    `<button type="button" class="nf-size" data-i="${i}" ${v.stock === 0 ? 'disabled' : ''}><b>${v.size} مل</b><span>${OP.money(v.price)}</span>${v.stock === 0 ? '<em class="nf-size-off">نفد</em>' : ''}</button>`).join('');
+  $('sizes').querySelectorAll('.nf-size').forEach(b => b.addEventListener('click', () => { SEL = VARS[+b.dataset.i]; QTY = 1; refresh(); }));
+}
+
+function refresh() {
+  const out = SEL.stock === 0;
+  const thr = Number(P.lowStockThreshold != null ? P.lowStockThreshold : 5);
+  const pct = OP.discountPct(SEL);
+  if (QTY > SEL.stock) QTY = Math.max(1, SEL.stock);
+
+  $('price').innerHTML = `${SEL.price.toLocaleString('en-US')}<small>ج.م</small>`;
+  $('old').hidden = !pct; $('old').textContent = pct ? OP.money(SEL.oldPrice) : '';
+  $('save').hidden = !pct; $('save').textContent = pct ? `وفّر ${pct}%` : '';
+
+  const tags = [];
+  if (out) tags.push('<span class="nf-tag-sale" style="background:#3A3733">نفد</span>');
+  else if (pct) tags.push(`<span class="nf-tag-sale">خصم ${pct}%</span>`);
+  (P.badges || []).slice(0, 2).forEach(b => tags.push(`<span class="nf-tag-soft">${esc(b)}</span>`));
+  $('stage-tags').innerHTML = tags.join('');
+
+  const st = $('stock');
+  st.className = 'nf-stock' + (out ? ' out' : SEL.stock <= thr ? ' low' : '');
+  st.innerHTML = '<i></i>' + (out ? 'الحجم ده نفد من المخزون' : SEL.stock <= thr ? (SEL.stock === 1 ? 'باقي قطعة واحدة فقط' : `باقي ${SEL.stock} قطع فقط — اطلب قبل ما تخلص`) : 'متوفر');
+
+  $('sizes').querySelectorAll('.nf-size').forEach((b, i) => b.classList.toggle('active', VARS[i] === SEL));
+  $('qty').value = QTY;
+  $('total').textContent = OP.money(SEL.price * QTY);
+  $('order-btn').disabled = out; $('sticky-btn').disabled = out;
+  $('order-btn').innerHTML = out ? 'غير متاح حالياً' : '<i class="bi bi-bag-check"></i> اطلب الآن';
+  $('sticky-btn').textContent = out ? 'نفد' : 'اطلب الآن';
+  const wa = $('wa-btn');
+  wa.href = OP.waLink(P, { variant: SEL, qty: QTY });
+  wa.style.display = out ? 'none' : '';
+  $('sticky-price').textContent = OP.money(SEL.price * QTY);
+}
+
+// ---------- أقسام المحتوى ----------
+function renderTop() {
+  document.title = `${P.name} | نفس للعطور`;
+  $('crumb-name').textContent = P.name;
+  const brand = $('brand');
+  brand.textContent = P.brand || 'عطر';
+  if (P.brand) brand.href = 'tos.html?brand=' + encodeURIComponent(P.brand); else brand.removeAttribute('href');
+  $('title').textContent = P.name;
+  if (P.nameEn && P.nameEn !== P.name) { $('title-en').hidden = false; $('title-en').textContent = P.nameEn; }
+  $('sticky-name').textContent = P.name;
+
+  const chips = [];
+  if (P.concentration) chips.push(`<span class="nf-chip solid">${esc(P.concentration)}</span>`);
+  if (P.gender) chips.push(`<span class="nf-chip">${esc(P.gender)}</span>`);
+  if (P.productType) chips.push(`<span class="nf-chip">${esc(P.productType)}</span>`);
+  $('chips').innerHTML = chips.join('');
+
+  const d = (P.description || '').trim();
+  if (d) {
+    const short = d.length > 190 ? d.slice(0, 190).replace(/\s+\S*$/, '') + '…' : d;
+    const lead = $('lead'); lead.hidden = false;
+    lead.textContent = short.replace(/\s*\n+\s*/g, ' ');
+    if (d.length > 190) lead.insertAdjacentHTML('beforeend', ' <a href="#about">المزيد</a>');
+    $('about').hidden = false; $('about-text').textContent = d;
+  }
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', (d || `${P.name} من ${P.brand || 'نفس'}`).slice(0, 160));
+}
+
+function renderJourney() {
+  const n = P.notes || {};
+  const tiers = [
+    ['top', 'النوتات العليا', 'أول ما ترشّ العطر، وبتفضل دقائق', 'bi-wind', n.top],
+    ['mid', 'نوتات القلب', 'شخصية العطر بعد دقائق من الرش', 'bi-heart-fill', n.middle],
+    ['base', 'نوتات القاعدة', 'الأثر اللي بيفضل على جلدك لساعات', 'bi-gem', n.base],
+  ].filter(t => Array.isArray(t[4]) && t[4].length);
+  let any = false;
+  if (tiers.length) {
+    any = true; $('pyramid-card').hidden = false;
+    $('pyramid').innerHTML = tiers.map(t => `<div class="nf-tier ${t[0]}"><div class="nf-tier-ico"><i class="bi ${t[3]}"></i></div><div><h4>${t[1]}</h4><small>${t[2]}</small>${t[4].map(x => `<span class="nf-note">${esc(x)}</span>`).join('')}</div></div>`).join('');
+  }
+  const meters = [];
+  if (P.longevity) meters.push(`<div class="nf-meter"><div class="nf-meter-top">الثبات <small>${LONG[P.longevity] || ''}${P.longevityHours ? ' · ' + esc(P.longevityHours) : ''}</small></div><div class="nf-bars">${[1, 2, 3, 4, 5].map(i => `<i class="${i <= P.longevity ? 'on' : ''}"></i>`).join('')}</div></div>`);
+  if (P.sillage) meters.push(`<div class="nf-meter"><div class="nf-meter-top">الفوحان <small>${SILL[P.sillage] || ''}</small></div><div class="nf-bars">${[1, 2, 3, 4, 5].map(i => `<i class="${i <= P.sillage ? 'on' : ''}"></i>`).join('')}</div><p>الفوحان هو قوة انتشار الريحة حواليك.</p></div>`);
+  const fam = Array.isArray(P.families) ? P.families : [];
+  if (meters.length || fam.length) {
+    any = true; $('meters-card').hidden = false;
+    $('meters').innerHTML = meters.join('');
+    if (!meters.length) $('meters-card').querySelector('h3').hidden = true;
+    if (fam.length) { $('families-wrap').hidden = false; $('families').innerHTML = fam.map(f => `<span class="nf-family">${esc(f)}</span>`).join(''); }
+  }
+  if (any) {
+    $('journey-sec').hidden = false;
+    if (!tiers.length || !(meters.length || fam.length)) $('journey').style.gridTemplateColumns = '1fr';
+  }
+}
+
+function renderWhen() {
+  const seasons = Array.isArray(P.seasons) ? P.seasons : [], occ = Array.isArray(P.occasions) ? P.occasions : [];
+  if (!seasons.length && !occ.length) return;
+  $('when-sec').hidden = false;
+  if (seasons.length) {
+    $('seasons').hidden = false;
+    $('seasons').innerHTML = ['صيف', 'شتاء', 'ربيع', 'خريف'].map(s => `<div class="nf-season${seasons.some(x => OP.strip(x) === OP.strip(s)) ? ' on' : ''}"><i class="bi ${SEASON_ICON[s]}"></i>${s}</div>`).join('');
+  }
+  $('occasions').innerHTML = occ.map(o => `<span class="nf-occ">${esc(o)}</span>`).join('');
+}
+
+function renderSpecs() {
+  const rows = [['الماركة', P.brand], ['التركيز', P.concentration], ['نوع المنتج', P.productType], ['الفئة', P.gender], ['بلد المنشأ', P.origin],
+    ['سنة الإصدار', P.releaseYear || ''], ['صانع العطر', P.perfumer], ['مستوحى من', P.similarTo], ['الأحجام المتاحة', OP.sizeRange(P)], ['كود المنتج', P.sku]]
+    .filter(r => r[1]).map(r => `<div class="nf-spec"><small>${r[0]}</small><b>${esc(r[1])}</b></div>`);
+  const custom = (Array.isArray(P.customFields) ? P.customFields : []).filter(c => c && c.label && c.value).map(c => {
+    const long = String(c.value).length > 42 || /\n/.test(c.value);
+    return long
+      ? `<div class="nf-spec wide"><i class="bi bi-patch-check"></i><div><small>${esc(c.label)}</small><b>${esc(c.value)}</b></div></div>`
+      : `<div class="nf-spec"><small>${esc(c.label)}</small><b>${esc(c.value)}</b></div>`;
+  });
+  const all = rows.concat(custom);
+  if (!all.length) return;
+  $('specs-sec').hidden = false; $('specs').innerHTML = all.join('');
+}
+
+async function renderRelated() {
+  try {
+    const snap = await getDocs(query(collection(db, 'products')));
+    const fam = new Set(P.families || []);
+    const list = [];
+    snap.forEach(d => {
+      const x = d.data(); x.id = d.id;
+      if (d.id === PID || !OP.isVisible(x)) return;
+      let score = (x.brand && x.brand === P.brand ? 3 : 0) + (x.gender && x.gender === P.gender ? 2 : 0) + (OP.totalStock(x) > 0 ? 1 : -3);
+      (x.families || []).forEach(f => { if (fam.has(f)) score += 2; });
+      list.push([score, x]);
+    });
+    list.sort((a, b) => b[0] - a[0]);
+    const top = list.slice(0, 4).map(r => r[1]);
+    if (!top.length) return;
+    $('related').innerHTML = top.map(OP.cardHtml).join('');
+    $('related-sec').hidden = false;
+  } catch (e) { console.error('related', e); }
+}
+
+function injectSchema() {
+  try {
+    const low = OP.cheapest(P);
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.textContent = JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'Product', name: P.name, image: [OP.imageOf(P)], description: P.description || P.name,
+      brand: P.brand ? { '@type': 'Brand', name: P.brand } : undefined, sku: P.sku || PID,
+      offers: { '@type': 'Offer', priceCurrency: 'EGP', price: low.price, availability: OP.totalStock(P) > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock', url: location.href }
+    });
+    document.head.appendChild(s);
+  } catch (_) { }
+}
+
+// ---------- الطلب ----------
+function setupOrder() {
+  $('qty-plus').addEventListener('click', () => { if (QTY < SEL.stock) { QTY++; refresh(); } });
+  $('qty-minus').addEventListener('click', () => { if (QTY > 1) { QTY--; refresh(); } });
+
+  const modalEl = $('checkoutModal');
+  modalEl.addEventListener('show.bs.modal', () => {
+    $('checkout-summary').innerHTML =
+      `<div class="r"><span>${esc(P.name)}${SEL.size ? ' · ' + SEL.size + ' مل' : ''}</span><span>× ${QTY}</span></div>` +
+      `<div class="r"><span>سعر القطعة</span><span>${OP.money(SEL.price)}</span></div>` +
+      `<div class="r tot"><span>الإجمالي</span><span>${OP.money(SEL.price * QTY)}</span></div>`;
+  });
+
+  const form = $('checkoutForm'), btn = $('confirmOrderBtn');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = $('custName').value.trim(), address = $('custAddress').value.trim(), phone = normalizePhone($('custPhone').value);
+    if (name.length < 2) { alert('اكتب اسمك بالكامل'); return; }
+    if (!phone) { alert('اكتب رقم موبايل مصري صحيح، مثال: 01012345678'); return; }
+    if (address.length < 8) { alert('اكتب العنوان بالتفصيل (المحافظة والمدينة والشارع)'); return; }
+
+    btn.disabled = true; btn.innerHTML = '<span class="spinner-border spinner-border-sm ms-2"></span> جاري إرسال الطلب...';
+    try {
+      // نتأكد من المخزون والسعر الحاليين قبل تسجيل الطلب
+      const fresh = (await getDoc(REF)).data();
+      if (!fresh || !OP.isVisible(fresh)) throw new Error('unavailable');
+      const fv = OP.variantsOf(fresh).find(x => x.size === SEL.size);
+      if (!fv || fv.stock < QTY) {
+        alert(fv && fv.stock > 0 ? `المتاح من الحجم ده ${fv.stock} قطعة فقط.` : 'للأسف الحجم ده خلص من المخزون.');
+        P = fresh; VARS = OP.variantsOf(P); SEL = VARS.find(v => v.size === SEL.size) || VARS[0]; renderSizes(); refresh();
+        return;
+      }
+      const unit = fv.price, total = unit * QTY;
+      await addDoc(collection(db, 'orders'), {
+        customerName: name, customerPhone: phone, address,
+        productId: PID, productName: P.name, brand: P.brand || '', productSku: P.sku || '',
+        concentration: P.concentration || '', imageUrl: P.imageUrl || '',
+        size: SEL.size ? `${SEL.size} مل` : '', sizeMl: SEL.size || 0, variantSku: SEL.sku || '',
+        quantity: QTY, price: unit, totalPrice: total,
+        status: 'جديد', saleRecorded: false, createdAt: serverTimestamp()
+      });
+      const cRef = doc(db, 'customers', phone), cSnap = await getDoc(cRef);
+      if (cSnap.exists()) { const c = cSnap.data(); await setDoc(cRef, { ...c, totalOrders: (c.totalOrders || 0) + 1, totalSpent: (c.totalSpent || 0) + total, lastOrderAt: serverTimestamp() }); }
+      else await setDoc(cRef, { name, phone, address, totalOrders: 1, totalSpent: total, createdAt: serverTimestamp() });
+
+      (window.bootstrap.Modal.getInstance(modalEl) || new window.bootstrap.Modal(modalEl)).hide();
+      new window.bootstrap.Modal($('successOrderModal')).show();
+      form.reset(); QTY = 1; refresh();
+    } catch (err) {
+      console.error('Order error', err);
+      alert('حصلت مشكلة أثناء إرسال الطلب. جرّب تاني أو اطلب عن طريق واتساب.');
+    } finally {
+      btn.disabled = false; btn.textContent = 'تأكيد الطلب';
+    }
+  });
+}
+
+// شريط الطلب السريع على الموبايل
+function setupSticky() {
+  const bar = $('sticky-bar'), row = $('buy-row');
+  if (!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([en]) => bar.classList.toggle('show', !en.isIntersecting && en.boundingClientRect.top < 0), { threshold: 0 }).observe(row);
+}
+
+function fail(title, text) {
+  $('state-box').innerHTML = `<div style="font-size:3rem;color:var(--osma-primary)"><i class="bi bi-droplet-half"></i></div><h3 class="mt-2">${title}</h3><p class="text-muted">${text}</p><a href="tos.html" class="nf-btn primary d-inline-flex mt-2" style="flex:none">تصفّح كل العطور</a>`;
+  $('crumb-name').textContent = '—';
+}
+
+async function loadProduct() {
+  PID = new URLSearchParams(location.search).get('id');
+  if (!PID) return fail('العطر غير موجود', 'الرابط ناقص. اختار العطر من المتجر.');
+  try {
+    REF = doc(db, 'products', PID);
+    const snap = await getDoc(REF);
+    if (!snap.exists() || !OP.isVisible(snap.data())) return fail('العطر ده مش متاح حالياً', 'ممكن يكون اتشال من المتجر. شوف باقي العطور.');
+    P = snap.data();
+    VARS = OP.variantsOf(P);
+    SEL = VARS.find(v => v.stock > 0) || VARS[0];
+
+    renderTop(); renderGallery(); renderSizes(); refresh();
+    renderJourney(); renderWhen(); renderSpecs(); setupOrder(); setupSticky(); injectSchema();
+    $('state-box').hidden = true; $('product-root').hidden = false;
+    renderRelated();
+  } catch (e) {
+    console.error('product', e);
+    fail('تعذّر تحميل العطر', 'اتأكد من الاتصال بالإنترنت وحدّث الصفحة.');
+  }
+}
+
+loadAnnouncements();
+loadProduct();
+
   </script>
-</body>
 </body>
 
 </html>
