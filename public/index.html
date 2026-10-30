@@ -28,6 +28,7 @@
 
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/nafas.css" rel="stylesheet">
+  <link href="assets/css/nafas-cards.css" rel="stylesheet">
 
   <!-- OSMA Brand Colors Customization -->
   <style>
@@ -1060,9 +1061,9 @@
         : '<p class="text-center w-100" style="color:var(--osma-primary);">لا توجد عطور في هذا التصنيف حالياً.</p>';
       if (typeof Swiper !== 'undefined') {
         catalogSwiper = new Swiper('.mySwiper', {
-          slidesPerView: 1, spaceBetween: 20, observer: true, observeParents: true,
+          slidesPerView: 2, spaceBetween: 12, observer: true, observeParents: true,
           navigation: { nextEl: '.mySwiper .swiper-button-next', prevEl: '.mySwiper .swiper-button-prev' },
-          breakpoints: { 640: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } }
+          breakpoints: { 576: { slidesPerView: 3, spaceBetween: 14 }, 992: { slidesPerView: 4, spaceBetween: 16 }, 1280: { slidesPerView: 5, spaceBetween: 16 } }
         });
       }
     }

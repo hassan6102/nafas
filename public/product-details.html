@@ -19,6 +19,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/nafas.css" rel="stylesheet">
+  <link href="assets/css/nafas-cards.css" rel="stylesheet">
 </head>
 
 <body class="product-details-page">
@@ -219,7 +220,11 @@
         <!-- ========== مشابهة ========== -->
         <section class="nf-section" id="related-sec" hidden>
           <div class="nf-section-head"><span class="ico"><i class="bi bi-heart"></i></span><h2>عطور قد تعجبك</h2></div>
-          <div class="nf-related" id="related"></div>
+          <div class="nf-rel swiper" id="rel-swiper">
+            <div class="swiper-wrapper" id="related"></div>
+            <button type="button" class="nf-rel-btn prev" id="rel-prev" aria-label="السابق"><i class="bi bi-chevron-right"></i></button>
+            <button type="button" class="nf-rel-btn next" id="rel-next" aria-label="التالي"><i class="bi bi-chevron-left"></i></button>
+          </div>
         </section>
 
       </div>
@@ -422,7 +427,8 @@
   }
 
   // كارت العطر الموحد (الرئيسية + كل العطور + مشابهة)
-  function cardHtml(p) {
+  function cardHtml(p, opt) {
+    opt = (opt && typeof opt === 'object') ? opt : {};
     var out = totalStock(p) === 0;
     var low = cheapest(p);
     var multi = variantsOf(p).length > 1;
@@ -437,7 +443,7 @@
     var price = (multi ? '<small class="nf-from">يبدأ من</small>' : '') +
       '<span class="current-price">' + money(low.price) + '</span>' +
       (low.oldPrice > low.price ? ' <span class="old-price" style="text-decoration:line-through;color:#999;font-size:14px;margin-inline-start:6px;">' + money(low.oldPrice) + '</span>' : '');
-    var meta = [p.concentration, p.gender, sizeRange(p)].filter(Boolean).map(esc).join(' · ');
+    var meta = (opt.noSize ? [p.concentration, p.gender] : [p.concentration, p.gender, sizeRange(p)]).filter(Boolean).map(esc).join(' · ');
     return '<div class="product-card' + (out ? ' nf-soldout' : '') + '">' +
       '<div class="product-image position-relative">' +
       (badges.length ? '<div class="nf-badges">' + badges.join('') + '</div>' : '') +
@@ -684,10 +690,17 @@ async function renderRelated() {
       list.push([score, x]);
     });
     list.sort((a, b) => b[0] - a[0]);
-    const top = list.slice(0, 4).map(r => r[1]);
+    const top = list.slice(0, 10).map(r => r[1]);
     if (!top.length) return;
-    $('related').innerHTML = top.map(OP.cardHtml).join('');
+    // كروت صغيرة بدون حجم الزجاجة، جوه سلايدر أفقي
+    $('related').innerHTML = top.map(x => `<div class="swiper-slide">${OP.cardHtml(x, { noSize: true })}</div>`).join('');
     $('related-sec').hidden = false;
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('#rel-swiper', {
+        slidesPerView: 'auto', spaceBetween: 12, freeMode: true, grabCursor: true, watchOverflow: true,
+        navigation: { nextEl: '#rel-next', prevEl: '#rel-prev' }
+      });
+    }
   } catch (e) { console.error('related', e); }
 }
 
